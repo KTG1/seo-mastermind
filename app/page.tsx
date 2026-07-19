@@ -74,8 +74,8 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="heroImage">
             <Image
-              src={assetPath("/holistic-seo-mastermind-group.png")}
-              alt="Members of the Holistic SEO Mastermind gathered in Kuşadası"
+              src={assetPath("/agenda-coast-hero.png")}
+              alt="Sunset over the Aegean coast near Kuşadası"
               fill
               priority
               unoptimized
