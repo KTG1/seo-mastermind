@@ -31,7 +31,7 @@
 .activityStage{position:relative;width:min(100%,350px);margin:0 0 36px}
 .activityPicture{position:relative;isolation:isolate;height:265px;overflow:hidden;background:#278C68;box-shadow:0 20px 50px rgba(0,0,0,.23);animation:sceneIn .5s ease both}
 .activityImage,.imageShade{position:absolute;inset:0}
-.activityImage{z-index:-2;background-image:url("/agenda-activity-scenes.png");background-size:200% 200%;transform:scale(1.02);animation:slowZoom 9s ease-in-out infinite alternate}
+.activityImage{z-index:-2;background-image:var(--activity-scenes);background-size:200% 200%;transform:scale(1.02);animation:slowZoom 9s ease-in-out infinite alternate}
 .waterImage{background-position:0 0}
 .restoreImage{background-position:100% 0}
 .tableImage{background-position:0 100%}

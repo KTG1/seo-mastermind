@@ -3,6 +3,7 @@ import Link from "next/link";
 import AgendaMenu from "../components/agenda-menu";
 import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -27,7 +28,7 @@ export default function EphesusPage() {
       </header>
 
       <section className={styles.hero}>
-        <Image src="/ephesus-visit-preview.png" alt="Illustrative sunrise view along the marble street toward the Library of Celsus in Ephesus" fill priority sizes="100vw" unoptimized />
+        <Image src={assetPath("/ephesus-visit-preview.png")} alt="Illustrative sunrise view along the marble street toward the Library of Celsus in Ephesus" fill priority sizes="100vw" unoptimized />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy}>
           <p>Shared excursion · Kuşadası, Türkiye</p>

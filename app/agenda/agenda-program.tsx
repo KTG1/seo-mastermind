@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { type CSSProperties, useEffect, useRef, useState } from "react";
+import { assetPath } from "../components/site-path";
 import styles from "./agenda-program.module.css";
 
 type Session = { time: string; title: string; description: string; type: "focus" | "water" | "restore" | "table" };
@@ -84,7 +85,7 @@ export default function AgendaProgram() {
     sessionListRef.current?.scrollTo({ top: 0 });
   }, [activeDay]);
 
-  return <section className={styles.program} aria-label="Seven-day mastermind programme">
+  return <section className={styles.program} aria-label="Seven-day mastermind programme" style={{ "--activity-scenes": `url(${assetPath("/agenda-activity-scenes.png")})` } as CSSProperties}>
     <div className={styles.calendarHead}><span>Seven days / one evolving conversation</span><span>Tap a day to enter its rhythm</span></div>
     <div className={styles.tabList} role="tablist" aria-label="Seven-day programme calendar">
       {days.map((day, index) => <button key={day.id} id={`tab-${day.id}`} role="tab" type="button" aria-selected={activeDay === index} aria-controls={`panel-${day.id}`} tabIndex={activeDay === index ? 0 : -1} onClick={() => { setActiveDay(index); setActiveSession(0); }}><span>0{index + 1}</span><strong>{day.label}</strong><i>{index === 3 ? "◌" : "↗"}</i></button>)}

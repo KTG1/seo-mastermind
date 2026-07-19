@@ -3,6 +3,7 @@ import Link from "next/link";
 import AgendaMenu from "../components/agenda-menu";
 import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -51,7 +52,7 @@ export default function FounderPage() {
           <div className={styles.heroLine}><span>HOLISTIC SEO MASTERMIND</span><span>A systems view of organic growth</span></div>
         </div>
         <div className={styles.heroPortrait}>
-          <Image src="/holistic-seo-mastermind-group.png" alt="Koray Tuğberk Gübür with members of the Holistic SEO Mastermind in Kuşadası" fill priority sizes="(max-width: 760px) 100vw, 50vw" unoptimized />
+          <Image src={assetPath("/holistic-seo-mastermind-group.png")} alt="Koray Tuğberk Gübür with members of the Holistic SEO Mastermind in Kuşadası" fill priority sizes="(max-width: 760px) 100vw, 50vw" unoptimized />
           <span>THE ROOM / IN PERSON</span>
         </div>
       </section>

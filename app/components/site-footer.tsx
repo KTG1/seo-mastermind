@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import BrandMark from "./brand-mark";
+import { assetPath } from "./site-path";
 import styles from "./site-footer.module.css";
 
 export default function SiteFooter() {
   return <footer className={styles.footer}>
-    <Image className={styles.image} src="/agenda-coast-hero.png" alt="" fill sizes="100vw" unoptimized />
+    <Image className={styles.image} src={assetPath("/agenda-coast-hero.png")} alt="" fill sizes="100vw" unoptimized />
     <div className={styles.shade} aria-hidden="true" />
     <div className={styles.content}>
       <div className={styles.topline}><span>KUŞADASI, TÜRKİYE</span><span>SEVEN DAYS / ONE WORKING ROOM</span></div>

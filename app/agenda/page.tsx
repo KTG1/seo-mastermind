@@ -3,6 +3,7 @@ import Link from "next/link";
 import AgendaMenu from "../components/agenda-menu";
 import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import { assetPath } from "../components/site-path";
 import AgendaProgram from "./agenda-program";
 import styles from "./page.module.css";
 
@@ -21,7 +22,7 @@ export default function AgendaPage() {
       </header>
 
       <section className="agendaHero">
-        <Image className="agendaHeroImage" src="/agenda-coast-hero.png" alt="Aegean coastline at sunrise near Kuşadası" fill priority sizes="100vw" unoptimized />
+        <Image className="agendaHeroImage" src={assetPath("/agenda-coast-hero.png")} alt="Aegean coastline at sunrise near Kuşadası" fill priority sizes="100vw" unoptimized />
         <div className="agendaHeroShade" aria-hidden="true" />
         <div className="agendaStamp">Sample programme<br />Details to be confirmed</div>
         <p>Seven days in the room &amp; by the sea</p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import AgendaMenu from "../components/agenda-menu";
 import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -22,7 +23,7 @@ export default function HotelPage() {
     <header className={styles.header}><Link className={styles.wordmark} href="/"><BrandMark /><b>HOLISTIC SEO<br />MASTERMIND</b></Link><nav aria-label="Primary navigation"><Link href="/about/">About</Link><Link href="/agency/">Agency</Link><Link href="/course/">Course</Link><Link href="/founder/">Founder</Link><AgendaMenu /><Link href="/attendees/">Members</Link></nav><Link href="/tickets/">Tickets <i>↗</i></Link></header>
 
     <section className={styles.hero}>
-      <Image src="/hotel-venue-preview.png" alt="Illustrative Mediterranean hotel terrace overlooking the sea at blue hour" fill priority sizes="100vw" unoptimized />
+      <Image src={assetPath("/hotel-venue-preview.png")} alt="Illustrative Mediterranean hotel terrace overlooking the sea at blue hour" fill priority sizes="100vw" unoptimized />
       <div className={styles.shade} />
       <div className={styles.heroCopy}><p>Illustrative venue preview · Kuşadası</p><h1>The hotel is<br />part of the <em>room.</em></h1><span>Final hotel details will be confirmed with invited attendees.</span></div>
     </section>

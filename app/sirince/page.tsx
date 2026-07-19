@@ -3,6 +3,7 @@ import Link from "next/link";
 import AgendaMenu from "../components/agenda-menu";
 import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -27,7 +28,7 @@ export default function SirincePage() {
       </header>
 
       <section className={styles.hero}>
-        <Image src="/sirince-village-preview.png" alt="Illustrative cobblestone lane through Şirince village in late afternoon light" fill priority sizes="100vw" unoptimized />
+        <Image src={assetPath("/sirince-village-preview.png")} alt="Illustrative cobblestone lane through Şirince village in late afternoon light" fill priority sizes="100vw" unoptimized />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy}><p>Village day · Hills above Kuşadası</p><h1>A different<br /><em>kind of pace.</em></h1><span>ŞİRİNCE / A DAY FOR LOOKING UP</span></div>
       </section>

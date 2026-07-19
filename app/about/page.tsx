@@ -3,6 +3,7 @@ import Link from "next/link";
 import AgendaMenu from "../components/agenda-menu";
 import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -37,7 +38,7 @@ export default function AboutPage() {
     </section>
 
     <section className={styles.groupPhoto}>
-      <Image src="/holistic-seo-mastermind-group.png" alt="Members of the Holistic SEO Mastermind gathering in Kuşadası" fill sizes="100vw" unoptimized />
+      <Image src={assetPath("/holistic-seo-mastermind-group.png")} alt="Members of the Holistic SEO Mastermind gathering in Kuşadası" fill sizes="100vw" unoptimized />
       <div><span>THE ROOM, KUŞADASI</span><p>Different businesses. One shared appetite for the work beneath the work.</p></div>
     </section>
 

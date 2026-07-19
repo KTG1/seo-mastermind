@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { type CSSProperties, FormEvent, useEffect, useState } from "react";
 import AgendaMenu from "./components/agenda-menu";
 import BrandMark from "./components/brand-mark";
 import SiteFooter from "./components/site-footer";
+import { assetPath } from "./components/site-path";
 
 const principles = [
   ["See the whole system", "Connect technical SEO, information gain, brand signals, entities, and conversion instead of treating them as separate checklists."],
@@ -73,7 +74,7 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="heroImage">
             <Image
-              src="/holistic-seo-mastermind-group.png"
+              src={assetPath("/holistic-seo-mastermind-group.png")}
               alt="Members of the Holistic SEO Mastermind gathered in Kuşadası"
               fill
               priority
@@ -130,7 +131,7 @@ export default function Home() {
         <section className="programmeOffer" aria-labelledby="programme-title">
           <div className="offerHeading"><div className="sectionLabel"><span>03</span> The core programme</div><h2 id="programme-title">Three days to <em>work the system.</em><br />One day to widen it.</h2><p>The core learning room moves through SEO, AI, automation, business, and investment—then opens into a dedicated conference day.</p></div>
           <div className="coreDays">{coreDays.map(([number, format, title, copy]) => <article key={number}><span>{number}</span><b>{format}</b><h3>{title}</h3><p>{copy}</p></article>)}</div>
-          <div className="experienceBand" data-engagement={currentExperience.id}>
+          <div className="experienceBand" data-engagement={currentExperience.id} style={{ "--experience-background": `url(${assetPath("/agenda-coast-hero.png")})` } as CSSProperties}>
             <div className="experienceCopy" key={currentExperience.id}>
               <span>{currentExperience.overline} <i>·</i> {String(activeExperience + 1).padStart(2, "0")} / {String(experiences.length).padStart(2, "0")}</span>
               <h3>{currentExperience.heading.split("\n")[0]}<br />{currentExperience.heading.split("\n")[1]} <em>↗</em></h3>

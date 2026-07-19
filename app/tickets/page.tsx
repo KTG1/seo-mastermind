@@ -1,7 +1,9 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import AgendaMenu from "../components/agenda-menu";
 import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import { assetPath } from "../components/site-path";
 import TicketApplication from "./ticket-application";
 import styles from "./page.module.css";
 
@@ -11,9 +13,9 @@ export const metadata = {
 };
 
 export default function TicketsPage() {
-  return <main className={styles.tickets}>
+  return <main className={styles.tickets} style={{ "--tickets-poster": `url(${assetPath("/holistic-seo-mastermind-group.png")})` } as CSSProperties}>
     <div className={styles.motionBackground} aria-hidden="true">
-      <video autoPlay loop muted playsInline poster="/holistic-seo-mastermind-group.png"><source src="/mastermind-reel.mp4" type="video/mp4" /></video>
+      <video autoPlay loop muted playsInline poster={assetPath("/holistic-seo-mastermind-group.png")}><source src={assetPath("/mastermind-reel.mp4")} type="video/mp4" /></video>
       <div className={styles.motionPoster} />
       <div className={styles.motionShade} />
     </div>
