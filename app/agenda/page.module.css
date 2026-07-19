@@ -1,0 +1,57 @@
+.agendaPage{min-height:100vh;background:#FFF9EA;color:#274C3B}
+.agendaPage :global(.agendaHeader){height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4.4vw,72px);font:10px var(--mono);letter-spacing:.07em;border-bottom:1px solid rgba(24,36,33,.2)}
+.agendaPage :global(.wordmark){display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font:10px/1.15 var(--mono);letter-spacing:.11em}
+.agendaPage :global(.mark){display:grid;place-items:center;width:24px;height:24px;background:#FF6B5E;color:#FFF9EA;font:italic 17px var(--display);letter-spacing:-.1em}
+.agendaPage :global(.agendaHeader>a:last-child){text-decoration:none;border-bottom:1px solid #FF6B5E;padding-bottom:5px}
+.agendaPage :global(.agendaHeader b){color:#FF6B5E;font-size:15px}
+.agendaPage :global(.agendaHero){position:relative;isolation:isolate;overflow:hidden;min-height:530px;padding:86px clamp(20px,9vw,150px) 38px;background:#274C3B;color:#FFF9EA}
+.agendaPage :global(.agendaHeroImage){z-index:-3;object-fit:cover;object-position:center 55%;filter:saturate(.78) contrast(1.04)}
+.agendaPage :global(.agendaHeroShade){position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(9,27,25,.88),rgba(9,27,25,.65) 43%,rgba(9,27,25,.18) 78%),linear-gradient(0deg,rgba(9,27,25,.74),transparent 54%)}
+.agendaPage :global(.agendaHero)::before{content:"";position:absolute;z-index:-1;width:min(66vw,950px);height:min(66vw,950px);right:-18vw;top:-32vw;border:1px solid rgba(242,238,229,.32);border-radius:50%;box-shadow:0 0 0 55px rgba(242,238,229,.05),0 0 0 130px rgba(242,238,229,.035)}
+.agendaPage :global(.agendaHero>p){position:relative;margin:0;color:#E5F5D6;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.agendaPage :global(.agendaHero h1){position:relative;margin:52px 0 0;font:400 clamp(68px,9vw,148px)/.78 var(--display);letter-spacing:-.085em;text-shadow:0 4px 28px rgba(6,19,18,.26)}
+.agendaPage :global(.agendaHero h1 em){font-style:normal;color:#FF9F68}
+.agendaPage :global(.agendaStamp){position:absolute;right:clamp(20px,7vw,120px);top:93px;width:138px;height:138px;border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(11deg);border:1px solid rgba(242,238,229,.75);color:#FFF9EA;background:rgba(12,38,34,.14);backdrop-filter:blur(3px);font:9px/1.45 var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.agendaPage :global(.agendaHeroFoot){position:absolute;bottom:24px;left:clamp(20px,9vw,150px);right:clamp(20px,9vw,150px);display:flex;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(242,238,229,.48);font:10px var(--mono);letter-spacing:.05em}
+.agendaPage :global(.agendaIntro){display:grid;grid-template-columns:.65fr 1.35fr;gap:8vw;padding:95px clamp(20px,14vw,230px);background:#FFF9EA}
+.agendaPage :global(.agendaIntro>span){font:10px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#FF6B5E}
+.agendaPage :global(.agendaIntro p){margin:0;max-width:640px;font:400 clamp(30px,3.6vw,56px)/1.02 var(--display);letter-spacing:-.055em}
+.agendaPage :global(.days){background:#274C3B;color:#FFF9EA;padding:0 clamp(20px,9vw,150px)}
+.agendaPage :global(.agendaDay){display:grid;grid-template-columns:.74fr 1.26fr;gap:8vw;padding:86px 0 94px;border-bottom:1px solid rgba(242,238,229,.25)}
+.agendaPage :global(.agendaDay:last-child){border:0}
+.agendaPage :global(.dayTitle>span){font:10px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#FF6B5E}
+.agendaPage :global(.dayTitle h2){margin:24px 0 25px;font:400 clamp(50px,5.8vw,92px)/.82 var(--display);letter-spacing:-.08em}
+.agendaPage :global(.dayTitle p){max-width:250px;margin:0;color:#E5F5D6;font-size:14px;line-height:1.5}
+.agendaPage :global(.sessionList){border-top:1px solid rgba(242,238,229,.25)}
+.agendaPage :global(.session){display:grid;grid-template-columns:75px 26px 1fr;gap:16px;padding:25px 0 24px;border-bottom:1px solid rgba(242,238,229,.25)}
+.agendaPage :global(.session time){color:#B8EDB0;font:10px var(--mono);letter-spacing:.03em}
+.agendaPage :global(.sessionDot){width:10px;height:10px;margin-top:3px;border-radius:50%;background:#FF6B5E;color:#274C3B;display:grid;place-items:center;font-size:7px}
+.agendaPage :global(.session h3){margin:0 0 8px;font:400 26px/1 var(--display);letter-spacing:-.04em}
+.agendaPage :global(.session p){margin:0;max-width:460px;color:#E5F5D6;font-size:13px;line-height:1.5}
+.agendaPage :global(.agendaClosing){padding:96px clamp(20px,14vw,230px);background:#FF6B5E;color:#274C3B}
+.agendaPage :global(.agendaClosing p){max-width:840px;margin:0 0 45px;font:400 clamp(46px,5.7vw,90px)/.9 var(--display);letter-spacing:-.075em}
+.agendaPage :global(.agendaClosing a){border-bottom:1px solid #274C3B;padding-bottom:9px;text-decoration:none;font:11px var(--mono)}
+.agendaPage :global(.agendaClosing a span){color:#FFF9EA;margin-left:25px;font-size:18px}
+.agendaPage :global(.agendaFooter){display:flex;justify-content:space-between;padding:26px clamp(20px,4.4vw,72px);background:#FFF9EA;font:9px var(--mono);letter-spacing:.06em}
+.agendaPage :global(.agendaFooter a){color:inherit}
+@media(max-width:760px){.agendaPage :global(.agendaHeader){height:66px}
+.agendaPage :global(.agendaHeader>span){display:none}
+.agendaPage :global(.agendaHeader .wordmark){font-size:8px}
+.agendaPage :global(.agendaHero){min-height:500px;padding:72px 20px 30px}
+.agendaPage :global(.agendaHero)::before{width:430px;height:430px;right:-165px;top:-140px}
+.agendaPage :global(.agendaHero h1){font-size:68px;margin-top:58px}
+.agendaPage :global(.agendaStamp){top:69px;right:25px;width:100px;height:100px;font-size:7px}
+.agendaPage :global(.agendaHeroFoot){left:20px;right:20px;font-size:8px;gap:25px}
+.agendaPage :global(.agendaIntro){display:block;padding:65px 20px}
+.agendaPage :global(.agendaIntro p){font-size:35px;margin-top:25px}
+.agendaPage :global(.agendaDay){display:block;padding:61px 0}
+.agendaPage :global(.dayTitle h2){font-size:59px;margin:18px 0}
+.agendaPage :global(.dayTitle p){margin-bottom:44px}
+.agendaPage :global(.session){grid-template-columns:58px 16px 1fr;gap:10px;padding:21px 0}
+.agendaPage :global(.session h3){font-size:24px}
+.agendaPage :global(.session p){font-size:12px}
+.agendaPage :global(.agendaClosing){padding:68px 20px}
+.agendaPage :global(.agendaClosing p){font-size:51px}
+.agendaPage :global(.agendaFooter){display:block;padding:23px 20px}
+.agendaPage :global(.agendaFooter span){display:block;margin-top:14px}
+}
