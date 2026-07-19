@@ -131,7 +131,7 @@ export default function Home() {
         <section className="programmeOffer" aria-labelledby="programme-title">
           <div className="offerHeading"><div className="sectionLabel"><span>03</span> The core programme</div><h2 id="programme-title">Three days to <em>work the system.</em><br />One day to widen it.</h2><p>The core learning room moves through SEO, AI, automation, business, and investment—then opens into a dedicated conference day.</p></div>
           <div className="coreDays">{coreDays.map(([number, format, title, copy]) => <article key={number}><span>{number}</span><b>{format}</b><h3>{title}</h3><p>{copy}</p></article>)}</div>
-          <div className="experienceBand" data-engagement={currentExperience.id} style={{ "--experience-background": `url(${assetPath("/agenda-coast-hero.png")})` } as CSSProperties}>
+          <div className="experienceBand" data-engagement={currentExperience.id} style={{ "--experience-background": `url(${assetPath("/media-water-sports.jpg")})` } as CSSProperties}>
             <div className="experienceCopy" key={currentExperience.id}>
               <span>{currentExperience.overline} <i>·</i> {String(activeExperience + 1).padStart(2, "0")} / {String(experiences.length).padStart(2, "0")}</span>
               <h3>{currentExperience.heading.split("\n")[0]}<br />{currentExperience.heading.split("\n")[1]} <em>↗</em></h3>

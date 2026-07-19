@@ -22,7 +22,7 @@ export default function AgendaPage() {
       </header>
 
       <section className="agendaHero">
-        <Image className="agendaHeroImage" src={assetPath("/agenda-coast-hero.png")} alt="Aegean coastline at sunrise near Kuşadası" fill priority sizes="100vw" unoptimized />
+        <Image className="agendaHeroImage" src={assetPath("/media-agenda-circle.jpg")} alt="Attendees in a peer conversation during a past Holistic SEO Mastermind" fill priority sizes="100vw" unoptimized />
         <div className="agendaHeroShade" aria-hidden="true" />
         <div className="agendaStamp">Sample programme<br />Details to be confirmed</div>
         <p>Seven days in the room &amp; by the sea</p>

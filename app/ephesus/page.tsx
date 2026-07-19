@@ -28,7 +28,7 @@ export default function EphesusPage() {
       </header>
 
       <section className={styles.hero}>
-        <Image src={assetPath("/ephesus-visit-preview.png")} alt="Illustrative sunrise view along the marble street toward the Library of Celsus in Ephesus" fill priority sizes="100vw" unoptimized />
+        <Image src={assetPath("/media-ephesus-group.jpg")} alt="Mastermind attendees together among the ancient ruins of Ephesus" fill priority sizes="100vw" unoptimized />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy}>
           <p>Shared excursion · Kuşadası, Türkiye</p>
