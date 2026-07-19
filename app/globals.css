@@ -33,6 +33,11 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .button b{font-size:17px;font-weight:400}
 .buttonCoral{background:var(--coral);color:var(--night)}
 .heroCaption{position:absolute;left:clamp(20px,4.4vw,72px);right:clamp(20px,4.4vw,72px);bottom:24px;padding-top:15px;border-top:1px solid rgba(242,238,229,.42)}
+@media(min-width:761px){.hero{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.heroTopline{grid-row:1}
+.heroCopy{grid-row:2;align-self:center;padding:clamp(48px,9vh,96px) 0 clamp(52px,8vh,84px)}
+.heroCaption{position:static;grid-row:3;align-self:end}
+}
 .introduction{padding:100px clamp(20px,9vw,150px) 116px;background:var(--sand)}
 .sectionLabel{display:flex;gap:10px;align-items:center}
 .sectionLabel span{color:var(--coral)}
