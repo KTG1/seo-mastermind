@@ -19,7 +19,7 @@ export default function ScrollCinema() {
       const distance = Math.max(1, bounds.height - window.innerHeight);
       const progress = Math.min(1, Math.max(0, -bounds.top / distance));
       const eased = progress * progress * (3 - 2 * progress);
-      const scene = progress < 0.34 ? "architecture" : progress < 0.68 ? "authority" : "momentum";
+      const scene = progress < 0.34 ? "seo" : progress < 0.68 ? "automation" : "investment";
 
       section.dataset.scene = scene;
       section.style.setProperty("--camera-x", `${-eased * 46}px`);
@@ -27,15 +27,15 @@ export default function ScrollCinema() {
       section.style.setProperty("--camera-scale", `${1 + eased * 0.13}`);
       section.style.setProperty("--core-y", `${-24 + eased * 84}deg`);
       section.style.setProperty("--core-x", `${12 - eased * 18}deg`);
-      section.style.setProperty("--architecture-x", `${-218 + eased * 112}px`);
-      section.style.setProperty("--architecture-y", `${-118 + eased * 67}px`);
-      section.style.setProperty("--architecture-z", `${50 + eased * 90}px`);
-      section.style.setProperty("--authority-x", `${96 - eased * 138}px`);
-      section.style.setProperty("--authority-y", `${-154 + eased * 104}px`);
-      section.style.setProperty("--authority-z", `${-70 + eased * 168}px`);
-      section.style.setProperty("--momentum-x", `${-32 + eased * 175}px`);
-      section.style.setProperty("--momentum-y", `${106 - eased * 150}px`);
-      section.style.setProperty("--momentum-z", `${-150 + eased * 254}px`);
+      section.style.setProperty("--seo-x", `${-192 + eased * 96}px`);
+      section.style.setProperty("--seo-y", `${-128 + eased * 68}px`);
+      section.style.setProperty("--seo-z", `${70 + eased * 86}px`);
+      section.style.setProperty("--automation-x", `${112 - eased * 126}px`);
+      section.style.setProperty("--automation-y", `${-160 + eased * 106}px`);
+      section.style.setProperty("--automation-z", `${-60 + eased * 172}px`);
+      section.style.setProperty("--investment-x", `${-18 + eased * 168}px`);
+      section.style.setProperty("--investment-y", `${112 - eased * 154}px`);
+      section.style.setProperty("--investment-z", `${-144 + eased * 248}px`);
     };
     const requestRender = () => {
       if (!frame) frame = window.requestAnimationFrame(render);
@@ -51,24 +51,24 @@ export default function ScrollCinema() {
     };
   }, []);
 
-  return <section className="scrollCinema" ref={sectionRef} data-scene="architecture" aria-label="A scroll-driven view of the systems behind durable organic growth">
+  return <section className="scrollCinema" ref={sectionRef} data-scene="seo" aria-label="A scroll-driven preview of the three Holistic SEO Mastermind tracks">
     <div className="cinemaSticky">
       <Image className="cinemaImage" src={assetPath("/agenda-coast-hero.png")} alt="" fill sizes="100vw" unoptimized />
       <div className="cinemaShade" aria-hidden="true" />
-      <div className="cinemaHud"><span>SCROLL FILM / 01—03</span><span>THE WHOLE SYSTEM</span></div>
+      <div className="cinemaHud"><span>THREE MASTERMINDS / 01—03</span><span>SCROLL TO ENTER EACH ROOM</span></div>
       <div className="cinemaCopy" aria-live="polite">
-        <div className="cinemaLine cinemaArchitecture"><span>01 / Architecture</span><h2>Give every<br />signal a <em>place.</em></h2><p>Technical structure turns a collection of pages into a legible system.</p></div>
-        <div className="cinemaLine cinemaAuthority"><span>02 / Authority</span><h2>Let the work<br /><em>become known.</em></h2><p>Useful information and credible experience give the system its weight.</p></div>
-        <div className="cinemaLine cinemaMomentum"><span>03 / Momentum</span><h2>Turn clarity<br />into <em>compound growth.</em></h2><p>When decisions reinforce each other, progress becomes easier to keep.</p></div>
+        <div className="cinemaLine cinemaSeo"><span>01 / SEO &amp; Conversion</span><h2>Turn intent<br />into <em>action.</em></h2><p>Build search journeys that earn the click, answer the need, and move the business forward.</p></div>
+        <div className="cinemaLine cinemaAutomation"><span>02 / AI &amp; Automation</span><h2>Scale the work<br />without losing <em>thinking.</em></h2><p>Design useful systems, sharper workflows, and room for the judgment that still matters.</p></div>
+        <div className="cinemaLine cinemaInvestment"><span>03 / Business &amp; Investment</span><h2>Make the system<br />earn its <em>future.</em></h2><p>Pressure-test where time, capital, and conviction can create a durable advantage.</p></div>
       </div>
       <div className="cinemaWorld" aria-hidden="true">
         <div className="cinemaHalo" />
         <div className="cinemaCore"><span>HSM</span><i>✦</i></div>
-        <article className="cinemaCard cinemaCardArchitecture"><small>01</small><b>Architecture</b><span>Make the structure speak.</span></article>
-        <article className="cinemaCard cinemaCardAuthority"><small>02</small><b>Authority</b><span>Give useful work a signal.</span></article>
-        <article className="cinemaCard cinemaCardMomentum"><small>03</small><b>Momentum</b><span>Let the right decisions compound.</span></article>
+        <article className="cinemaCard cinemaCardSeo"><small>01</small><b>SEO &amp;<br />Conversion</b><span>Turn search intent into action.</span></article>
+        <article className="cinemaCard cinemaCardAutomation"><small>02</small><b>AI &amp;<br />Automation</b><span>Scale work with discernment.</span></article>
+        <article className="cinemaCard cinemaCardInvestment"><small>03</small><b>Business &amp;<br />Investment</b><span>Make the right bets compound.</span></article>
       </div>
-      <div className="cinemaFoot"><span>SCROLL TO MOVE THROUGH THE SYSTEM</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
+      <div className="cinemaFoot"><span>SCROLL TO MOVE THROUGH THE THREE ROOMS</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
     </div>
   </section>;
 }
