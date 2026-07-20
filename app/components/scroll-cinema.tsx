@@ -4,10 +4,34 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { assetPath } from "./site-path";
 
-const trackSteps = [
-  { id: "seo", label: "SEO & Conversion", steps: [["01", "Map intent", "Find the demand worth serving.", "search"], ["02", "Shape the path", "Remove the friction between query and answer.", "path"], ["03", "Earn action", "Turn useful visits into a clearer next step.", "target"]] },
-  { id: "automation", label: "AI & Automation", steps: [["01", "Spot repetition", "Choose the work that should not stay manual.", "loop"], ["02", "Build guardrails", "Design the workflow before you scale it.", "shield"], ["03", "Review & refine", "Keep human judgment at the decision point.", "review"]] },
-  { id: "investment", label: "Business & Investment", steps: [["01", "Set the thesis", "Name the advantage you are building toward.", "compass"], ["02", "Test the downside", "Pressure-test the bet before it becomes expensive.", "scale"], ["03", "Allocate & compound", "Put attention and capital behind what works.", "growth"]] },
+const mastermindOutcomes = [
+  {
+    id: "seo",
+    label: "SEO & Conversion",
+    stages: [
+      ["Bring", "Scattered demand signals", "The real queries, pages, and friction in your way.", "search"],
+      ["Build at the table", "An intent-to-action map", "A shared model of the journey your site should create.", "path"],
+      ["Leave with", "A conversion-ready path", "Clear priorities your team can put into practice.", "target"],
+    ],
+  },
+  {
+    id: "automation",
+    label: "AI & Automation",
+    stages: [
+      ["Bring", "Manual loops & handoffs", "The work that is draining time or slipping through gaps.", "loop"],
+      ["Build at the table", "A guarded workflow", "The trigger, review point, and decision logic it needs.", "shield"],
+      ["Leave with", "An automation you trust", "A workflow that makes capacity without removing judgment.", "review"],
+    ],
+  },
+  {
+    id: "investment",
+    label: "Business & Investment",
+    stages: [
+      ["Bring", "A crowded opportunity set", "The bets competing for your attention and capital.", "compass"],
+      ["Build at the table", "A tested investment thesis", "The advantage, downside, and evidence behind the choice.", "scale"],
+      ["Leave with", "A focused allocation plan", "The next commitments that deserve conviction and follow-through.", "growth"],
+    ],
+  },
 ] as const;
 
 function StepGlyph({ type }: { type: string }) {
@@ -73,9 +97,20 @@ export default function ScrollCinema() {
       <div className="cinemaWorld" aria-hidden="true">
         <div className="cinemaHalo" />
         <div className="cinemaCore"><span>HSM</span><i>✦</i></div>
-        {trackSteps.map((track) => <div className={`cinemaPath cinemaPath${track.id[0].toUpperCase()}${track.id.slice(1)}`} key={track.id}>
-          <article className="cinemaPathLabel"><span>MASTER MIND</span><b>{track.label}</b></article>
-          {track.steps.map(([number, title, copy, icon]) => <article className="cinemaStep" key={title}><StepGlyph type={icon} /><small>{number}</small><b>{title}</b><span>{copy}</span></article>)}
+        {mastermindOutcomes.map((track) => <div className={`cinemaPath cinemaPath${track.id[0].toUpperCase()}${track.id.slice(1)}`} key={track.id}>
+          <div className="cinemaOutcomeHeading"><span>THE WORKING OUTPUT</span><b>{track.label}</b></div>
+          <div className="cinemaFlow">
+            <div className="cinemaPulse" />
+            {track.stages.map(([label, title, copy, icon], index) => <article className={`cinemaOutcome cinemaOutcome${index + 1}`} key={title}>
+              <StepGlyph type={icon} />
+              <small>{label}</small>
+              <b>{title}</b>
+              <span>{copy}</span>
+            </article>)}
+            <div className="cinemaConnector cinemaConnector1"><i>→</i></div>
+            <div className="cinemaConnector cinemaConnector2"><i>→</i></div>
+          </div>
+          <p className="cinemaOutcomeNote">A real problem becomes a usable operating decision.</p>
         </div>)}
       </div>
       <div className="cinemaFoot"><span>SCROLL TO MOVE THROUGH THE THREE ROOMS</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
