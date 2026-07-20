@@ -32,11 +32,39 @@ const experiences = [
   { id: "massage", title: "Massage & recovery", overline: "Restore", heading: "Let the work\nsettle in.", copy: "A deliberately slower option for rest, recovery, and the space needed to integrate the week.", image: "/experience-recovery.jpg" },
 ];
 
+const faqHighlights = [
+  { label: "Invitation", question: "Is the mastermind invite-only?", answer: "Yes. The room is deliberately small, and every application is reviewed for fit. Tell us what you are building and the real question you want to work on; we will reply personally." },
+  { label: "Invitation", question: "Can I bring a colleague or partner?", answer: "Each place is reviewed individually because the strength of the room comes from the people in it. Mention your colleague in the application and explain the work you would bring together." },
+  { label: "Programme", question: "What happens during the seven days?", answer: "The week combines three mastermind days across SEO, AI, automation, business, and investment with one conference day. The wider rhythm leaves room for arrival, recovery, local experiences, and long-table conversation." },
+  { label: "Programme", question: "Who is the room designed for?", answer: "Experienced operators, founders, SEO leaders, agency owners, investors, and builders working on a real business question. Curiosity matters, but so does having work that can benefit from careful peer challenge." },
+  { label: "Fee", question: "What does the $6,000 place include?", answer: "Your place includes the core mastermind and conference programme, working sessions, and the hosted group moments in the final itinerary. Accommodation, travel, and optional activities are confirmed separately for invited attendees." },
+  { label: "Travel", question: "How should I plan for Kuşadası?", answer: "Most international guests arrive through İzmir Adnan Menderes Airport. Confirmed attendees receive the final venue, transfer, check-in, and timing guidance well before the gathering." },
+  { label: "Travel", question: "Where does the gathering take place?", answer: "The gathering is hosted in Kuşadası, Türkiye. The final hotel and venue details are shared directly with confirmed attendees as part of their arrival guidance." },
+  { label: "Experiences", question: "Are the coastal activities required?", answer: "No. Boat time, water sports, safaris, and recovery sessions are optional. They sit around the core programme and depend on weather, safety guidance, and local availability." },
+  { label: "Experiences", question: "Will activities interrupt the working sessions?", answer: "No. The core programme anchors the week. Optional experiences are arranged around it to create recovery, conversation, and a different rhythm without displacing the work." },
+];
+
+const faqLabels = ["All", ...Array.from(new Set(faqHighlights.map((item) => item.label)))];
+
+const testimonials = [
+  { quote: "The value was not another list of tactics. It was finally seeing how the technical decisions, the brand, and the commercial model affect one another.", role: "Agency founder", location: "United Kingdom", initials: "AF" },
+  { quote: "I arrived with a crowded roadmap and left with three decisions. The room made the important work obvious—and gave me the confidence to remove the rest.", role: "Organic growth lead", location: "Europe", initials: "OG" },
+  { quote: "The conversations between sessions mattered as much as the sessions themselves. People challenged the premise, not just the execution.", role: "Independent operator", location: "International", initials: "IO" },
+];
+
+const videoTestimonials = [
+  { title: "Why the room changed the roadmap", role: "Agency founder", location: "United Kingdom", duration: "02:18", poster: "/holistic-seo-mastermind-group.png" },
+  { title: "The conversation beyond the sessions", role: "Independent operator", location: "International", duration: "01:42", poster: "/media-hotel-terrace.jpg" },
+];
+
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [activeExperience, setActiveExperience] = useState(0);
   const [experiencePaused, setExperiencePaused] = useState(false);
+  const [activeFaqLabel, setActiveFaqLabel] = useState("All");
+  const [activeReviewType, setActiveReviewType] = useState<"all" | "video" | "text">("all");
   const currentExperience = experiences[activeExperience];
+  const visibleFaqs = activeFaqLabel === "All" ? faqHighlights : faqHighlights.filter((item) => item.label === activeFaqLabel);
 
   useEffect(() => {
     if (experiencePaused) return;
@@ -138,9 +166,35 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="testimonials" aria-labelledby="testimonials-title">
+          <header className="testimonialHeading">
+            <div className="sectionLabel"><span>04</span> Notes from the room</div>
+            <h2 id="testimonials-title">What stays with<br />people <em>afterward.</em></h2>
+            <p>Watch a participant reflection or read the notes people carried away from the table.</p>
+          </header>
+          <div className="reviewTabs" role="group" aria-label="Filter reviews by format">
+            {([{"id":"all","label":"All","count":testimonials.length + videoTestimonials.length},{"id":"video","label":"Video reviews","count":videoTestimonials.length},{"id":"text","label":"Text reviews","count":testimonials.length}] as const).map((tab) => <button type="button" key={tab.id} aria-pressed={activeReviewType === tab.id} onClick={() => setActiveReviewType(tab.id)}><span>{tab.label}</span><i>{String(tab.count).padStart(2, "0")}</i></button>)}
+          </div>
+          <div className="testimonialGrid" data-review-view={activeReviewType} aria-live="polite">
+            {(activeReviewType === "all" ? videoTestimonials.slice(0, 1) : activeReviewType === "video" ? videoTestimonials : []).map((review) => <article className="videoReviewCard" key={review.title}>
+              <Image src={assetPath(review.poster)} alt="" fill sizes="(max-width: 760px) 100vw, 50vw" unoptimized />
+              <div className="videoReviewShade" aria-hidden="true" />
+              <div className="videoReviewTop"><span>Video review</span><i>{review.duration}</i></div>
+              <div className="videoReviewBody"><span className="videoPending" aria-label="Video asset pending">▶</span><h3>{review.title}</h3><p>{review.role} · {review.location}</p></div>
+            </article>)}
+            {(activeReviewType === "all" ? testimonials.slice(0, 1) : activeReviewType === "text" ? testimonials : []).map((testimonial, index) => <figure className="testimonialCard" key={testimonial.role}>
+              <div className="testimonialMeta"><span>{String(index + 1).padStart(2, "0")} / {activeReviewType === "all" ? "01" : "03"}</span><i>“</i></div>
+              <blockquote>{testimonial.quote}</blockquote>
+              <figcaption><span className="testimonialMonogram">{testimonial.initials}</span><span><b>{testimonial.role}</b><small>{testimonial.location}</small></span></figcaption>
+            </figure>)}
+          </div>
+          <p className="testimonialNote">Editorial placeholders · replace with approved participant quotes and video files before publication</p>
+          <Link className="testimonialArchive" href="/testimonials/">Explore testimonials by role <span>→</span></Link>
+        </section>
+
         <section className="application" id="apply">
           <div className="applicationCopy">
-            <div className="sectionLabel light"><span>03</span> Join the next room</div>
+            <div className="sectionLabel light"><span>05</span> Join the next room</div>
             <h2>Bring the question<br />that matters.</h2>
             <p>Tell us what you are trying to solve. We will reply if the next mastermind is the right space for your work.</p>
             <div className="applicationPrice"><span>Core programme access</span><strong>$6,000</strong><small>USD · per invited attendee</small></div>
@@ -152,6 +206,28 @@ export default function Home() {
             <button className="button buttonPaper" type="submit">Request a seat <b>→</b></button>
             <p className="formNote" aria-live="polite">{submitted ? "Thank you. Your request has been received." : "A considered reply, not an automated funnel."}</p>
           </form>
+        </section>
+
+        <section className="homeFaq" aria-labelledby="home-faq-title">
+          <header className="homeFaqHeading">
+            <div>
+              <div className="sectionLabel"><span>06</span> Before you decide</div>
+              <h2 id="home-faq-title">Questions worth<br />answering <em>early.</em></h2>
+            </div>
+            <div className="homeFaqIntro">
+              <p>The practical details, kept close to the decision they support.</p>
+              <Link href="/faq/">Read the complete FAQ <span>→</span></Link>
+            </div>
+          </header>
+          <div className="homeFaqFilters" role="group" aria-label="Filter frequently asked questions by topic">
+            {faqLabels.map((label) => <button type="button" key={label} aria-pressed={activeFaqLabel === label} onClick={() => setActiveFaqLabel(label)}>{label}<span>{label === "All" ? faqHighlights.length : faqHighlights.filter((item) => item.label === label).length}</span></button>)}
+          </div>
+          <div className="homeFaqList" aria-live="polite">
+            {visibleFaqs.map((item) => <details className="homeFaqItem" key={item.question}>
+              <summary><span className="faqLabel">{item.label}</span><b>{item.question}</b><i>+</i></summary>
+              <p>{item.answer}</p>
+            </details>)}
+          </div>
         </section>
       </main>
 
