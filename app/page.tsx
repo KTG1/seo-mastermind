@@ -6,6 +6,7 @@ import { type CSSProperties, FormEvent, useEffect, useState } from "react";
 import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
 import { assetPath } from "./components/site-path";
+import ScrollCinema from "./components/scroll-cinema";
 
 const principles = [
   ["See the whole system", "Connect technical SEO, information gain, brand signals, entities, and conversion instead of treating them as separate checklists."],
@@ -77,6 +78,8 @@ export default function Home() {
           </div>
           <div className="heroCaption"><span>Not a conference. Not a course.</span><span>A focused table of builders.</span></div>
         </section>
+
+        <ScrollCinema />
 
         <section className="introduction" id="approach">
           <div className="sectionLabel"><span>01</span> A different way to work on search</div>
