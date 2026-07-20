@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import AgendaMenu from "../components/agenda-menu";
-import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import SiteHeader from "../components/site-header";
 import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
@@ -21,11 +20,7 @@ const moments = [
 export default function SirincePage() {
   return (
     <main className={styles.page}>
-      <header className={styles.header}>
-        <Link className={styles.wordmark} href="/"><BrandMark /><b>HOLISTIC SEO<br />MASTERMIND</b></Link>
-        <nav aria-label="Primary navigation"><Link href="/about/">About</Link><Link href="/agency/">Agency</Link><Link href="/course/">Course</Link><Link href="/founder/">Founder</Link><AgendaMenu /><Link href="/attendees/">Members</Link></nav>
-        <Link className={styles.ticket} href="/tickets/">Tickets <i>↗</i></Link>
-      </header>
+      <SiteHeader className={styles.header} ctaClassName={styles.ticket} ctaHref="/tickets/" ctaLabel="Tickets" />
 
       <section className={styles.hero}>
         <Image src={assetPath("/sirince-village-preview.png")} alt="Illustrative cobblestone lane through Şirince village in late afternoon light" fill priority sizes="100vw" unoptimized />

@@ -3,9 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { type CSSProperties, FormEvent, useEffect, useState } from "react";
-import AgendaMenu from "./components/agenda-menu";
-import BrandMark from "./components/brand-mark";
 import SiteFooter from "./components/site-footer";
+import SiteHeader from "./components/site-header";
 import { assetPath } from "./components/site-path";
 
 const principles = [
@@ -54,21 +53,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="siteHeader">
-        <a className="wordmark" href="#top" aria-label="Holistic SEO Mastermind home">
-          <BrandMark />
-          <span>HOLISTIC SEO<br />MASTERMIND</span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <Link href="/about/">About</Link>
-          <Link href="/agency/">Agency</Link>
-          <Link href="/course/">Course</Link>
-          <Link href="/founder/">Founder</Link>
-          <AgendaMenu />
-          <Link href="/attendees/">Members</Link>
-        </nav>
-        <a className="headerCta" href="#apply">Request a seat <span>↗</span></a>
-      </header>
+      <SiteHeader className="siteHeader" ctaHref="#apply" />
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">

@@ -1,8 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import AgendaMenu from "../components/agenda-menu";
-import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import SiteHeader from "../components/site-header";
 import { assetPath } from "../components/site-path";
 import TicketApplication from "./ticket-application";
 import styles from "./page.module.css";
@@ -19,11 +18,7 @@ export default function TicketsPage() {
       <div className={styles.motionPoster} />
       <div className={styles.motionShade} />
     </div>
-    <header className={styles.header}>
-      <Link className={styles.wordmark} href="/"><BrandMark /><b>HOLISTIC SEO<br />MASTERMIND</b></Link>
-      <nav aria-label="Primary navigation"><Link href="/about/">About</Link><Link href="/agency/">Agency</Link><Link href="/course/">Course</Link><Link href="/founder/">Founder</Link><AgendaMenu /><Link href="/attendees/">Members</Link></nav>
-      <Link href="#application">Apply <i>↗</i></Link>
-    </header>
+    <SiteHeader className={styles.header} ctaHref="#application" ctaLabel="Apply" />
 
     <section className={styles.hero}>
       <p>Seven days / Kuşadası, Türkiye</p>

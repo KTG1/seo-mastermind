@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import AgendaMenu from "../components/agenda-menu";
-import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import SiteHeader from "../components/site-header";
 import { assetPath } from "../components/site-path";
 import AgendaProgram from "./agenda-program";
 import styles from "./page.module.css";
@@ -15,11 +14,7 @@ export const metadata = {
 export default function AgendaPage() {
   return (
     <main className={styles.agendaPage}>
-      <header className="agendaHeader">
-        <Link className="wordmark" href="/"><BrandMark /><span>HOLISTIC SEO<br />MASTERMIND</span></Link>
-        <nav aria-label="Primary navigation" style={{ display: "flex", gap: 18, marginLeft: 0 }}><Link href="/about/">About</Link><Link href="/agency/">Agency</Link><Link href="/course/">Course</Link><Link href="/founder/">Founder</Link><AgendaMenu /><Link href="/attendees/">Members</Link></nav>
-        <Link href="/#apply">Request a seat <b>↗</b></Link>
-      </header>
+      <SiteHeader className="agendaHeader" ctaHref="/#apply" />
 
       <section className="agendaHero">
         <Image className="agendaHeroImage" src={assetPath("/media-agenda-circle.jpg")} alt="Attendees in a peer conversation during a past Holistic SEO Mastermind" fill priority sizes="100vw" unoptimized />

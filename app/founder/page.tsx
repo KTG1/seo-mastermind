@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import AgendaMenu from "../components/agenda-menu";
-import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import SiteHeader from "../components/site-header";
 import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
@@ -38,11 +37,7 @@ const conversations = [
 export default function FounderPage() {
   return (
     <main className={styles.page}>
-      <header className={styles.header}>
-        <Link className={styles.wordmark} href="/"><BrandMark /><b>HOLISTIC SEO<br />MASTERMIND</b></Link>
-        <nav aria-label="Primary navigation"><Link href="/about/">About</Link><Link href="/agency/">Agency</Link><Link href="/course/">Course</Link><Link href="/founder/">Founder</Link><AgendaMenu /><Link href="/attendees/">Members</Link></nav>
-        <Link className={styles.ticket} href="/tickets/">Request an invitation <i>↗</i></Link>
-      </header>
+      <SiteHeader className={styles.header} ctaClassName={styles.ticket} ctaLabel="Request an invitation" />
 
       <section className={styles.hero} aria-labelledby="founder-title">
         <div className={styles.heroType} aria-hidden="true">KORAY</div>

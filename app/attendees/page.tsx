@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import AgendaMenu from "../components/agenda-menu";
-import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import SiteHeader from "../components/site-header";
 import { useMemo, useState } from "react";
 import styles from "./page.module.css";
 import WorldMap from "./world-map";
@@ -28,11 +27,7 @@ export default function AttendeesDirectory() {
   }), [focus, query]);
 
   return <main className={styles.directory}>
-    <header className={styles.header}>
-      <Link className={styles.wordmark} href="/"><BrandMark /><b>HOLISTIC SEO<br />MASTERMIND</b></Link>
-      <nav aria-label="Primary navigation"><Link href="/about/">About</Link><Link href="/agency/">Agency</Link><Link href="/course/">Course</Link><Link href="/founder/">Founder</Link><AgendaMenu /><Link href="/attendees/">Members</Link></nav>
-      <Link href="/#apply">Request a seat <i>↗</i></Link>
-    </header>
+    <SiteHeader className={styles.header} ctaHref="/#apply" />
 
     <section className={styles.hero}>
       <div><p>Member directory <span>·</span> First profiles</p><h1>People who<br /><em>do the work.</em></h1></div>

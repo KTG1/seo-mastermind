@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import AgendaMenu from "../components/agenda-menu";
-import BrandMark from "../components/brand-mark";
 import SiteFooter from "../components/site-footer";
+import SiteHeader from "../components/site-header";
 import { assetPath } from "../components/site-path";
 import styles from "./page.module.css";
 
@@ -20,7 +19,7 @@ const spaces = [
 
 export default function HotelPage() {
   return <main className={styles.hotel}>
-    <header className={styles.header}><Link className={styles.wordmark} href="/"><BrandMark /><b>HOLISTIC SEO<br />MASTERMIND</b></Link><nav aria-label="Primary navigation"><Link href="/about/">About</Link><Link href="/agency/">Agency</Link><Link href="/course/">Course</Link><Link href="/founder/">Founder</Link><AgendaMenu /><Link href="/attendees/">Members</Link></nav><Link href="/tickets/">Tickets <i>↗</i></Link></header>
+    <SiteHeader className={styles.header} ctaHref="/tickets/" ctaLabel="Tickets" />
 
     <section className={styles.hero}>
       <Image src={assetPath("/media-hotel-terrace.jpg")} alt="Attendees gathered in a shaded coastal seating area during the mastermind" fill priority sizes="100vw" unoptimized />
