@@ -96,7 +96,6 @@ export default function ScrollCinema() {
       </div>
       <div className="cinemaWorld" aria-hidden="true">
         <div className="cinemaHalo" />
-        <div className="cinemaCore"><span>HSM</span><i>✦</i></div>
         {mastermindOutcomes.map((track) => <div className={`cinemaPath cinemaPath${track.id[0].toUpperCase()}${track.id.slice(1)}`} key={track.id}>
           <div className="cinemaOutcomeHeading"><span>THE WORKING OUTPUT</span><b>{track.label}</b></div>
           <div className="cinemaFlow">
