@@ -100,7 +100,7 @@ export default function Home() {
           <div className="heroTopline"><span>Hosted by Koray Tuğberk Gübür</span><span>Kuşadası, Türkiye</span></div>
           <div className="heroCopy">
             <p className="eyebrow">For operators who know search is bigger than rankings</p>
-            <h1 id="hero-title">Build the<br /><em>whole system.</em></h1>
+            <h1 id="hero-title">Holistic SEO<br /><em>Mastermind</em> -<br />Business and<br />Investment Networking</h1>
             <p className="heroText">Holistic SEO Mastermind is a working room for people building durable organic growth—from the site architecture to the authority it earns in the world.</p>
             <a className="button buttonCoral" href="#apply">Apply for the next room <b>→</b></a>
           </div>
