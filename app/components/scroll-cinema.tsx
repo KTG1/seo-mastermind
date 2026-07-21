@@ -8,6 +8,7 @@ const mastermindOutcomes = [
   {
     id: "seo",
     label: "SEO & Conversion",
+    backdrop: "/media-agenda-circle.jpg",
     stages: [
       ["Bring", "Scattered demand signals", "The real queries, pages, and friction in your way.", "search"],
       ["Build at the table", "An intent-to-action map", "A shared model of the journey your site should create.", "path"],
@@ -17,6 +18,7 @@ const mastermindOutcomes = [
   {
     id: "automation",
     label: "AI & Automation",
+    backdrop: "/media-hotel-terrace.jpg",
     stages: [
       ["Bring", "Manual loops & handoffs", "The work that is draining time or slipping through gaps.", "loop"],
       ["Build at the table", "A guarded workflow", "The trigger, review point, and decision logic it needs.", "shield"],
@@ -26,6 +28,7 @@ const mastermindOutcomes = [
   {
     id: "investment",
     label: "Business & Investment",
+    backdrop: "/holistic-seo-mastermind-group.png",
     stages: [
       ["Bring", "A crowded opportunity set", "The bets competing for your attention and capital.", "compass"],
       ["Build at the table", "A tested investment thesis", "The advantage, downside, and evidence behind the choice.", "scale"],
@@ -86,7 +89,15 @@ export default function ScrollCinema() {
 
   return <section className="scrollCinema" ref={sectionRef} data-scene="seo" aria-label="A scroll-driven preview of the three Holistic SEO Mastermind tracks">
     <div className="cinemaSticky">
-      <Image className="cinemaImage" src={assetPath("/agenda-coast-hero.png")} alt="" fill sizes="100vw" unoptimized />
+      {mastermindOutcomes.map((track) => <Image
+        className={`cinemaImage cinemaImage${track.id[0].toUpperCase()}${track.id.slice(1)}`}
+        src={assetPath(track.backdrop)}
+        alt=""
+        fill
+        sizes="100vw"
+        unoptimized
+        key={track.id}
+      />)}
       <div className="cinemaShade" aria-hidden="true" />
       <div className="cinemaHud"><span>THREE MASTERMINDS / 01—03</span><span>SCROLL TO ENTER EACH ROOM</span></div>
       <div className="cinemaCopy" aria-live="polite">
