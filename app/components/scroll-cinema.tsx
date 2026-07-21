@@ -99,7 +99,14 @@ export default function ScrollCinema() {
         key={track.id}
       />)}
       <div className="cinemaShade" aria-hidden="true" />
-      <div className="cinemaHud"><span>THREE MASTERMINDS / 01—03</span><span>SCROLL TO ENTER EACH ROOM</span></div>
+      <div className="cinemaHud">
+        <span>THREE MASTERMINDS / 01—03</span>
+        <span className="cinemaRoomStatus" aria-live="polite">
+          <span className="cinemaRoomSeo">01 / SEO &amp; CONVERSION</span>
+          <span className="cinemaRoomAutomation">02 / AI &amp; AUTOMATION</span>
+          <span className="cinemaRoomInvestment">03 / BUSINESS &amp; INVESTMENT</span>
+        </span>
+      </div>
       <div className="cinemaCopy" aria-live="polite">
         <div className="cinemaLine cinemaSeo"><span>01 / SEO &amp; Conversion</span><h2>Turn intent<br />into <em>action.</em></h2><p>Build search journeys that earn the click, answer the need, and move the business forward.</p></div>
         <div className="cinemaLine cinemaAutomation"><span>02 / AI &amp; Automation</span><h2>Scale the work<br />without losing <em>thinking.</em></h2><p>Design useful systems, sharper workflows, and room for the judgment that still matters.</p></div>
