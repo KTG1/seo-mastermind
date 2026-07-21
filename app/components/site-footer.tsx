@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BrandMark from "./brand-mark";
 import NavigationIcon from "./navigation-icon";
-import { footerGroups } from "./site-header";
+import { footerGroups } from "./site-footer-links";
 import { assetPath } from "./site-path";
 import styles from "./site-footer.module.css";
 
