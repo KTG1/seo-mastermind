@@ -24,6 +24,7 @@ a{color:inherit}
 h1,h2,h3,p{margin-top:0}
 h1{font:400 clamp(64px,8.2vw,130px)/.82 var(--serif);letter-spacing:-.075em;margin:0 0 28px}
 h1 em,h2 em{color:var(--coral);font-style:normal}
+.heroFocus{display:inline-flex;align-items:center;gap:9px;margin:-4px 0 23px;color:#E5F5D6;font:10px var(--mono);letter-spacing:.09em;text-transform:uppercase}.heroFocus::before{width:22px;height:1px;background:var(--coral);content:""}
 .heroText{max-width:475px;font-size:17px;line-height:1.52;margin-bottom:32px}
 .button{border:0;display:inline-flex;align-items:center;justify-content:space-between;gap:36px;padding:15px 16px;text-decoration:none;font:11px var(--mono);letter-spacing:.02em;cursor:pointer}
 .button b{font-size:17px;font-weight:400}
