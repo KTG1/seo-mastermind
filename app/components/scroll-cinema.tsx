@@ -35,6 +35,16 @@ const mastermindOutcomes = [
       ["Leave with", "A focused allocation plan", "The next commitments that deserve conviction and follow-through.", "growth"],
     ],
   },
+  {
+    id: "conference",
+    label: "Conference & Networking",
+    backdrop: "/agenda-activity-scenes.png",
+    stages: [
+      ["Bring", "A question worth sharing", "The idea, challenge, or perspective that becomes stronger in a wider room.", "conversation"],
+      ["Build at the conference", "A trusted circle", "A set of people who understand the work and can sharpen the next move.", "people"],
+      ["Leave with", "Working alliances", "New conversations and follow-ups with real momentum behind them.", "connection"],
+    ],
+  },
 ] as const;
 
 function StepGlyph({ type }: { type: string }) {
@@ -46,6 +56,9 @@ function StepGlyph({ type }: { type: string }) {
   if (type === "review") return <svg viewBox="0 0 24 24"><path d="M3 12s3-5 9-5 9 5 9 5-3 5-9 5-9-5-9-5z" /><circle cx="12" cy="12" r="2" /></svg>;
   if (type === "compass") return <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><path d="m15.5 8.5-2 5-5 2 2-5z" /></svg>;
   if (type === "scale") return <svg viewBox="0 0 24 24"><path d="M12 4v16M7 7h10M5 19h14M7 7l-3 6h6zM17 7l-3 6h6z" /></svg>;
+  if (type === "conversation") return <svg viewBox="0 0 24 24"><path d="M4 5h12v9H9l-4 4v-4H4zM18 8h2v8h-3l-2 2" /></svg>;
+  if (type === "people") return <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" /><circle cx="17" cy="10" r="2" /><path d="M3 20c.5-4 3-6 6-6s5.5 2 6 6M15 15c2.7.2 4.4 1.8 5 5" /></svg>;
+  if (type === "connection") return <svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2" /><circle cx="18" cy="6" r="2" /><circle cx="18" cy="18" r="2" /><path d="m8 11 8-4M8 13l8 4" /></svg>;
   return <svg viewBox="0 0 24 24"><path d="M4 19h16M6 17v-5M11 17V8M16 17V4M4 9l6-4 5 2 5-4" /></svg>;
 }
 
@@ -64,7 +77,7 @@ export default function ScrollCinema() {
       const distance = Math.max(1, bounds.height - window.innerHeight);
       const progress = Math.min(1, Math.max(0, -bounds.top / distance));
       const eased = progress * progress * (3 - 2 * progress);
-      const scene = progress < 0.34 ? "seo" : progress < 0.68 ? "automation" : "investment";
+      const scene = progress < 0.25 ? "seo" : progress < 0.5 ? "automation" : progress < 0.75 ? "investment" : "conference";
 
       section.dataset.scene = scene;
       section.style.setProperty("--camera-x", `${-eased * 46}px`);
@@ -100,17 +113,19 @@ export default function ScrollCinema() {
       />)}
       <div className="cinemaShade" aria-hidden="true" />
       <div className="cinemaHud">
-        <span>THREE MASTERMINDS / 01—03</span>
+        <span>THREE MASTERMINDS + CONFERENCE / 01—04</span>
         <span className="cinemaRoomStatus" aria-live="polite">
           <span className="cinemaRoomSeo">01 / SEO &amp; CONVERSION</span>
           <span className="cinemaRoomAutomation">02 / AI &amp; AUTOMATION</span>
           <span className="cinemaRoomInvestment">03 / BUSINESS &amp; INVESTMENT</span>
+          <span className="cinemaRoomConference">04 / CONFERENCE &amp; NETWORKING</span>
         </span>
       </div>
       <div className="cinemaCopy" aria-live="polite">
         <div className="cinemaLine cinemaSeo"><span>01 / SEO &amp; Conversion</span><h2>Turn intent<br />into <em>action.</em></h2><p>Build search journeys that earn the click, answer the need, and move the business forward.</p></div>
         <div className="cinemaLine cinemaAutomation"><span>02 / AI &amp; Automation</span><h2>Scale the work<br />without losing <em>thinking.</em></h2><p>Design useful systems, sharper workflows, and room for the judgment that still matters.</p></div>
         <div className="cinemaLine cinemaInvestment"><span>03 / Business &amp; Investment</span><h2>Make the system<br />earn its <em>future.</em></h2><p>Pressure-test where time, capital, and conviction can create a durable advantage.</p></div>
+        <div className="cinemaLine cinemaConference"><span>04 / Conference &amp; Networking</span><h2>Make the right<br /><em>connections.</em></h2><p>Bring the work into a wider room, with people who can extend the conversation beyond the event.</p></div>
       </div>
       <div className="cinemaWorld" aria-hidden="true">
         <div className="cinemaHalo" />
@@ -130,7 +145,7 @@ export default function ScrollCinema() {
           <p className="cinemaOutcomeNote">A real problem becomes a usable operating decision.</p>
         </div>)}
       </div>
-      <div className="cinemaFoot"><span>SCROLL TO MOVE THROUGH THE THREE ROOMS</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
+      <div className="cinemaFoot"><span>SCROLL TO MOVE THROUGH THE FOUR ROOMS</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
     </div>
   </section>;
 }
