@@ -9,10 +9,16 @@ import { assetPath } from "./components/site-path";
 import ScrollCinema from "./components/scroll-cinema";
 
 const principles = [
-  ["See the whole system", "Connect technical SEO, information gain, brand signals, entities, and conversion instead of treating them as separate checklists."],
-  ["Work in public", "Bring the actual page, process, architecture, or problem. Leave with decisions you can put into practice immediately."],
-  ["Build durable advantage", "Create a search presence that earns citations, strengthens the brand, and compounds long after a single update ships."],
+  ["See the whole system", "Connect technical SEO, information gain, brand signals, entities, and conversion instead of treating them as separate checklists.", "Map the system", "system"],
+  ["Work in public", "Bring the actual page, process, architecture, or problem. Leave with decisions you can put into practice immediately.", "Make the work visible", "work"],
+  ["Build durable advantage", "Create a search presence that earns citations, strengthens the brand, and compounds long after a single update ships.", "advantage"],
 ];
+
+function PrincipleGlyph({ type }: { type: string }) {
+  if (type === "system") return <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="9" cy="20" r="3" /><circle cx="30" cy="10" r="3" /><circle cx="30" cy="30" r="3" /><path d="m12 19 15-8M12 21l15 8" /></svg>;
+  if (type === "work") return <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 29 28 10l3 3-19 19H9zM24 9l3 3M9 33h22" /><path d="m17 12 11 11" /></svg>;
+  return <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 31h24M11 27V18M20 27V13M29 27V7" /><path d="m10 14 8-6 7 3 6-6" /></svg>;
+}
 
 const coreDays = [
   ["01", "Mastermind", "SEO & AI", "Search systems, information gain, and how AI changes the work without replacing the thinking."],
@@ -127,11 +133,13 @@ export default function Home() {
             <p>One small group. Real work. Careful thinking.</p>
           </div>
           <div className="principleList">
-            {principles.map(([title, text], index) => (
+            {principles.map(([title, text, tag, glyph], index) => (
               <article className="principle" key={title}>
-                <span className="principleNumber">0{index + 1}</span>
+                <div className="principleTop"><span className="principleNumber">0{index + 1}</span><span className="principleTag">{tag}</span></div>
+                <div className="principleGlyph"><PrincipleGlyph type={glyph} /></div>
                 <h3>{title}</h3>
                 <p>{text}</p>
+                <span className="principleArrow" aria-hidden="true">↗</span>
               </article>
             ))}
           </div>
