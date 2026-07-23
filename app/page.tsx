@@ -9,15 +9,21 @@ import { assetPath } from "./components/site-path";
 import ScrollCinema from "./components/scroll-cinema";
 
 const principles = [
-  ["See the whole system", "Connect technical SEO, information gain, brand signals, entities, and conversion instead of treating them as separate checklists.", "Map the system", "system"],
-  ["Work in public", "Bring the actual page, process, architecture, or problem. Leave with decisions you can put into practice immediately.", "Make the work visible", "work"],
-  ["Build durable advantage", "Create a search presence that earns citations, strengthens the brand, and compounds long after a single update ships.", "advantage"],
-];
+  { id: "seo", label: "SEO", title: "SEO & topical authority", summary: "Shape the entities, information gain, site architecture, and conversion paths that make a search presence useful and understood.", outcome: "A clearer topical map and sharper priority pages.", glyph: "seo" },
+  { id: "ai", label: "AI", title: "AI & research systems", summary: "Use AI to expand research, model demand, and improve decision quality without outsourcing the judgment that makes the work distinct.", outcome: "Practical AI workflows your team can supervise.", glyph: "ai" },
+  { id: "automation", label: "Automation", title: "Automation & operations", summary: "Find the loops, handoffs, and recurring tasks that deserve a system—then design safeguards so the right work still gets reviewed.", outcome: "A trustworthy operating loop with clear ownership.", glyph: "automation" },
+  { id: "business", label: "Business", title: "Business strategy", summary: "Connect the search opportunity to the commercial model, customer journey, offer, and decision that actually move the business forward.", outcome: "A strategy that links visibility to commercial value.", glyph: "business" },
+  { id: "investment", label: "Investment", title: "Investment & allocation", summary: "Pressure-test where time, money, and conviction belong, so promising initiatives become considered bets instead of another crowded roadmap.", outcome: "A stronger thesis for the next allocation decision.", glyph: "investment" },
+  { id: "management", label: "Management", title: "Management & leadership", summary: "Create the cadence, context, and accountability that helps capable people make better decisions together when the work is complex.", outcome: "A management rhythm people can actually use.", glyph: "management" },
+] as const;
 
 function PrincipleGlyph({ type }: { type: string }) {
-  if (type === "system") return <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="9" cy="20" r="3" /><circle cx="30" cy="10" r="3" /><circle cx="30" cy="30" r="3" /><path d="m12 19 15-8M12 21l15 8" /></svg>;
-  if (type === "work") return <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 29 28 10l3 3-19 19H9zM24 9l3 3M9 33h22" /><path d="m17 12 11 11" /></svg>;
-  return <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 31h24M11 27V18M20 27V13M29 27V7" /><path d="m10 14 8-6 7 3 6-6" /></svg>;
+  if (type === "seo") return <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="11" cy="20" r="3" /><circle cx="28" cy="11" r="3" /><circle cx="28" cy="29" r="3" /><path d="m14 19 11-7M14 21l11 7" /></svg>;
+  if (type === "ai") return <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="10" y="10" width="20" height="20" rx="2" /><path d="M15 10V7M20 10V7M25 10V7M15 33v-3M20 33v-3M25 33v-3M10 15H7M10 20H7M10 25H7M33 15h-3M33 20h-3M33 25h-3M16 22l3-4 3 5 3-4" /></svg>;
+  if (type === "automation") return <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="13" r="3" /><circle cx="28" cy="13" r="3" /><circle cx="20" cy="28" r="3" /><path d="m15 14 9 0M14 16l4 9M26 16l-4 9" /></svg>;
+  if (type === "business") return <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 31h22M12 28V17h16v11M16 17v-5h8v5M16 22h3M21 22h3" /></svg>;
+  if (type === "investment") return <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 31h22M12 28v-8M20 28V16M28 28V10M11 16l8-5 6 3 5-6" /></svg>;
+  return <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="12" r="4" /><path d="M11 31c1-6 4-9 9-9s8 3 9 9M7 17h6M27 17h6" /></svg>;
 }
 
 const coreDays = [
@@ -67,9 +73,11 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [activeExperience, setActiveExperience] = useState(0);
   const [experiencePaused, setExperiencePaused] = useState(false);
+  const [activePrinciple, setActivePrinciple] = useState(0);
   const [activeFaqLabel, setActiveFaqLabel] = useState("All");
   const [activeReviewType, setActiveReviewType] = useState<"all" | "video" | "text">("all");
   const currentExperience = experiences[activeExperience];
+  const selectedPrinciple = principles[activePrinciple];
   const visibleFaqs = activeFaqLabel === "All" ? faqHighlights : faqHighlights.filter((item) => item.label === activeFaqLabel);
 
   useEffect(() => {
@@ -130,18 +138,22 @@ export default function Home() {
         <section className="principles" id="room">
           <div className="principlesHeading">
             <div className="sectionLabel"><span>02</span> What happens at the table</div>
-            <p>One small group. Real work. Careful thinking.</p>
+            <p>Choose a discipline to see the work.</p>
           </div>
-          <div className="principleList">
-            {principles.map(([title, text, tag, glyph], index) => (
-              <article className="principle" key={title}>
-                <div className="principleTop"><span className="principleNumber">0{index + 1}</span><span className="principleTag">{tag}</span></div>
-                <div className="principleGlyph"><PrincipleGlyph type={glyph} /></div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <span className="principleArrow" aria-hidden="true">↗</span>
-              </article>
+          <div className="principleList" role="group" aria-label="Explore the working disciplines">
+            {principles.map((principle, index) => (
+              <button className="principle" type="button" key={principle.id} aria-pressed={activePrinciple === index} onClick={() => setActivePrinciple(index)} onMouseEnter={() => setActivePrinciple(index)} onFocus={() => setActivePrinciple(index)}>
+                <span className="principleTop"><span className="principleNumber">0{index + 1}</span><span className="principleTag">{principle.label}</span></span>
+                <span className="principleGlyph"><PrincipleGlyph type={principle.glyph} /></span>
+                <strong>{principle.title}</strong>
+                <i aria-hidden="true">↗</i>
+              </button>
             ))}
+          </div>
+          <div className="principleDetail" aria-live="polite">
+            <div><span>0{activePrinciple + 1} / {selectedPrinciple.label}</span><h3>{selectedPrinciple.title}</h3></div>
+            <p>{selectedPrinciple.summary}</p>
+            <aside><span>Leave with</span><b>{selectedPrinciple.outcome}</b></aside>
           </div>
         </section>
 
