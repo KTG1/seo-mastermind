@@ -1,6 +1,8 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, type CSSProperties } from "react";
+import { assetPath } from "../components/site-path";
+import background from "./ticket-application-background.module.css";
 import styles from "./ticket-application.module.css";
 
 export default function TicketApplication() {
@@ -30,7 +32,7 @@ export default function TicketApplication() {
     }
   }
 
-  return <section className={styles.application} id="application">
+  return <section className={`${styles.application} ${background.application}`} id="application" style={{ "--application-photo": `url(${assetPath("/tickets-application-safari.jpg")})` } as CSSProperties}>
     <div className={styles.intro}><span>Invitation only</span><h2>Tell us why<br />this room <em>matters now.</em></h2><p>We review applications for the quality of the question, the fit with the room, and the perspective each person brings. A ticket is offered only after an invitation.</p><div className={styles.fit}><strong>Good fit for the room</strong><ul><li>You own or influence meaningful organic-growth decisions.</li><li>You can bring a real, unfinished challenge to work on.</li><li>You value candid exchange more than passive learning.</li></ul></div></div>
     <form className={styles.form} onSubmit={submitApplication}>
       <div className={styles.formTop}><span>Application / step one</span><p aria-live="polite">{status === "success" ? "Your application is in. We’ll review it with the next room in mind." : status === "error" ? "We couldn’t send your application. Please try again, or email us directly." : "A thoughtful application takes around five minutes."}</p></div>

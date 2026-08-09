@@ -1,0 +1,27 @@
+.application.application {
+  color: #fff9ea;
+  background-color: #173b2f;
+  background-image:
+    linear-gradient(90deg, rgba(9, 28, 23, .93) 0%, rgba(9, 28, 23, .79) 42%, rgba(9, 28, 23, .36) 68%, rgba(9, 28, 23, .18) 100%),
+    var(--application-photo);
+  background-position: center;
+  background-size: cover;
+}
+
+.application > div:first-child > p {
+  color: rgba(255, 249, 234, .84);
+}
+
+.application > div:first-child > div,
+.application > div:first-child li {
+  border-color: rgba(255, 249, 234, .24);
+}
+
+@media (max-width: 800px) {
+  .application.application {
+    background-image:
+      linear-gradient(180deg, rgba(9, 28, 23, .9) 0%, rgba(9, 28, 23, .76) 46%, rgba(9, 28, 23, .38) 72%, rgba(9, 28, 23, .2) 100%),
+      var(--application-photo);
+    background-position: 61% center;
+  }
+}
