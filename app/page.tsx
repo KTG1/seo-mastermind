@@ -8,6 +8,7 @@ import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
 import { assetPath } from "./components/site-path";
 import ScrollCinema from "./components/scroll-cinema";
+import HeritageMoment from "./components/heritage-moment";
 
 const principles = [
   { id: "seo", label: "SEO", title: "SEO & topical authority", summary: "Shape the entities, information gain, site architecture, and conversion paths that make a search presence useful and understood.", outcome: "A clearer topical map and sharper priority pages.", glyph: "seo" },
@@ -187,6 +188,8 @@ export default function Home() {
             </ul>
           </div>
         </section>
+
+        <HeritageMoment />
 
         <section className="testimonials" aria-labelledby="testimonials-title">
           <header className="testimonialHeading">
