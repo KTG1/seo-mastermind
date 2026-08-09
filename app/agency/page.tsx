@@ -2,6 +2,7 @@ import Link from "next/link";
 import SiteFooter from "../components/site-footer";
 import SiteHeader from "../components/site-header";
 import styles from "./page.module.css";
+import caseStyles from "./case-studies.module.css";
 
 export const metadata = {
   title: "Holistic SEO & Digital | Holistic SEO Mastermind",
@@ -19,6 +20,13 @@ const commitments = [
   ["The real business", "The work begins with the product, market, and decisions behind a website—not a generic keyword list."],
   ["The actual system", "Content, technical SEO, entities, brand signals, and user experience are considered together because they affect one another."],
   ["The long horizon", "The point is a stronger search presence the business can keep building on—not a short-lived reporting win."],
+];
+
+const caseStudies = [
+  { metric: "0 → 128K", period: "123 days", title: "Building topical authority from zero", sector: "Multilingual publishing", method: "Semantic content network", copy: "A new web source grew from no organic visibility to 128,000 monthly visits by building contextual hierarchy, topical coverage, and a consistent publishing rhythm.", href: "https://www.holisticseo.digital/theoretical-seo/topical-authority/" },
+  { metric: "+155%", period: "6 months", title: "Making every signal reinforce the next", sector: "Energy comparison", method: "Holistic SEO", copy: "Encazip combined semantic relevance with technical refinement, page-speed work, information architecture, and close collaboration across the client team.", href: "https://www.holisticseo.digital/seo-research-study/holistic-seo/" },
+  { metric: "40×", period: "Organic traffic", title: "Creating demand around a SaaS product", sector: "B2B & B2C SaaS", method: "SaaS search system", copy: "The programme aligned technical SEO, semantic coverage, product understanding, local signals, and conversion paths around the way software buyers research and decide.", href: "https://www.holisticseo.digital/seo-research-study/saas/" },
+  { metric: "+200%", period: "3 months", title: "Turning specialist knowledge into discoverability", sector: "B2B services", method: "Commercial search strategy", copy: "A B2B project increased organic clicks year over year by connecting its specialist subject matter to the questions, entities, and decision stages buyers actually use.", href: "https://www.holisticseo.digital/seo-research-study/b2b/" },
 ];
 
 export default function AgencyPage() {
@@ -46,6 +54,18 @@ export default function AgencyPage() {
     <section className={styles.commitments}>
       <div><p className={styles.eyebrow}>How the agency thinks</p><h2>Closer to the<br /><em>real question.</em></h2></div>
       <ol>{commitments.map(([title, copy], index) => <li key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol>
+    </section>
+
+    <section className={caseStyles.cases} aria-labelledby="case-studies-title">
+      <header className={caseStyles.heading}><p>Selected case studies</p><h2 id="case-studies-title">The evidence is in<br />what the system <em>changes.</em></h2><span>Selected public studies from Holistic SEO &amp; Digital. Each result links to the full methodology, context, and supporting search data.</span></header>
+      <div className={caseStyles.ledger}>
+        {caseStudies.map((study, index) => <a href={study.href} target="_blank" rel="noreferrer" className={caseStyles.study} key={study.title}>
+          <div className={caseStyles.index}><span>Case {String(index + 1).padStart(2, "0")}</span><i>↗</i></div>
+          <div className={caseStyles.result}><strong>{study.metric}</strong><small>{study.period}</small></div>
+          <div className={caseStyles.narrative}><p>{study.sector} · {study.method}</p><h3>{study.title}</h3><span>{study.copy}</span></div>
+          <div className={caseStyles.action}>Read the complete study <b>→</b></div>
+        </a>)}
+      </div>
     </section>
 
     <section className={styles.connection}>
