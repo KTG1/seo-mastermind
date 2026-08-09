@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { type CSSProperties, FormEvent, useEffect, useState } from "react";
+import experienceStyles from "./homepage-experience.module.css";
 import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
 import { assetPath } from "./components/site-path";
@@ -37,7 +38,7 @@ const experiences = [
   { id: "parasailing", title: "Parasailing", overline: "A wider view", heading: "See the coast\nfrom above.", copy: "A calm lift above the Aegean for the people who want a little distance from the usual point of view.", image: "/experience-parasailing.jpg" },
   { id: "jetskis", title: "Jet skis", overline: "On the water", heading: "Follow the\nenergy line.", copy: "An optional, high-energy coastal session for anyone who wants to trade the desk for open water.", image: "/experience-jetskis.jpg" },
   { id: "water-sports", title: "Water sports", overline: "Move, then return", heading: "Reset in\nblue water.", copy: "Swimming, paddling, and open-water time give the day a different kind of focus.", image: "/media-water-sports.jpg" },
-  { id: "coastal-safaris", title: "Coastal safaris", overline: "Beyond the shoreline", heading: "Take the\nlong route.", copy: "A slower outward journey through the landscape around Kuşadası, with room for the conversation to continue.", image: "/experience-coastal-safari.jpg" },
+  { id: "coastal-safaris", title: "Coastal safaris", overline: "Beyond the shoreline", heading: "Take the\nlong route.", copy: "A slower outward journey through the landscape around Kuşadası, with room for the conversation to continue.", image: "/experience-coastal-safari-mastermind.jpg" },
   { id: "horse-safaris", title: "Horse safaris", overline: "A quieter pace", heading: "Trade speed\nfor attention.", copy: "A guided option for the people who would rather follow the terrain at a more deliberate rhythm.", image: "/experience-horse-safari.jpg" },
   { id: "atv-safaris", title: "ATV safaris", overline: "Off the main road", heading: "Find a\ndifferent line.", copy: "A more active route through the surrounding landscape—optional, weather-dependent, and arranged with care.", image: "/experience-atv-safari.jpg" },
   { id: "boat-time", title: "Boat time", overline: "Out on the Aegean", heading: "Make room\nfor horizon.", copy: "Coffee, a calm boat ride, and a stretch of water where a difficult idea can finally become clear.", image: "/experience-boat-time.jpg" },
@@ -168,7 +169,7 @@ export default function Home() {
         <section className="programmeOffer" aria-labelledby="programme-title">
           <div className="offerHeading"><div className="sectionLabel"><span>03</span> The core programme</div><h2 id="programme-title">Three days to <em>work the system.</em><br />One day to widen it.</h2><p>The core learning room moves through SEO, AI, automation, business, and investment—then opens into a dedicated conference day.</p></div>
           <div className="coreDays">{coreDays.map(([number, format, title, copy]) => <article key={number}><span>{number}</span><b>{format}</b><h3>{title}</h3><p>{copy}</p></article>)}</div>
-          <div className="experienceBand" data-engagement={currentExperience.id} style={{ "--experience-background": `url(${assetPath(currentExperience.image)})` } as CSSProperties}>
+          <div className={`experienceBand ${experienceStyles.experienceBand}`} data-engagement={currentExperience.id} style={{ "--experience-background": `url(${assetPath(currentExperience.image)})` } as CSSProperties}>
             <div className="experienceCopy" key={currentExperience.id}>
               <span>{currentExperience.overline} <i>·</i> {String(activeExperience + 1).padStart(2, "0")} / {String(experiences.length).padStart(2, "0")}</span>
               <h3>{currentExperience.heading.split("\n")[0]}<br />{currentExperience.heading.split("\n")[1]} <em>↗</em></h3>
