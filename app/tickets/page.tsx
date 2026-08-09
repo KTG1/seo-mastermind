@@ -13,18 +13,18 @@ export const metadata = {
 };
 
 const galleryMoments = [
-  { src: "/tickets-gallery/night-song.jpg", alt: "Attendees singing together during an evening out", layout: "galleryAnchor" },
-  { src: "/tickets-gallery/waterfront-friends.jpg", alt: "Two attendees together on the Kuşadası waterfront", layout: "galleryWaterfront" },
-  { src: "/tickets-gallery/night-group.jpg", alt: "Four attendees sharing a late-night moment", layout: "galleryNightGroup" },
-  { src: "/tickets-gallery/safari-start.jpg", alt: "Attendees setting out for the safari", layout: "galleryStart" },
-  { src: "/tickets-gallery/safari-headlights.jpg", alt: "Safari jeeps travelling through the hills at dusk", layout: "galleryHeadlights" },
-  { src: "/tickets-gallery/portrait-sun.jpg", alt: "An attendee photographed in the evening sun", layout: "galleryPortraitSun" },
-  { src: "/tickets-gallery/safari-climb.jpg", alt: "A safari jeep climbing a mountain road", layout: "galleryClimb" },
-  { src: "/tickets-gallery/safari-road.jpg", alt: "Safari convoy moving along a forest road", layout: "galleryRoad" },
-  { src: "/tickets-gallery/safari-turn.jpg", alt: "Two safari jeeps taking a dusty turn", layout: "galleryTurn" },
-  { src: "/tickets-gallery/safari-dusk.jpg", alt: "Safari jeeps crossing the forest at dusk", layout: "galleryDusk" },
-  { src: "/tickets-gallery/portrait-stone.jpg", alt: "An attendee standing among ancient stone and pine trees", layout: "galleryPortraitStone" },
-  { src: "/tickets-gallery/safari-trail.jpg", alt: "Safari headlights glowing on the trail", layout: "galleryTrail" },
+  { src: "/tickets-gallery/session-room.jpg", alt: "A live mastermind session with attendees gathered around the stage", layout: "galleryAnchor" },
+  { src: "/tickets-gallery/working-cabana.jpg", alt: "A small working group exchanging ideas beside the water", layout: "galleryWaterfront" },
+  { src: "/tickets-gallery/night-group.jpg", alt: "Four attendees sharing a relaxed evening together", layout: "galleryNightGroup" },
+  { src: "/tickets-gallery/wine-tasting.jpg", alt: "Attendees discovering a local wine during a cultural visit", layout: "galleryStart" },
+  { src: "/tickets-gallery/safari-joy.jpg", alt: "Koray welcoming the group from the top of a safari jeep", layout: "galleryHeadlights" },
+  { src: "/tickets-gallery/ephesus-moment.jpg", alt: "An attendee enjoying a playful moment among the ruins of Ephesus", layout: "galleryPortraitSun" },
+  { src: "/tickets-gallery/water-fight.jpg", alt: "The group taking part in an outdoor water game", layout: "galleryClimb" },
+  { src: "/tickets-gallery/safari-arrival.jpg", alt: "A safari jeep arriving along a forest road", layout: "galleryPortraitStone" },
+  { src: "/tickets-gallery/cabana-circle.jpg", alt: "Attendees continuing the conversation in a shaded waterfront cabana", layout: "galleryTurn" },
+  { src: "/tickets-gallery/cabana-trio.jpg", alt: "Koray seated with two attendees between sessions", layout: "galleryDusk" },
+  { src: "/tickets-gallery/night-safari.jpg", alt: "Friends returning together after an evening safari", layout: "galleryRoad" },
+  { src: "/tickets-gallery/ephesus-group.jpg", alt: "The full mastermind group gathered at the ancient city of Ephesus", layout: "galleryTrail" },
 ];
 
 export default function TicketsPage() {
@@ -53,7 +53,7 @@ export default function TicketsPage() {
         <h2 id="gallery-title">Seven days.<br /><em>One shared story.</em></h2>
         <p>The strongest connections rarely end when the working session does. The room moves—from hard questions to open roads, long dinners, and the moments nobody schedules.</p>
       </div>
-      <div className={styles.galleryGrid}>
+      <div className={styles.galleryGrid} style={{ gridAutoFlow: "dense" }}>
         {galleryMoments.map((moment, index) => <figure className={`${styles.galleryFrame} ${styles[moment.layout]}`} key={moment.src}>
           <img src={assetPath(moment.src)} alt={moment.alt} loading="lazy" />
           <figcaption>{String(index + 1).padStart(2, "0")} / Kuşadası</figcaption>
