@@ -5,7 +5,19 @@
 
 .photo {
   background-position: center 66%;
-  animation: none;
+  transform-origin: 52% 62%;
+  will-change: transform;
+  animation: cinematicZoom 34s cubic-bezier(.45, 0, .55, 1) infinite alternate;
+}
+
+@keyframes cinematicZoom {
+  from {
+    transform: scale(1.015) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.085) translate3d(-.8%, -.45%, 0);
+  }
 }
 
 @media (max-width: 800px) {
@@ -15,5 +27,12 @@
 
   .photo {
     background-position: 52% 65%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo {
+    animation: none !important;
+    transform: none !important;
   }
 }

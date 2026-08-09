@@ -8,8 +8,8 @@ import background from "./tickets-background.module.css";
 import styles from "./page.module.css";
 
 export const metadata = {
-  title: "Tickets | Holistic SEO Mastermind",
-  description: "Reserve a place at the seven-day Holistic SEO Mastermind in Kuşadası, Türkiye.",
+  title: "Apply for Holistic SEO Mastermind 2026 | Kuşadası",
+  description: "Apply for an invitation to the seven-day Holistic SEO Mastermind 2026 in Kuşadası, Türkiye.",
 };
 
 export default function TicketsPage() {
