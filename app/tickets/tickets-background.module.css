@@ -1,0 +1,19 @@
+.frame {
+  inset: 0 0 auto;
+  height: 556px;
+}
+
+.photo {
+  background-position: center 66%;
+  animation: none;
+}
+
+@media (max-width: 800px) {
+  .frame {
+    height: 521px;
+  }
+
+  .photo {
+    background-position: 52% 65%;
+  }
+}

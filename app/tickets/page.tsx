@@ -4,6 +4,7 @@ import SiteFooter from "../components/site-footer";
 import SiteHeader from "../components/site-header";
 import { assetPath } from "../components/site-path";
 import TicketApplication from "./ticket-application";
+import background from "./tickets-background.module.css";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -12,10 +13,9 @@ export const metadata = {
 };
 
 export default function TicketsPage() {
-  return <main className={styles.tickets} style={{ "--tickets-poster": `url(${assetPath("/holistic-seo-mastermind-group.png")})` } as CSSProperties}>
-    <div className={styles.motionBackground} aria-hidden="true">
-      <video autoPlay loop muted playsInline poster={assetPath("/holistic-seo-mastermind-group.png")}><source src={assetPath("/mastermind-reel.mp4")} type="video/mp4" /></video>
-      <div className={styles.motionPoster} />
+  return <main className={styles.tickets} style={{ "--tickets-poster": `url(${assetPath("/tickets-ephesus-group.jpg")})` } as CSSProperties}>
+    <div className={`${styles.motionBackground} ${background.frame}`} aria-hidden="true">
+      <div className={`${styles.motionPoster} ${background.photo}`} />
       <div className={styles.motionShade} />
     </div>
     <SiteHeader className={styles.header} ctaHref="#application" ctaLabel="Apply" />
