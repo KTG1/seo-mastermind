@@ -1,0 +1,71 @@
+.card {
+  cursor: pointer;
+}
+
+.media {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 34%;
+  filter: saturate(.78) contrast(1.05);
+  transform: scale(1.01);
+  transition: transform 1s cubic-bezier(.2,.75,.2,1), filter .6s ease;
+}
+
+.playButton {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 0 28px;
+  padding: 0 0 0 3px;
+  border: 1px solid rgba(255,249,234,.72);
+  border-radius: 50%;
+  background: rgba(8,30,25,.12);
+  color: var(--solar);
+  font-size: 17px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: background .3s ease, color .3s ease, transform .4s cubic-bezier(.2,.75,.2,1), box-shadow .3s ease;
+}
+
+.card:hover .media {
+  filter: saturate(.98) contrast(1.08);
+  transform: scale(1.055);
+}
+
+.card:hover .playButton {
+  background: var(--solar);
+  box-shadow: 0 0 0 9px rgba(255,200,87,.16);
+  color: var(--ink);
+  transform: scale(1.1);
+}
+
+.playing {
+  cursor: default;
+  padding: 0;
+  background: #071c17;
+}
+
+.playing .media {
+  z-index: 1;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  transform: none;
+}
+
+.playing .overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media,
+  .playButton {
+    transition: none;
+  }
+}

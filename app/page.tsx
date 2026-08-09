@@ -9,6 +9,7 @@ import SiteHeader from "./components/site-header";
 import { assetPath } from "./components/site-path";
 import ScrollCinema from "./components/scroll-cinema";
 import HeritageMoment from "./components/heritage-moment";
+import VideoReviewCard from "./components/video-review-card";
 
 const principles = [
   { id: "seo", label: "SEO", title: "SEO & topical authority", summary: "Shape the entities, information gain, site architecture, and conversion paths that make a search presence useful and understood.", outcome: "A clearer topical map and sharper priority pages.", glyph: "seo" },
@@ -67,7 +68,7 @@ const testimonials = [
 ];
 
 const videoTestimonials = [
-  { title: "Why the room changed the roadmap", role: "Agency founder", location: "United Kingdom", duration: "02:18", poster: "/holistic-seo-mastermind-group.png" },
+  { title: "Deeper expertise. Lasting relationships.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:30", poster: "/mastermind-testimonial-poster.jpg", video: "/mastermind-testimonial-30s.mp4", captions: "/mastermind-testimonial-30s.vtt" },
   { title: "The conversation beyond the sessions", role: "Independent operator", location: "International", duration: "01:42", poster: "/media-hotel-terrace.jpg" },
 ];
 
@@ -201,19 +202,14 @@ export default function Home() {
             {([{"id":"all","label":"All","count":testimonials.length + videoTestimonials.length},{"id":"video","label":"Video reviews","count":videoTestimonials.length},{"id":"text","label":"Text reviews","count":testimonials.length}] as const).map((tab) => <button type="button" key={tab.id} aria-pressed={activeReviewType === tab.id} onClick={() => setActiveReviewType(tab.id)}><span>{tab.label}</span><i>{String(tab.count).padStart(2, "0")}</i></button>)}
           </div>
           <div className="testimonialGrid" data-review-view={activeReviewType} aria-live="polite">
-            {(activeReviewType === "all" ? videoTestimonials.slice(0, 1) : activeReviewType === "video" ? videoTestimonials : []).map((review) => <article className="videoReviewCard" key={review.title}>
-              <Image src={assetPath(review.poster)} alt="" fill sizes="(max-width: 760px) 100vw, 50vw" unoptimized />
-              <div className="videoReviewShade" aria-hidden="true" />
-              <div className="videoReviewTop"><span>Video review</span><i>{review.duration}</i></div>
-              <div className="videoReviewBody"><span className="videoPending" aria-label="Video asset pending">▶</span><h3>{review.title}</h3><p>{review.role} · {review.location}</p></div>
-            </article>)}
+            {(activeReviewType === "all" ? videoTestimonials.slice(0, 1) : activeReviewType === "video" ? videoTestimonials : []).map((review) => <VideoReviewCard review={review} key={review.title} />)}
             {(activeReviewType === "all" ? testimonials.slice(0, 1) : activeReviewType === "text" ? testimonials : []).map((testimonial, index) => <figure className="testimonialCard" key={testimonial.role}>
               <div className="testimonialMeta"><span>{String(index + 1).padStart(2, "0")} / {activeReviewType === "all" ? "01" : "03"}</span><i>“</i></div>
               <blockquote>{testimonial.quote}</blockquote>
               <figcaption><span className="testimonialMonogram">{testimonial.initials}</span><span><b>{testimonial.role}</b><small>{testimonial.location}</small></span></figcaption>
             </figure>)}
           </div>
-          <p className="testimonialNote">Editorial placeholders · replace with approved participant quotes and video files before publication</p>
+          <p className="testimonialNote">Participant reflections from previous Holistic SEO Mastermind gatherings</p>
           <Link className="testimonialArchive" href="/testimonials/">Explore testimonials by role <span>→</span></Link>
         </section>
 
