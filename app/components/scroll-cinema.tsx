@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import styles from "./scroll-cinema.module.css";
 import { assetPath } from "./site-path";
 
 const mastermindOutcomes = [
@@ -71,26 +72,53 @@ export default function ScrollCinema() {
     if (!section || reducedMotion.matches || window.innerWidth < 761) return;
 
     let frame = 0;
-    const render = () => {
-      frame = 0;
+    let currentProgress = 0;
+    let targetProgress = 0;
+
+    const measure = () => {
       const bounds = section.getBoundingClientRect();
       const distance = Math.max(1, bounds.height - window.innerHeight);
-      const progress = Math.min(1, Math.max(0, -bounds.top / distance));
-      const eased = progress * progress * (3 - 2 * progress);
-      const scene = progress < 0.25 ? "seo" : progress < 0.5 ? "automation" : progress < 0.75 ? "investment" : "conference";
+      targetProgress = Math.min(1, Math.max(0, -bounds.top / distance));
+    };
+
+    const paint = (progress: number) => {
+      const sceneIndex = Math.min(mastermindOutcomes.length - 1, Math.floor(progress * mastermindOutcomes.length));
+      const sceneStart = sceneIndex / mastermindOutcomes.length;
+      const localProgress = Math.min(1, Math.max(0, (progress - sceneStart) * mastermindOutcomes.length));
+      const settledMotion = Math.sin(localProgress * Math.PI);
+      const scene = mastermindOutcomes[sceneIndex].id;
 
       section.dataset.scene = scene;
-      section.style.setProperty("--camera-x", `${-eased * 46}px`);
-      section.style.setProperty("--camera-y", `${eased * 28}px`);
-      section.style.setProperty("--camera-scale", `${1 + eased * 0.13}`);
-      section.style.setProperty("--core-y", `${-24 + eased * 84}deg`);
-      section.style.setProperty("--core-x", `${12 - eased * 18}deg`);
+      section.dataset.sceneIndex = String(sceneIndex + 1);
+      section.style.setProperty("--cinema-progress", progress.toFixed(4));
+      section.style.setProperty("--scene-progress", localProgress.toFixed(4));
+      section.style.setProperty("--scene-settle", settledMotion.toFixed(4));
+      section.style.setProperty("--camera-x", `${(progress - 0.5) * -18}px`);
+      section.style.setProperty("--camera-y", `${(localProgress - 0.5) * 10}px`);
+      section.style.setProperty("--camera-scale", `${1.035 + settledMotion * 0.018}`);
+      section.style.setProperty("--core-y", `${-13 + localProgress * 26}deg`);
+      section.style.setProperty("--core-x", `${7 - localProgress * 12}deg`);
     };
+
+    const render = () => {
+      const delta = targetProgress - currentProgress;
+      currentProgress += delta * 0.12;
+
+      if (Math.abs(delta) < 0.0004) currentProgress = targetProgress;
+      paint(currentProgress);
+
+      if (currentProgress !== targetProgress) frame = window.requestAnimationFrame(render);
+      else frame = 0;
+    };
+
     const requestRender = () => {
+      measure();
       if (!frame) frame = window.requestAnimationFrame(render);
     };
 
-    render();
+    measure();
+    currentProgress = targetProgress;
+    paint(currentProgress);
     window.addEventListener("scroll", requestRender, { passive: true });
     window.addEventListener("resize", requestRender);
     return () => {
@@ -100,17 +128,29 @@ export default function ScrollCinema() {
     };
   }, []);
 
-  return <section className="scrollCinema" ref={sectionRef} data-scene="seo" aria-label="A scroll-driven preview of the three Holistic SEO Mastermind tracks">
-    <div className="cinemaSticky">
-      {mastermindOutcomes.map((track) => <Image
-        className={`cinemaImage cinemaImage${track.id[0].toUpperCase()}${track.id.slice(1)}`}
-        src={assetPath(track.backdrop)}
-        alt=""
-        fill
-        sizes="100vw"
-        unoptimized
-        key={track.id}
-      />)}
+  const moveToScene = (index: number) => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const scrollDistance = Math.max(0, section.offsetHeight - window.innerHeight);
+    window.scrollTo({
+      top: section.offsetTop + (scrollDistance * index) / (mastermindOutcomes.length - 1),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  };
+
+  return <section className={`scrollCinema ${styles.root}`} ref={sectionRef} data-scene="seo" data-scene-index="1" aria-label="A scroll-driven preview of the Holistic SEO Mastermind programme">
+    <div className={`cinemaSticky ${styles.sticky}`}>
+      <div className={styles.backdrops} aria-hidden="true">
+        {mastermindOutcomes.map((track) => <Image
+          className={`cinemaImage cinemaImage${track.id[0].toUpperCase()}${track.id.slice(1)}`}
+          src={assetPath(track.backdrop)}
+          alt=""
+          fill
+          sizes="100vw"
+          unoptimized
+          key={track.id}
+        />)}
+      </div>
       <div className="cinemaShade" aria-hidden="true" />
       <div className="cinemaHud">
         <span>THREE MASTERMINDS + CONFERENCE / 01—04</span>
@@ -121,6 +161,16 @@ export default function ScrollCinema() {
           <span className="cinemaRoomConference">04 / CONFERENCE &amp; NETWORKING</span>
         </span>
       </div>
+      <nav className={styles.sceneNav} aria-label="Mastermind rooms">
+        {mastermindOutcomes.map((track, index) => <button
+          type="button"
+          className={styles.sceneNavButton}
+          data-room={index + 1}
+          onClick={() => moveToScene(index)}
+          aria-label={`Go to ${track.label}`}
+          key={track.id}
+        ><span>{String(index + 1).padStart(2, "0")}</span><i /></button>)}
+      </nav>
       <div className="cinemaCopy" aria-live="polite">
         <div className="cinemaLine cinemaSeo"><span>01 / SEO &amp; Conversion</span><h2>Turn intent<br />into <em>action.</em></h2><p>Build search journeys that earn the click, answer the need, and move the business forward.</p></div>
         <div className="cinemaLine cinemaAutomation"><span>02 / AI &amp; Automation</span><h2>Scale the work<br />without losing <em>thinking.</em></h2><p>Design useful systems, sharper workflows, and room for the judgment that still matters.</p></div>

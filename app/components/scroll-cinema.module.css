@@ -1,0 +1,185 @@
+.root {
+  --cinema-progress: 0;
+  --scene-progress: 0;
+  --scene-settle: 0;
+}
+
+.sticky::after {
+  position: absolute;
+  z-index: 4;
+  top: 66px;
+  left: clamp(20px, 4.4vw, 72px);
+  width: calc(100% - clamp(40px, 8.8vw, 144px));
+  height: 1px;
+  background: #ffc857;
+  content: "";
+  opacity: 0.88;
+  transform: scaleX(var(--cinema-progress));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.backdrops {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+}
+
+.root :global(.cinemaImage) {
+  z-index: 0;
+  transition-duration: 0.78s, 0.2s, 0.78s;
+}
+
+.root :global(.cinemaCopy) {
+  transform: translate3d(0, calc((var(--scene-progress) - 0.5) * -8px), 0);
+  will-change: transform;
+}
+
+.root :global(.cinemaLine) {
+  filter: blur(5px);
+  transform: translate3d(0, 28px, 0) scale(0.985);
+  transition: opacity 0.48s ease, transform 0.68s cubic-bezier(0.2, 0.75, 0.2, 1), filter 0.48s ease;
+}
+
+.root[data-scene="seo"] :global(.cinemaSeo),
+.root[data-scene="automation"] :global(.cinemaAutomation),
+.root[data-scene="investment"] :global(.cinemaInvestment),
+.root[data-scene="conference"] :global(.cinemaConference) {
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.root :global(.cinemaWorld) {
+  transform: translate3d(-50%, calc(-50% + (var(--scene-progress) - 0.5) * 12px), 0);
+  transition: filter 0.5s ease;
+  will-change: transform;
+}
+
+.root :global(.cinemaPath) {
+  filter: blur(5px);
+  transition: opacity 0.46s ease, transform 0.7s cubic-bezier(0.2, 0.75, 0.2, 1), filter 0.46s ease;
+}
+
+.root[data-scene="seo"] :global(.cinemaPathSeo),
+.root[data-scene="automation"] :global(.cinemaPathAutomation),
+.root[data-scene="investment"] :global(.cinemaPathInvestment),
+.root[data-scene="conference"] :global(.cinemaPathConference) {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) rotateY(0);
+}
+
+.root[data-scene="conference"] :global(.cinemaPathConference .cinemaOutcome) {
+  opacity: 1;
+}
+
+.root[data-scene="conference"] :global(.cinemaPathConference .cinemaOutcome1) {
+  transform: translate3d(0, -50%, 0);
+  transition-delay: 0.04s;
+}
+
+.root[data-scene="conference"] :global(.cinemaPathConference .cinemaOutcome2) {
+  transform: translate3d(-50%, -50%, 22px) scale(1);
+  transition-delay: 0.17s;
+}
+
+.root[data-scene="conference"] :global(.cinemaPathConference .cinemaOutcome3) {
+  transform: translate3d(0, -50%, -20px);
+  transition-delay: 0.3s;
+}
+
+.root[data-scene="conference"] :global(.cinemaPathConference .cinemaConnector) {
+  opacity: 1;
+  transform: var(--connector-rotation) scaleX(1);
+  transition-delay: 0.44s;
+}
+
+.root[data-scene="conference"] :global(.cinemaPathConference .cinemaPulse) {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition-delay: 0.11s;
+}
+
+.sceneNav {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  right: clamp(18px, 2vw, 34px);
+  display: grid;
+  gap: 11px;
+  transform: translateY(-50%);
+}
+
+.sceneNavButton {
+  display: grid;
+  grid-template-columns: 22px 22px;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: rgba(229, 245, 214, 0.58);
+  cursor: pointer;
+  font: 7px var(--mono);
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+}
+
+.sceneNavButton i {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0.38);
+  transform-origin: right center;
+  transition: transform 0.45s cubic-bezier(0.2, 0.75, 0.2, 1), background 0.3s ease;
+}
+
+.sceneNavButton:hover,
+.sceneNavButton:focus-visible {
+  color: #fff9ea;
+  outline: none;
+}
+
+.root[data-scene-index="1"] .sceneNavButton[data-room="1"],
+.root[data-scene-index="2"] .sceneNavButton[data-room="2"],
+.root[data-scene-index="3"] .sceneNavButton[data-room="3"],
+.root[data-scene-index="4"] .sceneNavButton[data-room="4"] {
+  color: #ffc857;
+}
+
+.root[data-scene-index="1"] .sceneNavButton[data-room="1"] i,
+.root[data-scene-index="2"] .sceneNavButton[data-room="2"] i,
+.root[data-scene-index="3"] .sceneNavButton[data-room="3"] i,
+.root[data-scene-index="4"] .sceneNavButton[data-room="4"] i {
+  transform: scaleX(1);
+}
+
+@media (max-width: 760px) {
+  .sticky::after,
+  .sceneNav {
+    display: none;
+  }
+
+  .root :global(.cinemaCopy),
+  .root :global(.cinemaWorld) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky::after,
+  .sceneNav {
+    display: none;
+  }
+
+  .root :global(.cinemaCopy),
+  .root :global(.cinemaWorld) {
+    transform: none;
+  }
+
+  .root :global(.cinemaLine),
+  .root :global(.cinemaPath) {
+    filter: none;
+  }
+}
