@@ -22,18 +22,18 @@ export default function TicketsPage() {
 
     <section className={styles.hero}>
       <p>Seven days / Kuşadası, Türkiye</p>
-      <h1>Make room for<br /><em>the real work.</em></h1>
+      <h1>Where hard problems<br /><em>meet sharper minds.</em></h1>
       <div className={styles.heroBottom}><span>Hosted by Koray Tuğberk Gübür</span><span>Small by design</span></div>
     </section>
 
     <section className={styles.ticketPanel}>
       <div className={styles.ticketHeading}><span>Full week pass</span><h2>One place at<br />the table.</h2><p>Designed for the operator who wants time, perspective, and a room capable of meeting the real challenge.</p></div>
-      <div className={styles.priceBox}><span>Example ticket price</span><strong>€2,400</strong><small>per attendee · seven-day immersion</small><Link href="#application">Apply for an invitation <i>→</i></Link></div>
+      <div className={styles.priceBox}><span>Participation fee</span><strong>$5,000</strong><small>USD · per attendee · seven-day immersion</small><Link href="#application">Apply for an invitation <i>→</i></Link></div>
       <div className={styles.inclusions}><span>What your place includes</span><ul><li><b>Two live working clinics</b> focused on your own business challenge.</li><li><b>A carefully composed peer room</b> for serious challenge and exchange.</li><li><b>Seven days of systems thinking</b> with Koray and the full group.</li><li><b>Hosted long-table meals</b> where the conversation keeps moving.</li><li><b>Selected water, massage, and recovery moments</b> to create space for insight.</li><li><b>A 90-day commitment</b> you can carry back into the business.</li></ul></div>
     </section>
 
     <TicketApplication />
-    <section className={styles.note}><span>Before you book</span><p>The ticket price is an example placeholder. Replace it with your final price and payment flow before publishing.</p></section>
+    <section className={styles.note}><span>Before you apply</span><p>The $5,000 participation fee and payment timing are confirmed with your invitation before any payment is taken.</p></section>
     <SiteFooter />
   </main>;
 }

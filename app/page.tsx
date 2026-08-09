@@ -52,7 +52,7 @@ const faqHighlights = [
   { label: "Invitation", question: "Can I bring a colleague or partner?", answer: "Each place is reviewed individually because the strength of the room comes from the people in it. Mention your colleague in the application and explain the work you would bring together." },
   { label: "Programme", question: "What happens during the seven days?", answer: "The week combines three mastermind days across SEO, AI, automation, business, and investment with one conference day. The wider rhythm leaves room for arrival, recovery, local experiences, and long-table conversation." },
   { label: "Programme", question: "Who is the room designed for?", answer: "Experienced operators, founders, SEO leaders, agency owners, investors, and builders working on a real business question. Curiosity matters, but so does having work that can benefit from careful peer challenge." },
-  { label: "Fee", question: "What does the $6,000 place include?", answer: "Your place includes the core mastermind and conference programme, working sessions, and the hosted group moments in the final itinerary. Accommodation, travel, and optional activities are confirmed separately for invited attendees." },
+  { label: "Fee", question: "What does the $5,000 place include?", answer: "Your place includes the core mastermind and conference programme, working sessions, and the hosted group moments in the final itinerary. Accommodation, travel, and optional activities are confirmed separately for invited attendees." },
   { label: "Travel", question: "How should I plan for Kuşadası?", answer: "Most international guests arrive through İzmir Adnan Menderes Airport. Confirmed attendees receive the final venue, transfer, check-in, and timing guidance well before the gathering." },
   { label: "Travel", question: "Where does the gathering take place?", answer: "The gathering is hosted in Kuşadası, Türkiye. The final hotel and venue details are shared directly with confirmed attendees as part of their arrival guidance." },
   { label: "Experiences", question: "Are the coastal activities required?", answer: "No. Boat time, water sports, safaris, and recovery sessions are optional. They sit around the core programme and depend on weather, safety guidance, and local availability." },
@@ -218,7 +218,7 @@ export default function Home() {
             <div className="sectionLabel light"><span>05</span> Join the next room</div>
             <h2>Bring the question<br />that matters.</h2>
             <p>Tell us what you are trying to solve. We will reply if the next mastermind is the right space for your work.</p>
-            <div className="applicationPrice"><span>Core programme access</span><strong>$6,000</strong><small>USD · per invited attendee</small></div>
+            <div className="applicationPrice"><span>Core programme access</span><strong>$5,000</strong><small>USD · per invited attendee</small></div>
           </div>
           <form className="applyForm" onSubmit={submitApplication}>
             <label>Your name<input required name="name" placeholder="Jane Smith" /></label>
