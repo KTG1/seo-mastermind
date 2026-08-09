@@ -13,6 +13,7 @@ const members: Member[] = [
   { name: "James Dooley", initials: "JD", role: "SEO entrepreneur", location: "United Kingdom", focus: "Authority", joined: "2026", tone: "coral", coordinates: [-2.5, 54.5], slug: "james-dooley" },
   { name: "Mads Singers", initials: "MS", role: "Business operator", location: "Denmark", focus: "Strategy", joined: "2026", tone: "blue", coordinates: [10.1, 56.1], slug: "mads-singers" },
   { name: "Mira Doran", initials: "MD", role: "Independent publisher & founder", location: "Manchester, UK", focus: "Authority", joined: "2025", tone: "olive", coordinates: [-2.24, 53.48], slug: "mira-doran" },
+  { name: "Vaibhav Kakkar", initials: "VK", role: "Founder & Group CEO, DWS Group", location: "San Jose, USA", focus: "Agency growth", joined: "2026", tone: "olive", coordinates: [-121.89, 37.34], slug: "vaibhav-kakkar" },
   { name: "Vince Sanders", initials: "VS", role: "Founder, CBD American Shaman", location: "Kansas City, USA", focus: "Entrepreneurship", joined: "2026", tone: "blue", coordinates: [-94.58, 39.1], slug: "vince-sanders" },
 ];
 
