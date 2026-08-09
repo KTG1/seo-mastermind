@@ -7,7 +7,7 @@
   background-position: center 66%;
   transform-origin: 52% 62%;
   will-change: transform;
-  animation: cinematicZoom 26s cubic-bezier(.45, 0, .55, 1) infinite alternate;
+  animation: cinematicZoom 14s cubic-bezier(.45, 0, .55, 1) infinite alternate;
 }
 
 @keyframes cinematicZoom {
