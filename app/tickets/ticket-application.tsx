@@ -15,7 +15,7 @@ export default function TicketApplication() {
     setStatus("submitting");
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/ktgubur@holisticseo.digital", {
+      const response = await fetch("https://formsubmit.co/ajax/8df081b6a01d5c96e4db5bfd88926d77", {
         method: "POST",
         headers: { Accept: "application/json" },
         body: data,
