@@ -125,6 +125,25 @@ export default function Home() {
           <div className="heroCaption"><span>Not a conference. Not a course.</span><span>A focused table of builders.</span></div>
         </section>
 
+        <section className="nightInterlude" aria-labelledby="night-interlude-title">
+          <div className="nightInterludeCopy">
+            <div className="sectionLabel light"><span>After hours</span> The conversation continues</div>
+            <h2 id="night-interlude-title">Serious work.<br /><em>Unscripted nights.</em></h2>
+            <p>The strongest relationships are rarely built from an agenda alone. After the sessions, the room becomes music, laughter, and conversations that keep moving.</p>
+            <span className="nightInterludeNote">One week · one room · many stories</span>
+          </div>
+          <figure className="nightInterludeImage">
+            <Image
+              src={assetPath("/mastermind-unscripted-night.jpg")}
+              alt="Holistic SEO Mastermind attendees singing and laughing together during an evening in Kuşadası"
+              fill
+              unoptimized
+              sizes="(max-width: 760px) 100vw, 46vw"
+            />
+            <figcaption>Kuşadası after hours</figcaption>
+          </figure>
+        </section>
+
         <ScrollCinema />
 
         <section className="introduction" id="approach">
