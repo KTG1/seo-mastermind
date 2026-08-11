@@ -209,6 +209,25 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="roadMoment" aria-labelledby="road-moment-title">
+          <Image
+            src={assetPath("/mastermind-night-ride.jpg")}
+            alt="Holistic SEO Mastermind attendees sharing a night safari ride in Kuşadası"
+            fill
+            unoptimized
+            sizes="100vw"
+          />
+          <div className="roadMomentShade" aria-hidden="true" />
+          <div className="roadMomentCopy">
+            <div className="sectionLabel light"><span>Beyond the sessions</span> Shared experience</div>
+            <h2 id="road-moment-title">The day doesn’t end<br /><em>at the last slide.</em></h2>
+          </div>
+          <div className="roadMomentFoot">
+            <span>Night safari · Kuşadası</span>
+            <p>Some of the best conversations begin on the way back.</p>
+          </div>
+        </section>
+
         <HeritageMoment />
 
         <section className="collectivePortrait" aria-labelledby="collective-portrait-title">
