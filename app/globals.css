@@ -104,6 +104,18 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .experienceBand li:nth-child(odd) button{padding-right:2vw}
 .experienceBand li i{color:var(--coral);font-style:normal;font-size:15px}
 @keyframes experienceIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.collectivePortrait{padding:96px clamp(20px,4.4vw,72px) clamp(22px,4vw,58px);overflow:hidden;background:#09231e;color:var(--paper)}
+.collectivePortraitHeading{display:grid;grid-template-columns:.58fr 1.42fr;gap:6vw;align-items:end;margin-bottom:55px}
+.collectivePortraitHeading .sectionLabel{align-self:start;color:var(--seafoam)}
+.collectivePortraitHeading h2{max-width:980px;margin:0;font:400 clamp(49px,5.9vw,94px)/.86 var(--display);letter-spacing:-.074em}
+.collectivePortraitHeading h2 em{color:var(--solar);font-style:normal}
+.collectivePortraitFrame{position:relative;isolation:isolate;min-height:min(78vw,900px);margin:0;overflow:hidden;border:1px solid rgba(229,245,214,.32);background:#15392f}
+.collectivePortraitFrame>img{z-index:-2;object-fit:cover;object-position:center 47%;filter:saturate(.88) contrast(1.03);transform:scale(1.012);transition:transform 1.8s cubic-bezier(.2,.75,.2,1),filter .8s ease}
+.collectivePortraitShade{position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(6,25,21,.04) 44%,rgba(6,25,21,.88) 100%)}
+.collectivePortraitFrame figcaption{position:absolute;left:clamp(22px,3.5vw,55px);right:clamp(22px,3.5vw,55px);bottom:clamp(22px,3.5vw,48px);display:flex;align-items:end;justify-content:space-between;gap:40px;padding-top:17px;border-top:1px solid rgba(255,249,234,.58)}
+.collectivePortraitFrame figcaption span{color:var(--seafoam);font:9px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.collectivePortraitFrame figcaption strong{max-width:480px;color:var(--paper);font:400 clamp(24px,2.6vw,42px)/.95 var(--display);letter-spacing:-.045em;text-align:right}
+.collectivePortraitFrame:hover>img{filter:saturate(1) contrast(1.04);transform:scale(1.045)}
 .testimonials{padding:108px clamp(20px,7vw,112px) 92px;background:#FFF1C7;color:var(--ink)}
 .testimonialHeading{display:grid;grid-template-columns:.55fr 1.15fr .55fr;gap:5vw;align-items:end;padding-bottom:64px}
 .testimonialHeading>.sectionLabel{align-self:start}
@@ -238,6 +250,13 @@ footer{display:flex;align-items:center;justify-content:space-between;padding:26p
 .videoReviewCard{min-height:430px;padding:24px 20px}.videoReviewBody h3{font-size:38px}
 .testimonialNote{margin-top:26px;text-align:left}
 .testimonialArchive{margin:23px 0 0}
+.collectivePortrait{padding:70px 14px 14px}
+.collectivePortraitHeading{display:block;margin:0 6px 38px}
+.collectivePortraitHeading h2{margin-top:30px;font-size:52px}
+.collectivePortraitFrame{min-height:690px}
+.collectivePortraitFrame>img{object-position:57% center}
+.collectivePortraitFrame figcaption{display:grid;gap:13px}
+.collectivePortraitFrame figcaption strong{font-size:29px;text-align:left}
 .application{display:block;padding:70px 20px}
 .application h2{font-size:54px}
 .applicationCopy>p{margin-bottom:43px}
@@ -259,5 +278,5 @@ footer{align-items:flex-start;flex-wrap:wrap;gap:12px}
 footer span{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}
-.experienceBand::before,.experienceBand::after,.experienceCopy,.experienceBand li button,.cinemaLine,.cinemaCore,.cinemaPath,.cinemaStep,.cinemaOutcome,.cinemaConnector,.cinemaConnector::after,.cinemaPulse,.homeFaqItem summary i,.homeFaqFilters button,.testimonialCard,.reviewTabs button,.videoReviewCard>img,.videoReviewShade,.videoPending,.videoReviewBody h3,.videoReviewBody p{transition:none;animation:none}.scrollCinema{height:auto}.cinemaSticky{position:relative}.cinemaImage{transform:none}
+.experienceBand::before,.experienceBand::after,.experienceCopy,.experienceBand li button,.cinemaLine,.cinemaCore,.cinemaPath,.cinemaStep,.cinemaOutcome,.cinemaConnector,.cinemaConnector::after,.cinemaPulse,.collectivePortraitFrame>img,.homeFaqItem summary i,.homeFaqFilters button,.testimonialCard,.reviewTabs button,.videoReviewCard>img,.videoReviewShade,.videoPending,.videoReviewBody h3,.videoReviewBody p{transition:none;animation:none}.scrollCinema{height:auto}.cinemaSticky{position:relative}.cinemaImage{transform:none}
 }

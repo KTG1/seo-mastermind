@@ -192,9 +192,30 @@ export default function Home() {
 
         <HeritageMoment />
 
+        <section className="collectivePortrait" aria-labelledby="collective-portrait-title">
+          <header className="collectivePortraitHeading">
+            <div className="sectionLabel"><span>04</span> The people behind the week</div>
+            <h2 id="collective-portrait-title">A room becomes valuable<br />when everyone <em>adds to it.</em></h2>
+          </header>
+          <figure className="collectivePortraitFrame">
+            <Image
+              src={assetPath("/mastermind-collective-toast.jpg")}
+              alt="Holistic SEO Mastermind attendees raising a toast together beside the water in Kuşadası"
+              fill
+              unoptimized
+              sizes="100vw"
+            />
+            <div className="collectivePortraitShade" aria-hidden="true" />
+            <figcaption>
+              <span>Previous gathering · Kuşadası, Türkiye</span>
+              <strong>Different markets. Different questions.<br />One generous table.</strong>
+            </figcaption>
+          </figure>
+        </section>
+
         <section className="testimonials" aria-labelledby="testimonials-title">
           <header className="testimonialHeading">
-            <div className="sectionLabel"><span>04</span> Notes from the room</div>
+            <div className="sectionLabel"><span>05</span> Notes from the room</div>
             <h2 id="testimonials-title">What stays with<br />people <em>afterward.</em></h2>
             <p>Watch a participant reflection or read the notes people carried away from the table.</p>
           </header>
@@ -215,7 +236,7 @@ export default function Home() {
 
         <section className="application" id="apply">
           <div className="applicationCopy">
-            <div className="sectionLabel light"><span>05</span> Join the next room</div>
+            <div className="sectionLabel light"><span>06</span> Join the next room</div>
             <h2>Bring the question<br />that matters.</h2>
             <p>Tell us what you are trying to solve. We will reply if the next mastermind is the right space for your work.</p>
             <div className="applicationPrice"><span>Core programme access</span><strong>$5,000</strong><small>USD · per invited attendee</small></div>
@@ -232,7 +253,7 @@ export default function Home() {
         <section className="homeFaq" aria-labelledby="home-faq-title">
           <header className="homeFaqHeading">
             <div>
-              <div className="sectionLabel"><span>06</span> Before you decide</div>
+              <div className="sectionLabel"><span>07</span> Before you decide</div>
               <h2 id="home-faq-title">Questions worth<br />answering <em>early.</em></h2>
             </div>
             <div className="homeFaqIntro">
