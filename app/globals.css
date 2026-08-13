@@ -42,6 +42,17 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .nightInterludeImage>img{z-index:-1;object-fit:cover;object-position:center 44%;filter:saturate(.92) contrast(1.03);transform:scale(1.015);transition:transform 1.8s cubic-bezier(.2,.75,.2,1),filter .8s ease}
 .nightInterludeImage:hover>img{filter:saturate(1.08) contrast(1.05);transform:scale(1.055)}
 .nightInterludeImage figcaption{position:absolute;z-index:1;right:28px;bottom:26px;color:#fff1c7;font:8px var(--mono);letter-spacing:.09em;text-transform:uppercase}
+.aegeanInterlude{position:relative;isolation:isolate;display:flex;min-height:min(88vh,900px);overflow:hidden;padding:clamp(28px,4.4vw,72px);flex-direction:column;justify-content:space-between;background:#092d34;color:var(--paper)}
+.aegeanInterlude::before{position:absolute;z-index:-3;inset:0;background:var(--aegean-poster) center/cover no-repeat;content:""}
+.aegeanInterlude>video{position:absolute;z-index:-2;inset:-3%;width:106%;height:106%;object-fit:cover;object-position:center;filter:saturate(.9) contrast(1.06);animation:aegeanDrift 18s ease-in-out infinite alternate}
+.aegeanInterludeShade{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(5,30,34,.88),rgba(5,30,34,.18) 66%),linear-gradient(0deg,rgba(4,25,30,.74),transparent 54%)}
+.aegeanInterludeCopy{max-width:900px;padding-top:clamp(95px,16vh,170px)}
+.aegeanInterludeCopy .sectionLabel{color:#DAF1E8}.aegeanInterludeCopy .sectionLabel span{color:var(--solar)}
+.aegeanInterludeCopy h2{margin:clamp(68px,10vh,110px) 0 28px;font:400 clamp(60px,7vw,116px)/.82 var(--display);letter-spacing:-.078em}
+.aegeanInterludeCopy h2 em{color:#ff9f68;font-style:normal}
+.aegeanInterludeCopy p{max-width:480px;margin:0;color:#E1F1EA;font-size:16px;line-height:1.6}
+.aegeanInterludeFoot{display:flex;justify-content:space-between;gap:30px;padding-top:17px;border-top:1px solid rgba(255,249,234,.48);font:9px var(--mono);letter-spacing:.09em;text-transform:uppercase}
+@keyframes aegeanDrift{from{transform:scale(1.015) translate3d(-.5%,0,0)}to{transform:scale(1.075) translate3d(.7%,-.5%,0)}}
 @media(min-width:761px){.hero{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
 .heroTopline{grid-row:1}
 .heroCopy{grid-row:2;align-self:center;padding:clamp(48px,9vh,96px) 0 clamp(52px,8vh,84px)}
@@ -232,6 +243,7 @@ footer{display:flex;align-items:center;justify-content:space-between;padding:26p
 .heroText{width:82%;font-size:15px}
 .heroCaption{left:20px;right:20px;font-size:8px;gap:20px}
 .nightInterlude{display:flex;min-height:0;flex-direction:column-reverse}.nightInterludeImage{min-height:74svh}.nightInterludeImage>img{object-position:center 40%}.nightInterludeCopy{min-height:570px;padding:68px 20px 28px}.nightInterludeCopy h2{margin:62px 0 27px;font-size:55px}.nightInterludeCopy>p{font-size:14px}.nightInterludeNote{margin-top:70px}
+.aegeanInterlude{min-height:720px;padding:24px 20px}.aegeanInterludeCopy{padding-top:82px}.aegeanInterludeCopy h2{margin-top:94px;font-size:55px}.aegeanInterludeCopy p{max-width:310px;font-size:14px}.aegeanInterludeFoot{display:grid;gap:12px}.aegeanInterlude>video{object-position:58% center}
 .scrollCinema{height:auto}.cinemaSticky{position:relative;display:block;height:auto;min-height:690px;padding:24px 20px}.cinemaImage{transform:none}.cinemaCopy{padding-top:84px;min-height:280px}.cinemaLine{position:relative;inset:auto;display:none}.cinemaSeo{display:block}.cinemaLine h2{font-size:60px}.cinemaWorld{left:50%;top:auto;bottom:78px;width:520px;height:310px;transform:translateX(-50%) scale(.62)}.cinemaOutcomeHeading{top:0}.cinemaOutcomeNote{bottom:-1%}.cinemaFoot{left:20px;right:20px;font-size:7px}.cinemaFoot span:last-child{display:none}
 .introduction{padding:68px 20px 76px}
 .introMain{display:block;margin-top:48px}
@@ -310,5 +322,5 @@ footer{align-items:flex-start;flex-wrap:wrap;gap:12px}
 footer span{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}
-.experienceBand::before,.experienceBand::after,.experienceVideo,.experienceCopy,.experienceBand li button,.cinemaLine,.cinemaCore,.cinemaPath,.cinemaStep,.cinemaOutcome,.cinemaConnector,.cinemaConnector::after,.cinemaPulse,.nightInterludeImage>img,.roadMoment>img,.collectivePortraitFrame>img,.homeFaqItem summary i,.homeFaqFilters button,.testimonialCard,.reviewTabs button,.videoReviewCard>img,.videoReviewShade,.videoPending,.videoReviewBody h3,.videoReviewBody p{transition:none;animation:none}.experienceVideo{display:none}.experienceBand[data-engagement="water-sports"]::before{opacity:1}.scrollCinema{height:auto}.cinemaSticky{position:relative}.cinemaImage{transform:none}
+.experienceBand::before,.experienceBand::after,.experienceVideo,.experienceCopy,.experienceBand li button,.cinemaLine,.cinemaCore,.cinemaPath,.cinemaStep,.cinemaOutcome,.cinemaConnector,.cinemaConnector::after,.cinemaPulse,.nightInterludeImage>img,.aegeanInterlude>video,.roadMoment>img,.collectivePortraitFrame>img,.homeFaqItem summary i,.homeFaqFilters button,.testimonialCard,.reviewTabs button,.videoReviewCard>img,.videoReviewShade,.videoPending,.videoReviewBody h3,.videoReviewBody p{transition:none;animation:none}.experienceVideo,.aegeanInterlude>video{display:none}.experienceBand[data-engagement="water-sports"]::before{opacity:1}.scrollCinema{height:auto}.cinemaSticky{position:relative}.cinemaImage{transform:none}
 }

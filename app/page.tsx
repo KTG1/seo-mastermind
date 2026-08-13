@@ -146,6 +146,19 @@ export default function Home() {
 
         <ScrollCinema />
 
+        <section className="aegeanInterlude" aria-labelledby="aegean-interlude-title" style={{ "--aegean-poster": `url(${assetPath("/mastermind-aegean-water-sports-poster.jpg")})` } as CSSProperties}>
+          <video autoPlay muted loop playsInline preload="metadata" poster={assetPath("/mastermind-aegean-water-sports-poster.jpg")} aria-hidden="true">
+            <source src={assetPath("/mastermind-aegean-water-sports.mp4")} type="video/mp4" />
+          </video>
+          <div className="aegeanInterludeShade" aria-hidden="true" />
+          <div className="aegeanInterludeCopy">
+            <div className="sectionLabel light"><span>Beyond the table</span> The Aegean resets the room</div>
+            <h2 id="aegean-interlude-title">Leave the room.<br /><em>Keep the momentum.</em></h2>
+            <p>Open water, a wider horizon, and enough distance for the next useful idea to surface.</p>
+          </div>
+          <div className="aegeanInterludeFoot"><span>Kuşadası / Türkiye</span><span>Optional coastal experiences</span></div>
+        </section>
+
         <section className="introduction" id="approach">
           <div className="sectionLabel"><span>01</span> A different way to work on search</div>
           <div className="introMain">
