@@ -39,7 +39,7 @@ const coreDays = [
 const experiences = [
   { id: "parasailing", title: "Parasailing", overline: "A wider view", heading: "See the coast\nfrom above.", copy: "A calm lift above the Aegean for the people who want a little distance from the usual point of view.", image: "/experience-parasailing.jpg" },
   { id: "jetskis", title: "Jet skis", overline: "On the water", heading: "Follow the\nenergy line.", copy: "An optional, high-energy coastal session for anyone who wants to trade the desk for open water.", image: "/experience-jetskis.jpg" },
-  { id: "water-sports", title: "Water sports", overline: "Move, then return", heading: "Reset in\nblue water.", copy: "Swimming, paddling, and open-water time give the day a different kind of focus.", image: "/media-water-sports.jpg" },
+  { id: "water-sports", title: "Water sports", overline: "Move, then return", heading: "Reset in\nblue water.", copy: "Swimming, paddling, and open-water time give the day a different kind of focus.", image: "/mastermind-aegean-water-sports-poster.jpg", video: "/mastermind-aegean-water-sports.mp4" },
   { id: "coastal-safaris", title: "Coastal safaris", overline: "Beyond the shoreline", heading: "Take the\nlong route.", copy: "A slower outward journey through the landscape around Kuşadası, with room for the conversation to continue.", image: "/experience-coastal-safari-mastermind.jpg" },
   { id: "horse-safaris", title: "Horse safaris", overline: "A quieter pace", heading: "Trade speed\nfor attention.", copy: "A guided option for the people who would rather follow the terrain at a more deliberate rhythm.", image: "/experience-horse-safari.jpg" },
   { id: "atv-safaris", title: "ATV safaris", overline: "Off the main road", heading: "Find a\ndifferent line.", copy: "A more active route through the surrounding landscape—optional, weather-dependent, and arranged with care.", image: "/experience-atv-safari.jpg" },
@@ -74,7 +74,7 @@ const videoTestimonials = [
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
-  const [activeExperience, setActiveExperience] = useState(0);
+  const [activeExperience, setActiveExperience] = useState(2);
   const [experiencePaused, setExperiencePaused] = useState(false);
   const [activePrinciple, setActivePrinciple] = useState(0);
   const [activeFaqLabel, setActiveFaqLabel] = useState("All");
@@ -191,6 +191,11 @@ export default function Home() {
           <div className="offerHeading"><div className="sectionLabel"><span>03</span> The core programme</div><h2 id="programme-title">Three days to <em>work the system.</em><br />One day to widen it.</h2><p>The core learning room moves through SEO, AI, automation, business, and investment—then opens into a dedicated conference day.</p></div>
           <div className="coreDays">{coreDays.map(([number, format, title, copy]) => <article key={number}><span>{number}</span><b>{format}</b><h3>{title}</h3><p>{copy}</p></article>)}</div>
           <div className={`experienceBand ${experienceStyles.experienceBand}`} data-engagement={currentExperience.id} style={{ "--experience-background": `url(${assetPath(currentExperience.image)})` } as CSSProperties}>
+            {"video" in currentExperience && currentExperience.video ? (
+              <video className="experienceVideo" autoPlay muted loop playsInline preload="metadata" poster={assetPath(currentExperience.image)} aria-hidden="true">
+                <source src={assetPath(currentExperience.video)} type="video/mp4" />
+              </video>
+            ) : null}
             <div className="experienceCopy" key={currentExperience.id}>
               <span>{currentExperience.overline} <i>·</i> {String(activeExperience + 1).padStart(2, "0")} / {String(experiences.length).padStart(2, "0")}</span>
               <h3>{currentExperience.heading.split("\n")[0]}<br />{currentExperience.heading.split("\n")[1]} <em>↗</em></h3>

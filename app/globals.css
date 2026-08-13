@@ -91,6 +91,9 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .experienceBand{position:relative;isolation:isolate;display:grid;grid-template-columns:.9fr 1.1fr;gap:8vw;overflow:hidden;margin-top:59px;padding:55px;background:#26765A;color:var(--sand)}
 .experienceBand::before{content:"";position:absolute;z-index:-2;inset:-5%;background:var(--experience-background) center 58%/cover no-repeat;filter:saturate(.65) contrast(1.08);transition:transform 1.1s cubic-bezier(.2,.8,.2,1),filter .8s ease,background-position 1.1s ease}
 .experienceBand::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(10,31,29,.94),rgba(10,31,29,.7));transition:background .7s ease}
+.experienceVideo{position:absolute;z-index:-2;inset:-4%;width:108%;height:108%;object-fit:cover;object-position:center 52%;filter:saturate(.9) contrast(1.08);animation:experienceCamera 18s ease-in-out infinite alternate}
+.experienceBand[data-engagement="water-sports"]::before{opacity:0}
+@keyframes experienceCamera{from{transform:scale(1.01) translate3d(-.8%,0,0)}to{transform:scale(1.08) translate3d(.8%,-.6%,0)}}
 .experienceBand[data-engagement="parasailing"]::before{background-position:20% 52%;transform:scale(1.04);filter:saturate(.9) contrast(1.08)}
 .experienceBand[data-engagement="jetskis"]::before{background-position:42% 63%;transform:scale(1.13);filter:saturate(1.1) contrast(1.14)}
 .experienceBand[data-engagement="water-sports"]::before{background-position:28% 72%;transform:scale(1.09);filter:saturate(1.25) hue-rotate(8deg)}
@@ -307,5 +310,5 @@ footer{align-items:flex-start;flex-wrap:wrap;gap:12px}
 footer span{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}
-.experienceBand::before,.experienceBand::after,.experienceCopy,.experienceBand li button,.cinemaLine,.cinemaCore,.cinemaPath,.cinemaStep,.cinemaOutcome,.cinemaConnector,.cinemaConnector::after,.cinemaPulse,.nightInterludeImage>img,.roadMoment>img,.collectivePortraitFrame>img,.homeFaqItem summary i,.homeFaqFilters button,.testimonialCard,.reviewTabs button,.videoReviewCard>img,.videoReviewShade,.videoPending,.videoReviewBody h3,.videoReviewBody p{transition:none;animation:none}.scrollCinema{height:auto}.cinemaSticky{position:relative}.cinemaImage{transform:none}
+.experienceBand::before,.experienceBand::after,.experienceVideo,.experienceCopy,.experienceBand li button,.cinemaLine,.cinemaCore,.cinemaPath,.cinemaStep,.cinemaOutcome,.cinemaConnector,.cinemaConnector::after,.cinemaPulse,.nightInterludeImage>img,.roadMoment>img,.collectivePortraitFrame>img,.homeFaqItem summary i,.homeFaqFilters button,.testimonialCard,.reviewTabs button,.videoReviewCard>img,.videoReviewShade,.videoPending,.videoReviewBody h3,.videoReviewBody p{transition:none;animation:none}.experienceVideo{display:none}.experienceBand[data-engagement="water-sports"]::before{opacity:1}.scrollCinema{height:auto}.cinemaSticky{position:relative}.cinemaImage{transform:none}
 }
