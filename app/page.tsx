@@ -223,7 +223,7 @@ export default function Home() {
 
         <section className="introduction" id="approach">
           <video className="introductionVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src={assetPath("/mastermind-champagne-pop-background.mp4")} type="video/mp4" />
+            <source src={assetPath("/mastermind-champagne-spill-background.mp4")} type="video/mp4" />
           </video>
           <div className="introductionShade" aria-hidden="true" />
           <div className="sectionLabel"><span>01</span> A different way to work on search</div>
