@@ -204,7 +204,7 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .reviewTabs button:hover,.reviewTabs button[aria-pressed="true"]{background:var(--ink);color:var(--solar)}
 .reviewTabs button[aria-pressed="true"] i{border-color:var(--solar)}
 .testimonialGrid{display:grid;border-top:1px solid rgba(39,76,59,.28);border-left:1px solid rgba(39,76,59,.28)}
-.testimonialGrid[data-review-view="all"],.testimonialGrid[data-review-view="video"]{grid-template-columns:repeat(2,1fr)}
+.testimonialGrid[data-review-view="all"],.testimonialGrid[data-review-view="video"]{grid-template-columns:repeat(3,1fr)}
 .testimonialGrid[data-review-view="text"]{grid-template-columns:repeat(3,1fr)}
 .testimonialCard{display:flex;flex-direction:column;min-height:475px;margin:0;padding:27px 2.3vw 25px;border-right:1px solid rgba(39,76,59,.28);border-bottom:1px solid rgba(39,76,59,.28);background:rgba(255,249,234,.35);transition:background .25s ease,transform .25s ease}
 .testimonialGrid[data-review-view="text"] .testimonialCard:nth-child(2){background:#E5F5D6;transform:translateY(22px)}

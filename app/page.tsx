@@ -88,7 +88,6 @@ const videoTestimonials = [
   { title: "The people make it valuable.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:38", poster: "/mastermind-testimonial-people-values.jpg", video: "/mastermind-testimonial-people-values.mp4" },
   { title: "Everyone brings value to the table.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:23", poster: "/mastermind-testimonial-everyone-brings-value.jpg", video: "/mastermind-testimonial-everyone-brings-value.mp4", captions: "/mastermind-testimonial-everyone-brings-value.vtt" },
   { title: "Deeper expertise. Lasting relationships.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:30", poster: "/mastermind-testimonial-poster.jpg", video: "/mastermind-testimonial-30s.mp4", captions: "/mastermind-testimonial-30s.vtt" },
-  { title: "The conversation beyond the sessions", role: "Independent operator", location: "International", duration: "01:42", poster: "/media-hotel-terrace.jpg" },
 ];
 
 export default function Home() {
@@ -350,9 +349,9 @@ export default function Home() {
             {([{"id":"all","label":"All","count":testimonials.length + videoTestimonials.length},{"id":"video","label":"Video reviews","count":videoTestimonials.length},{"id":"text","label":"Text reviews","count":testimonials.length}] as const).map((tab) => <button type="button" key={tab.id} aria-pressed={activeReviewType === tab.id} onClick={() => setActiveReviewType(tab.id)}><span>{tab.label}</span><i>{String(tab.count).padStart(2, "0")}</i></button>)}
           </div>
           <div className="testimonialGrid" data-review-view={activeReviewType} aria-live="polite">
-            {(activeReviewType === "all" ? videoTestimonials.slice(0, 1) : activeReviewType === "video" ? videoTestimonials : []).map((review) => <VideoReviewCard review={review} key={review.title} />)}
-            {(activeReviewType === "all" ? testimonials.slice(0, 1) : activeReviewType === "text" ? testimonials : []).map((testimonial, index) => <figure className="testimonialCard" key={testimonial.role}>
-              <div className="testimonialMeta"><span>{String(index + 1).padStart(2, "0")} / {activeReviewType === "all" ? "01" : "03"}</span><i>“</i></div>
+            {(activeReviewType === "all" || activeReviewType === "video" ? videoTestimonials : []).map((review) => <VideoReviewCard review={review} key={review.title} />)}
+            {(activeReviewType === "all" || activeReviewType === "text" ? testimonials : []).map((testimonial, index) => <figure className="testimonialCard" key={testimonial.role}>
+              <div className="testimonialMeta"><span>{String(index + 1).padStart(2, "0")} / 03</span><i>“</i></div>
               <blockquote>{testimonial.quote}</blockquote>
               <figcaption><span className="testimonialMonogram">{testimonial.initials}</span><span><b>{testimonial.role}</b><small>{testimonial.location}</small></span></figcaption>
             </figure>)}
