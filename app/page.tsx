@@ -143,6 +143,10 @@ export default function Home() {
         </section>
 
         <section className="eventBrief" aria-labelledby="event-brief-title">
+          <video className="eventBriefVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+            <source src={assetPath("/mastermind-2026-programme-background.mp4")} type="video/mp4" />
+          </video>
+          <div className="eventBriefVideoShade" aria-hidden="true" />
           <header className="eventBriefHeading">
             <div>
               <div className="sectionLabel"><span>2026</span> The invitation-only week</div>
@@ -163,9 +167,6 @@ export default function Home() {
           </div>
 
           <div className="eventBriefProgramme">
-            <video className="eventBriefProgrammeVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-              <source src={assetPath("/mastermind-2026-programme-background.mp4")} type="video/mp4" />
-            </video>
             <div className="eventBriefProgrammeShade" aria-hidden="true" />
             <article className="eventBriefFormat">
               <span>Inside the room</span>
