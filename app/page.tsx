@@ -258,6 +258,10 @@ export default function Home() {
         </section>
 
         <section className="host">
+          <video className="hostVideo" autoPlay muted loop playsInline preload="metadata" poster={assetPath("/mastermind-pamukkale-walk-poster.jpg")} aria-hidden="true">
+            <source src={assetPath("/mastermind-pamukkale-walk-background.mp4")} type="video/mp4" />
+          </video>
+          <div className="hostVideoShade" aria-hidden="true" />
           <div className="hostLine" aria-hidden="true" />
           <div className="hostKicker">Your host</div>
           <h2>Koray Tuğberk<br /><em>Gübür</em></h2>
