@@ -30,10 +30,27 @@ function PrincipleGlyph({ type }: { type: string }) {
 }
 
 const coreDays = [
-  ["01", "Mastermind", "SEO & AI", "Search systems, information gain, and how AI changes the work without replacing the thinking."],
-  ["02", "Mastermind", "Automation & business", "Design the operating systems, decision loops, and commercial habits that make good work compound."],
-  ["03", "Mastermind", "Investment & opportunity", "Pressure-test the opportunities, allocation questions, and durable advantages worth building toward."],
-  ["04", "Conference", "The whole system", "One shared conference day for stronger connections, sharper ideas, and perspectives beyond the table."],
+  ["01", "Mastermind", "SEO & reputation", "Build search systems, authority, and a reputation that reinforce one another."],
+  ["02", "Mastermind", "Automation & business", "Design operating systems and commercial habits that make good work compound."],
+  ["03", "Mastermind", "Management & scaling", "Work through the leadership, accountability, and scaling decisions behind durable growth."],
+  ["04", "Mastermind", "Opportunity room", "Pressure-test partnerships, talent, investments, and the opportunities worth pursuing together."],
+  ["05", "Conference", "The whole system", "One full conference day for stronger connections, sharper ideas, and perspectives beyond the table."],
+];
+
+const eventExperiences = [
+  "Massages",
+  "Jet skis",
+  "Water sports",
+  "Parasailing",
+  "Ephesus visit",
+  "Pamukkale visit",
+  "Horse safari",
+  "ATV safari",
+  "Water battle",
+  "Mountain safari",
+  "Scuba diving",
+  "Opening night party",
+  "Closing night party",
 ];
 
 const experiences = [
@@ -50,11 +67,11 @@ const experiences = [
 const faqHighlights = [
   { label: "Invitation", question: "Is the mastermind invite-only?", answer: "Yes. The room is deliberately small, and every application is reviewed for fit. Tell us what you are building and the real question you want to work on; we will reply personally." },
   { label: "Invitation", question: "Can I bring a colleague or partner?", answer: "Each place is reviewed individually because the strength of the room comes from the people in it. Mention your colleague in the application and explain the work you would bring together." },
-  { label: "Programme", question: "What happens during the seven days?", answer: "The week combines three mastermind days across SEO, AI, automation, business, and investment with one conference day. The wider rhythm leaves room for arrival, recovery, local experiences, and long-table conversation." },
+  { label: "Programme", question: "What happens during the eight days?", answer: "The week combines four mastermind sessions across SEO, automation, business, management, reputation, and scaling with one full conference day and four attendee-led night-time Q&As. The wider rhythm leaves room for hosted experiences, recovery, and long-table conversation." },
   { label: "Programme", question: "Who is the room designed for?", answer: "Experienced operators, founders, SEO leaders, agency owners, investors, and builders working on a real business question. Curiosity matters, but so does having work that can benefit from careful peer challenge." },
-  { label: "Fee", question: "What does the $5,000 place include?", answer: "Your place includes the core mastermind and conference programme, working sessions, and the hosted group moments in the final itinerary. Accommodation, travel, and optional activities are confirmed separately for invited attendees." },
-  { label: "Travel", question: "How should I plan for Kuşadası?", answer: "Most international guests arrive through İzmir Adnan Menderes Airport. Confirmed attendees receive the final venue, transfer, check-in, and timing guidance well before the gathering." },
-  { label: "Travel", question: "Where does the gathering take place?", answer: "The gathering is hosted in Kuşadası, Türkiye. The final hotel and venue details are shared directly with confirmed attendees as part of their arrival guidance." },
+  { label: "Fee", question: "What does the $5,000 place include?", answer: "Everything in the hosted week: accommodation, food, drinks, VIP airport transfers, four masterminds, the conference, safaris, water sports, massages, parties, and the listed group experiences." },
+  { label: "Travel", question: "How should I plan for Kuşadası?", answer: "Most international guests arrive through İzmir Adnan Menderes Airport. We collect every attendee in a VIP vehicle and return them to the airport after the event." },
+  { label: "Travel", question: "Where does the gathering take place?", answer: "The 2026 gathering takes place at Infinity by Yelken Aquapark Hotel, a five-star hotel in Kuşadası, Türkiye, from 25 September to 2 October." },
   { label: "Experiences", question: "Are the coastal activities required?", answer: "No. Boat time, water sports, safaris, and recovery sessions are optional. They sit around the core programme and depend on weather, safety guidance, and local availability." },
   { label: "Experiences", question: "Will activities interrupt the working sessions?", answer: "No. The core programme anchors the week. Optional experiences are arranged around it to create recovery, conversation, and a different rhythm without displacing the work." },
 ];
@@ -118,11 +135,51 @@ export default function Home() {
           <div className="heroCopy">
             <p className="eyebrow">For operators who know search is bigger than rankings</p>
             <h1 id="hero-title">Holistic SEO<br /><em>Mastermind.</em></h1>
-            <p className="heroFocus">Business &amp; investment networking</p>
+            <p className="heroFocus">25 September—2 October 2026 · 60 guests</p>
             <p className="heroText">Holistic SEO Mastermind is a working room for people building durable organic growth—from the site architecture to the authority it earns in the world.</p>
-            <a className="button buttonCoral" href="#apply">Apply for the next room <b>→</b></a>
+            <a className="button buttonCoral" href="#apply">Request your invitation <b>→</b></a>
           </div>
           <div className="heroCaption"><span>Not a conference. Not a course.</span><span>A focused table of builders.</span></div>
+        </section>
+
+        <section className="eventBrief" aria-labelledby="event-brief-title">
+          <header className="eventBriefHeading">
+            <div>
+              <div className="sectionLabel"><span>2026</span> The invitation-only week</div>
+              <h2 id="event-brief-title">One room.<br /><em>Sixty builders.</em><br />Eight days.</h2>
+            </div>
+            <div className="eventBriefDecision">
+              <span className="eventBriefAvailability"><i aria-hidden="true" /> 60% of places are already taken</span>
+              <p>For business owners, operators, and exceptional talent in SEO, automation, management, reputation building, and scaling—people looking for opportunities to network and grow together.</p>
+              <a className="button buttonCoral" href="#apply">Request an invitation <b>→</b></a>
+            </div>
+          </header>
+
+          <div className="eventBriefFacts">
+            <article><span>When</span><strong>25 Sep—2 Oct</strong><small>2026 · eight hosted days</small></article>
+            <article><span>Where</span><strong>Infinity by Yelken</strong><small>Five-star Aquapark Hotel · Kuşadası</small></article>
+            <article><span>The room</span><strong>60 attendees</strong><small>Invitation and reference required</small></article>
+            <article><span>All-inclusive fee</span><strong>$5,000</strong><small>For each new attendee</small></article>
+          </div>
+
+          <div className="eventBriefProgramme">
+            <article className="eventBriefFormat">
+              <span>Inside the room</span>
+              <h3>Four masterminds.<br />One full conference day.<br />Four night-time Q&amp;As.</h3>
+              <p>The mastermind sessions cover automation, business, SEO, management, reputation, and scaling. Evening Q&amp;A topics are chosen from attendee suggestions.</p>
+            </article>
+            <article className="eventBriefIncluded">
+              <span>Everything is included</span>
+              <p>Accommodation, food, drinks, all local transportation, VIP airport collection and return, the masterminds, conference, and every hosted experience.</p>
+              <ul>{eventExperiences.map((experience) => <li key={experience}>{experience}</li>)}</ul>
+            </article>
+          </div>
+
+          <footer className="eventBriefInvite">
+            <span>How to join</span>
+            <p>Ask a past attendee to introduce you, or request an invitation from <strong>Koray Tuğberk Gübür</strong>, <strong>James Dooley</strong>, or <strong>Mads Singers</strong>.</p>
+            <a href="#apply">Start your request <span>↓</span></a>
+          </footer>
         </section>
 
         <section className="nightInterlude" aria-labelledby="night-interlude-title">
@@ -201,7 +258,7 @@ export default function Home() {
         </section>
 
         <section className="programmeOffer" aria-labelledby="programme-title">
-          <div className="offerHeading"><div className="sectionLabel"><span>03</span> The core programme</div><h2 id="programme-title">Three days to <em>work the system.</em><br />One day to widen it.</h2><p>The core learning room moves through SEO, AI, automation, business, and investment—then opens into a dedicated conference day.</p></div>
+          <div className="offerHeading"><div className="sectionLabel"><span>03</span> The core programme</div><h2 id="programme-title">Four masterminds to <em>work the system.</em><br />One full day to widen it.</h2><p>The working room moves through SEO, reputation, automation, business, management, and scaling—then opens into a dedicated conference day.</p></div>
           <div className="coreDays">{coreDays.map(([number, format, title, copy]) => <article key={number}><span>{number}</span><b>{format}</b><h3>{title}</h3><p>{copy}</p></article>)}</div>
           <div className={`experienceBand ${experienceStyles.experienceBand}`} data-engagement={currentExperience.id} style={{ "--experience-background": `url(${assetPath(currentExperience.image)})` } as CSSProperties}>
             {"video" in currentExperience && currentExperience.video ? (
@@ -294,14 +351,15 @@ export default function Home() {
           <div className="applicationCopy">
             <div className="sectionLabel light"><span>06</span> Join the next room</div>
             <h2>Bring the question<br />that matters.</h2>
-            <p>Tell us what you are trying to solve. We will reply if the next mastermind is the right space for your work.</p>
-            <div className="applicationPrice"><span>Core programme access</span><strong>$5,000</strong><small>USD · per invited attendee</small></div>
+            <p>Request an invitation with a reference from a past attendee, or through Koray Tuğberk Gübür, James Dooley, or Mads Singers. Tell us what you are building and what you can add to the room.</p>
+            <div className="applicationPrice"><span>Everything included</span><strong>$5,000</strong><small>USD · per new invited attendee</small></div>
           </div>
           <form className="applyForm" onSubmit={submitApplication}>
             <label>Your name<input required name="name" placeholder="Jane Smith" /></label>
             <label>Work email<input required type="email" name="email" placeholder="jane@company.com" /></label>
             <label>What are you building?<textarea required name="goal" placeholder="Tell us about the search problem you want to work on…" /></label>
-            <button className="button buttonPaper" type="submit">Request a seat <b>→</b></button>
+            <label>Your reference or inviter<input required name="reference" placeholder="Past attendee, Koray, James, or Mads" /></label>
+            <button className="button buttonPaper" type="submit">Request an invitation <b>→</b></button>
             <p className="formNote" aria-live="polite">{submitted ? "Thank you. Your request has been received." : "A considered reply, not an automated funnel."}</p>
           </form>
         </section>
