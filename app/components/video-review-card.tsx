@@ -7,6 +7,7 @@ import styles from "./video-review-card.module.css";
 
 type VideoReview = {
   title: string;
+  quote: string;
   role: string;
   location: string;
   duration: string;
@@ -40,7 +41,8 @@ export default function VideoReviewCard({ review }: { review: VideoReview }) {
       <div className={`videoReviewTop ${styles.overlay}`}><span>Video review</span><i>{review.duration}</i></div>
       <div className={`videoReviewBody ${styles.overlay}`}>
         {review.video ? <button className={styles.playButton} type="button" onClick={play} aria-label={`Play ${review.title}`}>▶</button> : <span className="videoPending" aria-label="Video asset pending">▶</span>}
-        <h3>{review.title}</h3>
+        <h3 className={styles.kicker}>{review.title}</h3>
+        <blockquote className={styles.quote}>“{review.quote}”</blockquote>
         <p>{review.role} · {review.location}</p>
       </div>
     </article>

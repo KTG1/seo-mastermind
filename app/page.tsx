@@ -85,9 +85,9 @@ const testimonials = [
 ];
 
 const videoTestimonials = [
-  { title: "The people make it valuable.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:38", poster: "/mastermind-testimonial-people-values.jpg", video: "/mastermind-testimonial-people-values.mp4" },
-  { title: "Everyone brings value to the table.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:23", poster: "/mastermind-testimonial-everyone-brings-value.jpg", video: "/mastermind-testimonial-everyone-brings-value.mp4", captions: "/mastermind-testimonial-everyone-brings-value.vtt" },
-  { title: "Deeper expertise. Lasting relationships.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:30", poster: "/mastermind-testimonial-poster.jpg", video: "/mastermind-testimonial-30s.mp4", captions: "/mastermind-testimonial-30s.vtt" },
+  { title: "People over presentations", quote: "What I liked most? The people. It was very valuable.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:38", poster: "/mastermind-testimonial-people-values.jpg", video: "/mastermind-testimonial-people-values.mp4" },
+  { title: "Value in every conversation", quote: "Here, everyone has value to bring to the table.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:23", poster: "/mastermind-testimonial-everyone-brings-value.jpg", video: "/mastermind-testimonial-everyone-brings-value.mp4", captions: "/mastermind-testimonial-everyone-brings-value.vtt" },
+  { title: "Depth that stays with you", quote: "You’ll find something much deeper and more thought-provoking here—and you’ll also have a damn good time.", role: "Mastermind attendee", location: "Kuşadası, Türkiye", duration: "00:30", poster: "/mastermind-testimonial-poster.jpg", video: "/mastermind-testimonial-30s.mp4", captions: "/mastermind-testimonial-30s.vtt" },
 ];
 
 export default function Home() {
