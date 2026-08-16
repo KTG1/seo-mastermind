@@ -39,7 +39,7 @@ const mastermindOutcomes = [
   {
     id: "conference",
     label: "Conference & Networking",
-    backdrop: "/agenda-activity-scenes.png",
+    backdrop: "/mastermind-safari-conversations.jpg",
     stages: [
       ["Bring", "A question worth sharing", "The idea, challenge, or perspective that becomes stronger in a wider room.", "conversation"],
       ["Build at the conference", "A trusted circle", "A set of people who understand the work and can sharpen the next move.", "people"],
@@ -153,7 +153,7 @@ export default function ScrollCinema() {
       </div>
       <div className="cinemaShade" aria-hidden="true" />
       <div className="cinemaHud">
-        <span>THREE MASTERMINDS + CONFERENCE / 01—04</span>
+        <span>FOUR FOCUSED PROGRAMME ROOMS / 01—04</span>
         <span className="cinemaRoomStatus" aria-live="polite">
           <span className="cinemaRoomSeo">01 / SEO &amp; CONVERSION</span>
           <span className="cinemaRoomAutomation">02 / AI &amp; AUTOMATION</span>
@@ -169,7 +169,7 @@ export default function ScrollCinema() {
           onClick={() => moveToScene(index)}
           aria-label={`Go to ${track.label}`}
           key={track.id}
-        ><span>{String(index + 1).padStart(2, "0")}</span><i /></button>)}
+        ><b>{track.label}</b><span>{String(index + 1).padStart(2, "0")}</span><i /></button>)}
       </nav>
       <div className="cinemaCopy" aria-live="polite">
         <div className="cinemaLine cinemaSeo"><span>01 / SEO &amp; Conversion</span><h2>Turn intent<br />into <em>action.</em></h2><p>Build search journeys that earn the click, answer the need, and move the business forward.</p></div>
@@ -195,7 +195,7 @@ export default function ScrollCinema() {
           <p className="cinemaOutcomeNote">A real problem becomes a usable operating decision.</p>
         </div>)}
       </div>
-      <div className="cinemaFoot"><span>SCROLL TO MOVE THROUGH THE FOUR ROOMS</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
+      <div className="cinemaFoot"><span>SCROLL OR CHOOSE A ROOM TO EXPLORE</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
     </div>
   </section>;
 }

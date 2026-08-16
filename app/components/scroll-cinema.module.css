@@ -112,7 +112,7 @@
 
 .sceneNavButton {
   display: grid;
-  grid-template-columns: 22px 22px;
+  grid-template-columns: minmax(0, 150px) 22px 22px;
   align-items: center;
   gap: 7px;
   padding: 4px 0;
@@ -123,6 +123,19 @@
   font: 7px var(--mono);
   letter-spacing: 0.08em;
   transition: color 0.3s ease;
+}
+
+.sceneNavButton b {
+  overflow: hidden;
+  font: inherit;
+  font-weight: 400;
+  opacity: 0;
+  text-align: right;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  transform: translateX(8px);
+  transition: opacity 0.3s ease, transform 0.38s cubic-bezier(0.2, 0.75, 0.2, 1);
+  white-space: nowrap;
 }
 
 .sceneNavButton i {
@@ -139,6 +152,12 @@
 .sceneNavButton:focus-visible {
   color: #fff9ea;
   outline: none;
+}
+
+.sceneNavButton:hover b,
+.sceneNavButton:focus-visible b {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .root[data-scene-index="1"] .sceneNavButton[data-room="1"],
