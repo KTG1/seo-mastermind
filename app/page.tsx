@@ -130,6 +130,9 @@ export default function Home() {
               sizes="100vw"
             />
           </div>
+          <video className="heroVideo" autoPlay muted loop playsInline preload="metadata" poster={assetPath("/agenda-coast-hero.png")} aria-hidden="true">
+            <source src={assetPath("/mastermind-2026-programme-background.mp4")} type="video/mp4" />
+          </video>
           <div className="heroShade" aria-hidden="true" />
           <div className="heroTopline"><span>Hosted by Koray Tuğberk Gübür</span><span>Kuşadası, Türkiye</span></div>
           <div className="heroCopy">
@@ -143,10 +146,6 @@ export default function Home() {
         </section>
 
         <section className="eventBrief" aria-labelledby="event-brief-title">
-          <video className="eventBriefVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src={assetPath("/mastermind-2026-programme-background.mp4")} type="video/mp4" />
-          </video>
-          <div className="eventBriefVideoShade" aria-hidden="true" />
           <header className="eventBriefHeading">
             <div>
               <div className="sectionLabel"><span>2026</span> The invitation-only week</div>

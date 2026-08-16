@@ -11,9 +11,10 @@ a{color:inherit}
 .wordmark{display:flex;align-items:center;gap:10px;font:10px/1.15 var(--mono);letter-spacing:.11em;text-decoration:none}
 .mark,.brandMark{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;background:linear-gradient(135deg,var(--coral),var(--solar));color:var(--ink);font:italic 17px/1 var(--serif);letter-spacing:-.1em;box-shadow:0 3px 0 rgba(39,76,59,.16)}
 .brandMark svg{display:block;width:100%;height:100%}
-.hero{min-height:calc(100vh - 76px);min-height:680px;position:relative;color:var(--sand);overflow:hidden;isolation:isolate;padding:30px clamp(20px,4.4vw,72px)}
-.heroImage,.heroShade{position:absolute;inset:0;z-index:-2}
+.hero{min-height:calc(100vh - 76px);min-height:680px;position:relative;color:var(--sand);overflow:hidden;isolation:isolate;padding:30px clamp(20px,4.4vw,72px);background:#16352d}
+.heroImage,.heroVideo,.heroShade{position:absolute;inset:0;z-index:-2}
 .heroImage img{object-fit:cover;object-position:center 44%;filter:saturate(.78) contrast(1.07)}
+.heroVideo{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.82) contrast(1.08);transform:scale(1.015)}
 .heroShade{z-index:-1;background:linear-gradient(90deg,rgba(9,24,21,.86) 0%,rgba(9,24,21,.61) 38%,rgba(9,24,21,.1) 76%),linear-gradient(0deg,rgba(9,24,21,.72),transparent 42%)}
 .heroTopline,.heroCaption{display:flex;justify-content:space-between;font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase}
 .heroTopline{padding-bottom:16px;border-bottom:1px solid rgba(242,238,229,.42)}
@@ -31,8 +32,6 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .buttonCoral{background:var(--coral);color:var(--night)}
 .heroCaption{position:absolute;left:clamp(20px,4.4vw,72px);right:clamp(20px,4.4vw,72px);bottom:24px;padding-top:15px;border-top:1px solid rgba(242,238,229,.42)}
 .eventBrief{position:relative;isolation:isolate;padding:clamp(82px,9vw,138px) clamp(20px,7vw,112px) clamp(72px,8vw,120px);overflow:hidden;background:var(--sky);color:var(--ink)}
-.eventBriefVideo{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.92) contrast(1.05);transform:scale(1.015)}
-.eventBriefVideoShade{position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(255,241,199,.75) 0%,rgba(255,241,199,.68) 56%,rgba(255,241,199,.54) 100%)}
 .eventBriefHeading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:8vw;align-items:end;margin-bottom:clamp(58px,7vw,98px)}
 .eventBriefHeading h2{max-width:850px;margin:42px 0 0;font:400 clamp(58px,6.6vw,106px)/.82 var(--display);letter-spacing:-.078em}
 .eventBriefHeading h2 em{color:var(--coral);font-style:normal}
@@ -65,7 +64,7 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .eventBriefInvite>a{display:flex;align-items:center;gap:22px;padding-bottom:8px;border-bottom:1px solid rgba(39,76,59,.45);font:9px var(--mono);letter-spacing:.05em;text-decoration:none;text-transform:uppercase}
 .eventBriefInvite>a span{color:var(--coral);font-size:17px}
 @keyframes availabilityPulse{50%{box-shadow:0 0 0 9px rgba(255,107,94,0)}}
-@media(prefers-reduced-motion:reduce){.eventBriefAvailability i{animation:none}.eventBriefVideo{display:none}}
+@media(prefers-reduced-motion:reduce){.eventBriefAvailability i{animation:none}.heroVideo{display:none}}
 .nightInterlude{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);min-height:780px;background:#24152f;color:var(--paper)}
 .nightInterludeCopy{display:flex;flex-direction:column;justify-content:center;padding:clamp(70px,9vw,145px)}
 .nightInterludeCopy .sectionLabel{color:#f2c4ef}.nightInterludeCopy .sectionLabel span{color:var(--solar)}
@@ -273,7 +272,7 @@ footer{display:flex;align-items:center;justify-content:space-between;padding:26p
 .footerBrand .mark,.footerBrand .brandMark{width:20px;height:20px;flex-basis:20px;font-size:14px}
 @media(max-width:760px){.siteHeader{height:66px}
 .hero{min-height:690px;padding:22px 20px}
-.heroImage img{object-position:60% center}
+.heroImage img,.heroVideo{object-position:60% center}
 .heroShade{background:linear-gradient(90deg,rgba(9,24,21,.82),rgba(9,24,21,.27)),linear-gradient(0deg,rgba(9,24,21,.74),transparent 44%)}
 .heroTopline{font-size:8px}
 .heroCopy{padding-top:105px}
