@@ -360,6 +360,10 @@ export default function Home() {
         </section>
 
         <section className="application" id="apply">
+          <video className="applicationVideo" autoPlay muted loop playsInline preload="metadata" poster={assetPath("/mastermind-runway-party-poster.jpg")} aria-hidden="true">
+            <source src={assetPath("/mastermind-runway-party-background.mp4")} type="video/mp4" />
+          </video>
+          <div className="applicationVideoShade" aria-hidden="true" />
           <div className="applicationCopy">
             <div className="sectionLabel light"><span>06</span> Join the next room</div>
             <h2>Bring the question<br />that matters.</h2>
