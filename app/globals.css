@@ -230,24 +230,25 @@ h1 em,h2 em{color:var(--coral);font-style:normal}
 .videoReviewCard:hover .videoReviewBody p{color:var(--solar)}
 .testimonialNote{margin:49px 0 0;color:#7A6D52;font:8px/1.5 var(--mono);letter-spacing:.06em;text-align:right;text-transform:uppercase}
 .testimonialArchive{display:flex;align-items:center;justify-content:space-between;max-width:330px;margin:25px 0 0 auto;padding:13px 0;border-top:1px solid rgba(39,76,59,.35);border-bottom:1px solid rgba(39,76,59,.35);font:9px var(--mono);letter-spacing:.05em;text-decoration:none;text-transform:uppercase}.testimonialArchive span{color:var(--coral);font-size:16px}
-.application{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 1fr;gap:10vw;padding:104px clamp(20px,9vw,150px);overflow:hidden;background:var(--coral);color:var(--night)}
+.application{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 1fr;gap:10vw;padding:104px clamp(20px,9vw,150px);overflow:hidden;background:var(--night);color:var(--sand)}
 .applicationVideo{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:saturate(.82) contrast(1.08);transform:scale(1.02)}
-.applicationVideoShade{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(255,107,94,.91) 0%,rgba(255,107,94,.84) 46%,rgba(255,107,94,.76) 100%),linear-gradient(0deg,rgba(255,184,131,.2),transparent 58%)}
+.applicationVideoShade{position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 70% 48%,rgba(98,82,255,.18),transparent 30%),linear-gradient(90deg,rgba(25,10,23,.93) 0%,rgba(25,10,23,.78) 48%,rgba(25,10,23,.58) 100%),linear-gradient(0deg,rgba(14,6,17,.88),transparent 62%)}
+.application .sectionLabel.light{color:#FFB4A8}.application .sectionLabel.light span{color:var(--solar)}
 .sectionLabel.light{color:#7A3049}
 .sectionLabel.light span{color:var(--sand)}
 .application h2{font:400 clamp(50px,5.5vw,90px)/.86 var(--serif);letter-spacing:-.07em;color:var(--sand);margin:30px 0}
 .applicationCopy>p{max-width:350px;font-size:15px;line-height:1.5}
-.applicationPrice{display:grid;gap:5px;margin-top:42px;padding-top:18px;border-top:1px solid rgba(36,17,13,.45);max-width:350px}
-.applicationPrice span,.applicationPrice small{font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#7A3049}
+.applicationPrice{display:grid;gap:5px;margin-top:42px;padding-top:18px;border-top:1px solid rgba(255,249,234,.38);max-width:350px}
+.applicationPrice span,.applicationPrice small{font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#FFB4A8}
 .applicationPrice strong{font:400 clamp(55px,5.4vw,82px)/.8 var(--serif);letter-spacing:-.075em;color:var(--sand)}
 .applyForm{padding-top:4px}
-.applyForm label{display:block;color:#7A3049;font:10px var(--mono);letter-spacing:.04em;margin-bottom:22px}
-.applyForm input,.applyForm textarea{width:100%;display:block;resize:vertical;outline:none;background:transparent;border:0;border-bottom:1px solid rgba(36,17,13,.52);padding:10px 0 9px;margin-top:6px;border-radius:0;color:var(--night);font:15px var(--sans)}
+.applyForm label{display:block;color:#FFB4A8;font:10px var(--mono);letter-spacing:.04em;margin-bottom:22px}
+.applyForm input,.applyForm textarea{width:100%;display:block;resize:vertical;outline:none;background:transparent;border:0;border-bottom:1px solid rgba(255,249,234,.5);padding:10px 0 9px;margin-top:6px;border-radius:0;color:var(--sand);font:15px var(--sans)}
 .applyForm textarea{height:79px}
 .applyForm input:focus,.applyForm textarea:focus{border-color:var(--sand)}
-.applyForm ::placeholder{color:rgba(84,37,28,.62)}
+.applyForm ::placeholder{color:rgba(255,249,234,.56)}
 .buttonPaper{background:var(--sand);color:var(--night)}
-.formNote{font:10px var(--mono);color:#7A3049;margin:14px 0 0}
+.formNote{font:10px var(--mono);color:#FFB4A8;margin:14px 0 0}
 .homeFaq{padding:108px clamp(20px,9vw,150px) 120px;background:#163d35;color:var(--paper)}
 .homeFaqHeading{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.6fr);gap:8vw;align-items:end;padding-bottom:58px}
 .homeFaqHeading h2{max-width:780px;margin:45px 0 0;font:400 clamp(51px,6.1vw,96px)/.87 var(--display);letter-spacing:-.075em}
