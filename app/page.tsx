@@ -163,6 +163,10 @@ export default function Home() {
           </div>
 
           <div className="eventBriefProgramme">
+            <video className="eventBriefProgrammeVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+              <source src={assetPath("/mastermind-2026-programme-background.mp4")} type="video/mp4" />
+            </video>
+            <div className="eventBriefProgrammeShade" aria-hidden="true" />
             <article className="eventBriefFormat">
               <span>Inside the room</span>
               <h3>Four masterminds.<br />One full conference day.<br />Four night-time Q&amp;As.</h3>
