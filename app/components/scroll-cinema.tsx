@@ -10,40 +10,44 @@ const mastermindOutcomes = [
     id: "seo",
     label: "SEO & Conversion",
     backdrop: "/media-agenda-circle.jpg",
+    note: "Leave with fewer guesses and a decision you can use on Monday.",
     stages: [
-      ["Bring", "Scattered demand signals", "The real queries, pages, and friction in your way.", "search"],
-      ["Build at the table", "An intent-to-action map", "A shared model of the journey your site should create.", "path"],
-      ["Leave with", "A conversion-ready path", "Clear priorities your team can put into practice.", "target"],
+      ["Bring", "A real growth bottleneck", "The site, market, or decision keeping you stuck.", "search"],
+      ["Work through", "A room-tested direction", "Operators challenge the assumptions and sharpen the move.", "path"],
+      ["Take home", "Your next three moves", "A focused plan you can put to work immediately.", "target"],
     ],
   },
   {
     id: "automation",
     label: "AI & Automation",
     backdrop: "/media-hotel-terrace.jpg",
+    note: "Build leverage without handing away the judgment that makes you valuable.",
     stages: [
-      ["Bring", "Manual loops & handoffs", "The work that is draining time or slipping through gaps.", "loop"],
-      ["Build at the table", "A guarded workflow", "The trigger, review point, and decision logic it needs.", "shield"],
-      ["Leave with", "An automation you trust", "A workflow that makes capacity without removing judgment.", "review"],
+      ["Bring", "Work that steals your time", "The recurring task, handoff, or bottleneck slowing growth.", "loop"],
+      ["Design together", "A system with safeguards", "The workflow, review point, and ownership it needs.", "shield"],
+      ["Take home", "Leverage you can trust", "A practical system that creates capacity without losing judgment.", "review"],
     ],
   },
   {
     id: "investment",
     label: "Business & Investment",
-    backdrop: "/holistic-seo-mastermind-group.png",
+    backdrop: "/mastermind-cabana-conversation.jpg",
+    note: "The right room can turn a possibility into a serious next conversation.",
     stages: [
-      ["Bring", "A crowded opportunity set", "The bets competing for your attention and capital.", "compass"],
-      ["Build at the table", "A tested investment thesis", "The advantage, downside, and evidence behind the choice.", "scale"],
-      ["Leave with", "A focused allocation plan", "The next commitments that deserve conviction and follow-through.", "growth"],
+      ["Bring", "What you are building", "The opportunity, ambition, or constraint you want to move forward.", "compass"],
+      ["Find in the room", "The right counterpart", "Talent, capital, distribution, or experience that fits the moment.", "scale"],
+      ["Leave with", "A serious next step", "A partnership, introduction, or decision worth following through.", "growth"],
     ],
   },
   {
     id: "conference",
     label: "Conference & Networking",
     backdrop: "/mastermind-safari-conversations.jpg",
+    note: "Meet people you will still call when the event is over.",
     stages: [
-      ["Bring", "A question worth sharing", "The idea, challenge, or perspective that becomes stronger in a wider room.", "conversation"],
-      ["Build at the conference", "A trusted circle", "A set of people who understand the work and can sharpen the next move.", "people"],
-      ["Leave with", "Working alliances", "New conversations and follow-ups with real momentum behind them.", "connection"],
+      ["Bring", "A question worth asking", "The challenge or idea that deserves more than a quick answer.", "conversation"],
+      ["Meet here", "People who understand it", "Founders and operators who can challenge, connect, and contribute.", "people"],
+      ["Leave with", "Relationships with momentum", "Conversations you genuinely want to continue after Kuşadası.", "connection"],
     ],
   },
 ] as const;
@@ -153,7 +157,7 @@ export default function ScrollCinema() {
       </div>
       <div className="cinemaShade" aria-hidden="true" />
       <div className="cinemaHud">
-        <span>FOUR FOCUSED PROGRAMME ROOMS / 01—04</span>
+        <span>FOUR ROOMS BUILT AROUND REAL DECISIONS / 01—04</span>
         <span className="cinemaRoomStatus" aria-live="polite">
           <span className="cinemaRoomSeo">01 / SEO &amp; CONVERSION</span>
           <span className="cinemaRoomAutomation">02 / AI &amp; AUTOMATION</span>
@@ -172,10 +176,10 @@ export default function ScrollCinema() {
         ><b>{track.label}</b><span>{String(index + 1).padStart(2, "0")}</span><i /></button>)}
       </nav>
       <div className="cinemaCopy" aria-live="polite">
-        <div className="cinemaLine cinemaSeo"><span>01 / SEO &amp; Conversion</span><h2>Turn intent<br />into <em>action.</em></h2><p>Build search journeys that earn the click, answer the need, and move the business forward.</p></div>
-        <div className="cinemaLine cinemaAutomation"><span>02 / AI &amp; Automation</span><h2>Scale the work<br />without losing <em>thinking.</em></h2><p>Design useful systems, sharper workflows, and room for the judgment that still matters.</p></div>
-        <div className="cinemaLine cinemaInvestment"><span>03 / Business &amp; Investment</span><h2>Make the system<br />earn its <em>future.</em></h2><p>Pressure-test where time, capital, and conviction can create a durable advantage.</p></div>
-        <div className="cinemaLine cinemaConference"><span>04 / Conference &amp; Networking</span><h2>Make the right<br /><em>connections.</em></h2><p>Bring the work into a wider room, with people who can extend the conversation beyond the event.</p></div>
+        <div className="cinemaLine cinemaSeo"><span>01 / SEO &amp; Conversion</span><h2>Bring the problem.<br />Leave with <em>a plan.</em></h2><p>Put your real growth question in front of people who know how to pressure-test it.</p></div>
+        <div className="cinemaLine cinemaAutomation"><span>02 / AI &amp; Automation</span><h2>Turn lost time<br />into <em>leverage.</em></h2><p>Build practical systems with operators who have scaled the work before.</p></div>
+        <div className="cinemaLine cinemaInvestment"><span>03 / Business &amp; Investment</span><h2>Find the opportunity<br />you came <em>for.</em></h2><p>Meet people with the talent, capital, reach, or experience your next move needs.</p></div>
+        <div className="cinemaLine cinemaConference"><span>04 / Conference &amp; Networking</span><h2>Meet people<br />worth <em>knowing.</em></h2><p>Start conversations in Kuşadası that continue long after the event ends.</p></div>
       </div>
       <div className="cinemaWorld" aria-hidden="true">
         <div className="cinemaHalo" />
@@ -192,7 +196,7 @@ export default function ScrollCinema() {
             <div className="cinemaConnector cinemaConnector1"><i>→</i></div>
             <div className="cinemaConnector cinemaConnector2"><i>→</i></div>
           </div>
-          <p className="cinemaOutcomeNote">A real problem becomes a usable operating decision.</p>
+          <p className="cinemaOutcomeNote">{track.note}</p>
         </div>)}
       </div>
       <div className="cinemaFoot"><span>SCROLL OR CHOOSE A ROOM TO EXPLORE</span><i>↓</i><span>KUŞADASI / TÜRKİYE</span></div>
