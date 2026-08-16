@@ -222,6 +222,10 @@ export default function Home() {
         </section>
 
         <section className="introduction" id="approach">
+          <video className="introductionVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+            <source src={assetPath("/mastermind-champagne-pop-background.mp4")} type="video/mp4" />
+          </video>
+          <div className="introductionShade" aria-hidden="true" />
           <div className="sectionLabel"><span>01</span> A different way to work on search</div>
           <div className="introMain">
             <h2>SEO becomes valuable when it is understood as a <em>living business system.</em></h2>
