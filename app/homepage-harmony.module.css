@@ -1,0 +1,53 @@
+.home {
+  --home-gutter: clamp(20px, 5vw, 80px);
+  --home-space: clamp(64px, 7.5vw, 112px);
+  --home-dark: #102d27;
+  --home-light: #fff9ea;
+  --home-muted: #f4eddb;
+  --home-heading: clamp(42px, 5.2vw, 80px);
+  --home-tracking: -.045em;
+}
+.home :global(section[id]), .home :global(h2[id]) { scroll-margin-top: 32px; }
+.home :global(h2) { text-wrap: balance; }
+.home :global(p) { text-wrap: pretty; }
+.home :global(.eventBrief), .home :global(.introduction), .home :global(.principles),
+.home :global(.host), .home :global(.programmeOffer), .home :global(.testimonials),
+.home :global(.homeFaq), .home :global(.collectivePortrait) {
+  padding-left: var(--home-gutter); padding-right: var(--home-gutter);
+  padding-top: var(--home-space); padding-bottom: var(--home-space);
+}
+.home :global(.eventBrief), .home :global(.testimonials) { background: var(--home-muted); }
+.home :global(.programmeOffer) { background: var(--home-light); }
+.home :global(.nightInterlude), .home :global(.collectivePortrait), .home :global(.homeFaq) { background: var(--home-dark); }
+.home :global(.eventBriefHeading h2), .home :global(.nightInterludeCopy h2),
+.home :global(.programmeOffer h2), .home :global(.testimonialHeading h2),
+.home :global(.collectivePortraitHeading h2), .home :global(.homeFaqIntro h2) {
+  font-size: var(--home-heading); line-height: 1.02; letter-spacing: var(--home-tracking);
+}
+.home :global(.eventBriefHeading) { gap: clamp(32px, 6vw, 88px); margin-bottom: 48px; }
+.home :global(.eventBriefHeading h2) { margin-top: 26px; }
+.home :global(.eventBriefFacts article) { min-height: 180px; }
+.home :global(.eventBriefFacts article:nth-child(2)) { background: #e9eee2; }
+.home :global(.eventBriefFacts article:nth-child(4)) { background: #274c3b; color: #fff9ea; }
+.home :global(.eventBriefAvailability i) { animation: none; }
+.home :global(.nightInterludeCopy) { padding: var(--home-space) var(--home-gutter) 40px; }
+.home :global(.nightInterludeCopy h2) { margin-top: 44px; }
+.home :global(.nightInterlude) { min-height: 680px; }
+.home :global(.sectionLabel) { line-height: 1.6; }
+.home :global(.sectionLabel.light) { color: #dce7de; }
+.home :global(.gatheringPhoto) { min-height: clamp(580px, 58vw, 820px); padding: var(--home-gutter); }
+.home :global(.gatheringPhoto h2) { line-height: 1.03; }
+.home :global(.host h2) { font-size: clamp(58px, 7.4vw, 112px); line-height: .98; letter-spacing: -.055em; }
+.home :global(.roadMomentCopy h2) { font-size: clamp(46px, 6.3vw, 94px); line-height: 1.01; letter-spacing: -.045em; }
+.home :global(.testimonialHeading), .home :global(.collectivePortraitHeading) { margin-bottom: 40px; }
+.home :global(.collectivePortrait) { padding-bottom: 0; }
+.home :global(.button), .home :global(.reviewTabs button), .home :global(.homeFaqFilters button) { min-height: 44px; }
+@media(max-width:760px) {
+  .home :global(.nightInterlude) { min-height: 0; }
+  .home :global(.nightInterludeCopy) { min-height: 0; padding: 48px var(--home-gutter); }
+  .home :global(.nightInterludeNote) { margin-top: 40px; }
+  .home :global(.gatheringPhoto) { min-height: 620px; }
+  .home :global(.eventBriefFacts article) { min-height: 156px; }
+  .home :global(.host>p) { margin-left: 0; }
+}
+.home :global(.eventBrief)>p { margin:20px 0 28px; max-width:940px; font-size:14px; line-height:1.7; }

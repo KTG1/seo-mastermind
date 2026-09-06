@@ -175,3 +175,7 @@
     transition: none;
   }
 }
+
+/* Shared homepage rhythm; component defaults remain available elsewhere. */
+.section { background: var(--home-dark, #102d27); padding-left: var(--home-gutter, 5vw); padding-right: var(--home-gutter, 5vw); padding-top: var(--home-space, 88px); padding-bottom: var(--home-space, 88px); }
+ .heading h2 { font-size:var(--home-heading, 64px); line-height:1.02; letter-spacing:var(--home-tracking, -.045em); }

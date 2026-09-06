@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { type CSSProperties, FormEvent, useEffect, useState } from "react";
+import harmony from "./homepage-harmony.module.css";
 import experienceStyles from "./homepage-experience.module.css";
 import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
@@ -127,7 +128,7 @@ export default function Home() {
       />
       <SiteHeader className="siteHeader" ctaHref="#apply" />
 
-      <main id="top">
+      <main id="top" className={harmony.home}>
         <section className="hero" aria-labelledby="hero-title">
           <div className="heroImage">
             <Image
