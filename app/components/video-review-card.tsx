@@ -6,6 +6,7 @@ import { assetPath } from "./site-path";
 import styles from "./video-review-card.module.css";
 
 type VideoReview = {
+  id?: string;
   title: string;
   quote: string;
   role: string;
@@ -27,7 +28,7 @@ export default function VideoReviewCard({ review }: { review: VideoReview }) {
   }
 
   return (
-    <article className={`videoReviewCard ${review.video ? styles.card : ""} ${playing ? styles.playing : ""}`} onClick={!playing && review.video ? play : undefined}>
+    <article id={review.id} className={`videoReviewCard ${review.video ? styles.card : ""} ${playing ? styles.playing : ""}`} onClick={!playing && review.video ? play : undefined}>
       {review.video ? (
         <video ref={videoRef} className={styles.media} poster={assetPath(review.poster)} controls={playing} playsInline preload="metadata" onEnded={() => setPlaying(false)}>
           <source src={assetPath(review.video)} type="video/mp4" />

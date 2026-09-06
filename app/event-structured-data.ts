@@ -1,3 +1,5 @@
+import { videoTestimonials } from "./video-testimonials";
+
 // Invitation-only events are not eligible for Google's event rich results.
 // Keep the markup factual; do not imply public ticket availability.
 // Sources: /agency/, /founder/, /attendees/ and each linked attendee biography.
@@ -91,6 +93,28 @@ export const eventAttendees = [
   ...person,
 }));
 
+// These are past-attendee reflections featured on the 2026 event page,
+// not footage recorded at the upcoming event. Decorative background loops are omitted.
+export const eventVideos = videoTestimonials.map((review) => ({
+  "@type": "VideoObject",
+  "@id": `${site}/#${review.id}`,
+  name: review.title,
+  description: `A past Holistic SEO Mastermind attendee reflection featured on the 2026 event page: “${review.quote}”`,
+  thumbnailUrl: [`${site}${review.poster}`],
+  uploadDate: review.uploadDate,
+  duration: review.durationISO,
+  contentUrl: `${site}${review.video}`,
+  url: `${site}/#${review.id}`,
+  encodingFormat: "video/mp4",
+  width: review.width,
+  height: review.height,
+  inLanguage: "en",
+  isAccessibleForFree: true,
+  publisher: { "@id": organizerId },
+  about: { "@id": `${site}/#event-2026` },
+  isPartOf: { "@id": `${site}/#webpage` },
+}));
+
 export const eventStructuredData = {
   "@context": "https://schema.org",
   "@type": "Event",
@@ -119,6 +143,7 @@ export const eventStructuredData = {
     inLanguage: "en",
     publisher: { "@id": organizerId },
     mainEntity: { "@id": `${site}/#event-2026` },
+    video: eventVideos.map((video) => ({ "@id": video["@id"] })),
   },
   location: {
     "@type": "Place",
@@ -136,6 +161,7 @@ export const eventStructuredData = {
   organizer: eventOrganizer,
   performer: eventFounder,
   attendee: eventAttendees,
+  subjectOf: eventVideos,
   // This describes the advertised fee, not unrestricted public ticket sales.
   // No inventory or sales dates are asserted without evidence.
   offers: {
