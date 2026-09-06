@@ -30,6 +30,16 @@ export default function NightlyQA() {
           </div>
         </div>
       </div>
+      <section className={styles.panelSession} id="panel-qa" aria-labelledby="panel-qa-title">
+        <header className={styles.panelHeading}>
+          <div><span className={styles.eyebrow}>Another Q&amp;A moment</span><h2 id="panel-qa-title">Questions from the room.<br />Perspectives from the panel.</h2></div>
+          <p>The discussion goes both ways. Bring your question into the room, hear different perspectives, and follow the answer further.</p>
+        </header>
+        <div className={styles.panelPhotos}>
+          <figure><Image src={assetPath("/mastermind-panel-qa.webp")} alt="Panel members discussing questions in front of the seated mastermind audience" fill unoptimized sizes="(max-width: 760px) 100vw, 58vw" /><figcaption>The panel · a previous mastermind Q&amp;A</figcaption></figure>
+          <figure><Image src={assetPath("/mastermind-audience-qa.webp")} alt="Mastermind attendees listening and participating in a Q&A from rows of conference tables" fill unoptimized sizes="(max-width: 760px) 100vw, 38vw" /><figcaption>The audience · listening, asking, contributing</figcaption></figure>
+        </div>
+      </section>
     </section>
   );
 }
