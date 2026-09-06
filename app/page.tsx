@@ -11,7 +11,7 @@ import ScrollCinema from "./components/scroll-cinema";
 import HeritageMoment from "./components/heritage-moment";
 import VideoReviewCard from "./components/video-review-card";
 
-import { eventStructuredData, eventAttendees, eventFounder, eventOrganizer } from "./event-structured-data";
+import { eventStructuredData, eventAttendees, eventFounder, eventOrganizer, founderProfiles } from "./event-structured-data";
 
 const principles = [
   { id: "seo", label: "SEO", title: "SEO & topical authority", summary: "Shape the entities, information gain, site architecture, and conversion paths that make a search presence useful and understood.", outcome: "A clearer topical map and sharper priority pages.", glyph: "seo" },
@@ -182,9 +182,12 @@ export default function Home() {
               <section>
                 <h3><Link href="/agency/">{eventOrganizer.name}</Link></h3>
                 <p>{eventOrganizer.description}</p>
+                <p>Organizer office: {eventOrganizer.address.streetAddress}, {eventOrganizer.address.postalCode} {eventOrganizer.address.addressLocality}, {eventOrganizer.address.addressRegion}, Türkiye.</p>
+                <p><a href={`mailto:${eventOrganizer.email}`}>{eventOrganizer.email}</a><br />Agency technical support: <a href={`tel:${eventOrganizer.contactPoint.telephone.replace(/\s/g, "")}`}>{eventOrganizer.contactPoint.telephone}</a>. <a href={eventOrganizer.url}>Official agency website</a> · <a href={eventOrganizer.logo.url}>Agency logo</a></p>
                 <h3><Link href="/founder/">{eventFounder.name}</Link> · Founder &amp; host</h3>
                 <p>{eventFounder.description}</p>
                 <p>Research and conversations: <a href={eventFounder.sameAs[0]}>Holistic SEO author archive</a>, <a href={eventFounder.subjectOf[0].url}>Authority Hacker interview</a>, and <a href={eventFounder.subjectOf[1].url}>Lumar interview</a>.</p>
+                <p>Koray’s public profiles: {founderProfiles.map((profile, index) => <span key={profile.url}>{index > 0 ? " · " : ""}<a href={profile.url}>{profile.name}</a></span>)}</p>
               </section>
               <section>
                 <h3>From the 2026 attendee directory</h3>

@@ -5,6 +5,18 @@
 const site = "https://seoconference.digital";
 const organizerId = "https://www.holisticseo.digital/#organization";
 
+// Identity links published by the organizer's official homepage JSON-LD.
+export const founderProfiles = [
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/koray-tugberk-gubur/" },
+  { name: "X / Twitter", url: "https://twitter.com/KorayGubur" },
+  { name: "YouTube", url: "https://www.youtube.com/@TopicalAuthority" },
+  { name: "Medium", url: "https://medium.com/@ktgubur" },
+  { name: "Quora", url: "https://www.quora.com/profile/Koray-Tuberk-Gbr" },
+  { name: "Facebook", url: "https://www.facebook.com/koraytugberk.gubur.948/" },
+  { name: "Pinterest", url: "https://tr.pinterest.com/koraytugberkgubur/" },
+  { name: "Reddit", url: "https://www.reddit.com/user/KorayTugberk-g/" },
+];
+
 export const eventFounder = {
   "@type": "Person",
   "@id": `${site}/founder/#person`,
@@ -16,7 +28,8 @@ export const eventFounder = {
   description: "Koray Tuğberk Gübür founded Holistic SEO & Digital and Holistic SEO Mastermind. His work connects semantic SEO, topical authority, technical foundations, information architecture, and brand reputation. He publishes search research, case studies, and the Topical Authority course, and hosts the mastermind as a working conversation around attendees' real business and search challenges.",
   knowsAbout: ["Semantic SEO", "Topical authority", "Technical SEO", "Information architecture", "Entity identity management", "Search engine research"],
   worksFor: { "@id": organizerId },
-  sameAs: ["https://www.holisticseo.digital/author/koray-tugberk-gubur/"],
+  sameAs: ["https://www.holisticseo.digital/author/koray-tugberk-gubur/", ...founderProfiles.map((profile) => profile.url)],
+  image: `${site}/tickets-gallery/safari-joy.jpg`,
   subjectOf: [
     { "@type": "WebPage", name: "Decoding topical authority with Koray Tuğberk Gübür", url: "https://www.authorityhacker.com/podcasts/decoding-topical-authority-with-koray-tugberk-gubur/" },
     { "@type": "WebPage", name: "Bridging search engines and humans", url: "https://www.lumar.io/blog/qa/seo-interview-bridging-search-engines-and-humans/" },
@@ -27,7 +40,32 @@ export const eventOrganizer = {
   "@type": "Organization",
   "@id": organizerId,
   name: "Holistic SEO & Digital",
+  alternateName: "Holistic SEO",
   url: "https://www.holisticseo.digital/",
+  email: "ktgubur@holisticseo.digital",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Esentepe, Büyükderece Caddesi No:193",
+    addressLocality: "Şişli",
+    addressRegion: "İstanbul",
+    postalCode: "34360",
+    addressCountry: "TR",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+90 506 157 8585",
+    contactType: "technical support",
+    url: "https://www.holisticseo.digital/",
+  },
+  logo: {
+    "@type": "ImageObject",
+    "@id": "https://www.holisticseo.digital/#logo",
+    url: "https://www.holisticseo.digital/wp-content/uploads/2022/05/holisticseo-digital-logo.png",
+    contentUrl: "https://www.holisticseo.digital/wp-content/uploads/2022/05/holisticseo-digital-logo.png",
+    width: 1000,
+    height: 250,
+    caption: "Holistic SEO & Digital",
+  },
   description: "Holistic SEO & Digital is a search systems agency founded by Koray Tuğberk Gübür. Its work brings together semantic content systems, technical SEO, data analysis and experimentation, design, and conversion to build durable organic growth.",
   founder: eventFounder,
   knowsAbout: ["Semantic SEO", "Technical SEO", "Topical authority", "Content strategy", "Data analysis", "Search engine research", "Website design", "Conversion optimization"],
