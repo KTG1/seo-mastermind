@@ -11,41 +11,7 @@ import ScrollCinema from "./components/scroll-cinema";
 import HeritageMoment from "./components/heritage-moment";
 import VideoReviewCard from "./components/video-review-card";
 
-// Invitation-only events are not eligible for Google's event rich results.
-// Keep the markup factual; do not imply public ticket availability.
-const eventStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "@id": "https://seoconference.digital/#event-2026",
-  name: "Holistic SEO Mastermind 2026",
-  url: "https://seoconference.digital/",
-  description: "An invitation-only gathering for business owners, operators, and SEO professionals, with four mastermind sessions, a conference day, evening Q&As, and shared group experiences. Invitation and reference required.",
-  startDate: "2026-09-25",
-  endDate: "2026-10-02",
-  eventStatus: "https://schema.org/EventScheduled",
-  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-  isAccessibleForFree: false,
-  image: ["https://seoconference.digital/mastermind-collective-toast.jpg"],
-  location: {
-    "@type": "Place",
-    name: "Infinity by Yelken Aquapark Hotel",
-    url: "https://www.infinitybyyelken.com/en",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Kadınlar Denizi Mahallesi, 9. Sk",
-      addressLocality: "Kuşadası",
-      addressRegion: "Aydın",
-      postalCode: "09400",
-      addressCountry: "TR",
-    },
-  },
-  organizer: {
-    "@type": "Organization",
-    "@id": "https://www.holisticseo.digital/#organization",
-    name: "Holistic SEO & Digital",
-    url: "https://www.holisticseo.digital/",
-  },
-};
+import { eventStructuredData, eventAttendees, eventFounder, eventOrganizer } from "./event-structured-data";
 
 const principles = [
   { id: "seo", label: "SEO", title: "SEO & topical authority", summary: "Shape the entities, information gain, site architecture, and conversion paths that make a search presence useful and understood.", outcome: "A clearer topical map and sharper priority pages.", glyph: "seo" },
@@ -209,6 +175,28 @@ export default function Home() {
           </div>
 
           <p>Organized by <a href="https://www.holisticseo.digital/">Holistic SEO &amp; Digital</a>. Venue: Infinity by Yelken Aquapark Hotel, Kadınlar Denizi Mahallesi, 9. Sk, 09400 Kuşadası, Aydın, Türkiye.</p>
+
+          <details className="eventPeople">
+            <summary>About the organizer, founder &amp; attendees</summary>
+            <div className="eventPeopleBody">
+              <section>
+                <h3><Link href="/agency/">{eventOrganizer.name}</Link></h3>
+                <p>{eventOrganizer.description}</p>
+                <h3><Link href="/founder/">{eventFounder.name}</Link> · Founder &amp; host</h3>
+                <p>{eventFounder.description}</p>
+                <p>Research and conversations: <a href={eventFounder.sameAs[0]}>Holistic SEO author archive</a>, <a href={eventFounder.subjectOf[0].url}>Authority Hacker interview</a>, and <a href={eventFounder.subjectOf[1].url}>Lumar interview</a>.</p>
+              </section>
+              <section>
+                <h3>From the 2026 attendee directory</h3>
+                <p>Explore the published profiles and the perspectives they bring to the room.</p>
+                <ul>{eventAttendees.map((person) => <li key={person["@id"]}>
+                  <h4><Link href={new URL(person.url).pathname}>{person.name}</Link></h4>
+                  <p>{person.description}</p>
+                </li>)}</ul>
+                <Link href="/attendees/">Explore the member directory →</Link>
+              </section>
+            </div>
+          </details>
 
           <div className="eventBriefProgramme">
             <div className="eventBriefProgrammeShade" aria-hidden="true" />
