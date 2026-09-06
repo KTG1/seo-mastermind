@@ -388,6 +388,16 @@ export default function Home() {
           </figure>
         </section>
 
+        <section className="firstYear" id="mastermind-2024" aria-labelledby="first-year-title">
+          <header className="firstYearHeading"><div><span>First year · 2024</span><h2 id="first-year-title">Where it began.</h2></div><p>Memories from the first Holistic SEO Mastermind: exploring Pamukkale together and spending time on the water in Kuşadası.</p></header>
+          <div className="firstYearPhotos">
+            {[
+              { src: "/mastermind-2024-pamukkale.webp", alt: "2024 Holistic SEO Mastermind collage showing attendees at Pamukkale, in thermal pools, and exploring ancient ruins", caption: "Pamukkale · 1 October 2024" },
+              { src: "/mastermind-2024-kusadasi-boat.webp", alt: "2024 Holistic SEO Mastermind collage showing attendees on a boat along the Kuşadası coast", caption: "On the water in Kuşadası · 3 October 2024" },
+            ].map((photo) => <figure key={photo.src}><a href={assetPath(photo.src)} target="_blank" rel="noreferrer" aria-label={`View full collage: ${photo.caption} (opens in a new tab)`}><Image src={assetPath(photo.src)} alt={photo.alt} width={3750} height={1959} unoptimized sizes="100vw" /></a><figcaption><span>{photo.caption}</span><span>Open collage ↗</span></figcaption></figure>)}
+          </div>
+        </section>
+
         <SharedMoments />
 
         <section className="testimonials" aria-labelledby="testimonials-title">
