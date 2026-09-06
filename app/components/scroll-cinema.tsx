@@ -73,7 +73,8 @@ export default function ScrollCinema() {
   useEffect(() => {
     const section = sectionRef.current;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (!section || reducedMotion.matches || window.innerWidth < 761) return;
+    if (!section) return;
+    const desktop = window.matchMedia("(min-width: 761px)");
 
     let frame = 0;
     let currentProgress = 0;
@@ -116,16 +117,26 @@ export default function ScrollCinema() {
     };
 
     const requestRender = () => {
+      if (reducedMotion.matches || !desktop.matches) {
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
+        currentProgress = 0;
+        targetProgress = 0;
+        paint(0);
+        return;
+      }
       measure();
       if (!frame) frame = window.requestAnimationFrame(render);
     };
 
-    measure();
-    currentProgress = targetProgress;
-    paint(currentProgress);
+    requestRender();
+    reducedMotion.addEventListener("change", requestRender);
+    desktop.addEventListener("change", requestRender);
     window.addEventListener("scroll", requestRender, { passive: true });
     window.addEventListener("resize", requestRender);
     return () => {
+      reducedMotion.removeEventListener("change", requestRender);
+      desktop.removeEventListener("change", requestRender);
       window.removeEventListener("scroll", requestRender);
       window.removeEventListener("resize", requestRender);
       if (frame) window.cancelAnimationFrame(frame);
@@ -137,7 +148,7 @@ export default function ScrollCinema() {
     if (!section) return;
     const scrollDistance = Math.max(0, section.offsetHeight - window.innerHeight);
     window.scrollTo({
-      top: section.offsetTop + (scrollDistance * index) / (mastermindOutcomes.length - 1),
+      top: window.scrollY + section.getBoundingClientRect().top + (scrollDistance * (index + 0.25)) / mastermindOutcomes.length,
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     });
   };
