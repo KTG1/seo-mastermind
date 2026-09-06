@@ -134,9 +134,10 @@ export const eventStructuredData = {
     },
   },
   organizer: eventOrganizer,
+  performer: eventFounder,
   attendee: eventAttendees,
   // This describes the advertised fee, not unrestricted public ticket sales.
-  // No inventory, sales dates, or performer lineup is asserted without evidence.
+  // No inventory or sales dates are asserted without evidence.
   offers: {
     "@type": "Offer",
     "@id": `${site}/tickets/#participation-offer`,

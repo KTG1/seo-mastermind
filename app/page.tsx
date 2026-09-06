@@ -184,7 +184,7 @@ export default function Home() {
                 <p>{eventOrganizer.description}</p>
                 <p>Organizer office: {eventOrganizer.address.streetAddress}, {eventOrganizer.address.postalCode} {eventOrganizer.address.addressLocality}, {eventOrganizer.address.addressRegion}, Türkiye.</p>
                 <p><a href={`mailto:${eventOrganizer.email}`}>{eventOrganizer.email}</a><br />Agency technical support: <a href={`tel:${eventOrganizer.contactPoint.telephone.replace(/\s/g, "")}`}>{eventOrganizer.contactPoint.telephone}</a>. <a href={eventOrganizer.url}>Official agency website</a> · <a href={eventOrganizer.logo.url}>Agency logo</a></p>
-                <h3><Link href="/founder/">{eventFounder.name}</Link> · Founder &amp; host</h3>
+                <h3><Link href="/founder/">{eventFounder.name}</Link> · Founder, host &amp; presenter</h3>
                 <p>{eventFounder.description}</p>
                 <p>Research and conversations: <a href={eventFounder.sameAs[0]}>Holistic SEO author archive</a>, <a href={eventFounder.subjectOf[0].url}>Authority Hacker interview</a>, and <a href={eventFounder.subjectOf[1].url}>Lumar interview</a>.</p>
                 <p>Koray’s public profiles: {founderProfiles.map((profile, index) => <span key={profile.url}>{index > 0 ? " · " : ""}<a href={profile.url}>{profile.name}</a></span>)}</p>
