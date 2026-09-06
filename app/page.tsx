@@ -11,6 +11,42 @@ import ScrollCinema from "./components/scroll-cinema";
 import HeritageMoment from "./components/heritage-moment";
 import VideoReviewCard from "./components/video-review-card";
 
+// Invitation-only events are not eligible for Google's event rich results.
+// Keep the markup factual; do not imply public ticket availability.
+const eventStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": "https://seoconference.digital/#event-2026",
+  name: "Holistic SEO Mastermind 2026",
+  url: "https://seoconference.digital/",
+  description: "An invitation-only gathering for business owners, operators, and SEO professionals, with four mastermind sessions, a conference day, evening Q&As, and shared group experiences. Invitation and reference required.",
+  startDate: "2026-09-25",
+  endDate: "2026-10-02",
+  eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  isAccessibleForFree: false,
+  image: ["https://seoconference.digital/mastermind-collective-toast.jpg"],
+  location: {
+    "@type": "Place",
+    name: "Infinity by Yelken Aquapark Hotel",
+    url: "https://www.infinitybyyelken.com/en",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kadınlar Denizi Mahallesi, 9. Sk",
+      addressLocality: "Kuşadası",
+      addressRegion: "Aydın",
+      postalCode: "09400",
+      addressCountry: "TR",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    "@id": "https://www.holisticseo.digital/#organization",
+    name: "Holistic SEO & Digital",
+    url: "https://www.holisticseo.digital/",
+  },
+};
+
 const principles = [
   { id: "seo", label: "SEO", title: "SEO & topical authority", summary: "Shape the entities, information gain, site architecture, and conversion paths that make a search presence useful and understood.", outcome: "A clearer topical map and sharper priority pages.", glyph: "seo" },
   { id: "ai", label: "AI", title: "AI & research systems", summary: "Use AI to expand research, model demand, and improve decision quality without outsourcing the judgment that makes the work distinct.", outcome: "Practical AI workflows your team can supervise.", glyph: "ai" },
@@ -117,6 +153,12 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(eventStructuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader className="siteHeader" ctaHref="#apply" />
 
       <main id="top">
@@ -165,6 +207,8 @@ export default function Home() {
             <article><span>The room</span><strong>60 attendees</strong><small>Invitation and reference required</small></article>
             <article><span>All-inclusive fee</span><strong>$5,000</strong><small>For each new attendee</small></article>
           </div>
+
+          <p>Organized by <a href="https://www.holisticseo.digital/">Holistic SEO &amp; Digital</a>. Venue: Infinity by Yelken Aquapark Hotel, Kadınlar Denizi Mahallesi, 9. Sk, 09400 Kuşadası, Aydın, Türkiye.</p>
 
           <div className="eventBriefProgramme">
             <div className="eventBriefProgrammeShade" aria-hidden="true" />
