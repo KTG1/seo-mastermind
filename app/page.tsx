@@ -9,6 +9,7 @@ import SiteHeader from "./components/site-header";
 import { assetPath } from "./components/site-path";
 import ScrollCinema from "./components/scroll-cinema";
 import HeritageMoment from "./components/heritage-moment";
+import NightlyQA from "./components/nightly-qa";
 import VideoReviewCard from "./components/video-review-card";
 
 import { videoTestimonials } from "./video-testimonials";
@@ -71,7 +72,7 @@ const experiences = [
 const faqHighlights = [
   { label: "Invitation", question: "Is the mastermind invite-only?", answer: "Yes. The room is deliberately small, and every application is reviewed for fit. Tell us what you are building and the real question you want to work on; we will reply personally." },
   { label: "Invitation", question: "Can I bring a colleague or partner?", answer: "Each place is reviewed individually because the strength of the room comes from the people in it. Mention your colleague in the application and explain the work you would bring together." },
-  { label: "Programme", question: "What happens during the eight days?", answer: "The week combines four mastermind sessions across SEO, automation, business, management, reputation, and scaling with one full conference day and four attendee-led night-time Q&As. The wider rhythm leaves room for hosted experiences, recovery, and long-table conversation." },
+  { label: "Programme", question: "What happens during the eight days?", answer: "The week combines four mastermind sessions across SEO, automation, business, management, reputation, and scaling with one full conference day and nightly attendee-led Q&As. The wider rhythm leaves room for hosted experiences, recovery, and long-table conversation." },
   { label: "Programme", question: "Who is the room designed for?", answer: "Experienced operators, founders, SEO leaders, agency owners, investors, and builders working on a real business question. Curiosity matters, but so does having work that can benefit from careful peer challenge." },
   { label: "Fee", question: "What does the $5,000 place include?", answer: "Everything in the hosted week: accommodation, food, drinks, VIP airport transfers, four masterminds, the conference, safaris, water sports, massages, parties, and the listed group experiences." },
   { label: "Travel", question: "How should I plan for Kuşadası?", answer: "Most international guests arrive through İzmir Adnan Menderes Airport. We collect every attendee in a VIP vehicle and return them to the airport after the event." },
@@ -203,7 +204,7 @@ export default function Home() {
             <div className="eventBriefProgrammeShade" aria-hidden="true" />
             <article className="eventBriefFormat">
               <span>Inside the room</span>
-              <h3>Four masterminds.<br />One full conference day.<br />Four night-time Q&amp;As.</h3>
+              <h3>Four masterminds.<br />One full conference day.<br />Q&amp;A every night.</h3>
               <p>The mastermind sessions cover automation, business, SEO, management, reputation, and scaling. Evening Q&amp;A topics are chosen from attendee suggestions.</p>
             </article>
             <article className="eventBriefIncluded">
@@ -219,6 +220,8 @@ export default function Home() {
             <a href="#apply">Start your request <span>↓</span></a>
           </footer>
         </section>
+
+        <NightlyQA />
 
         <section className="nightInterlude" aria-labelledby="night-interlude-title">
           <div className="nightInterludeCopy">

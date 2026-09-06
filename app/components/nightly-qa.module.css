@@ -1,0 +1,28 @@
+.section { padding: clamp(64px, 7vw, 112px) clamp(20px, 4.4vw, 72px); background: #102b36; color: #fff9ea; scroll-margin-top: 24px; }
+.heading { display: grid; grid-template-columns: 1.6fr 1fr; align-items: end; gap: 7vw; margin-bottom: 46px; }
+.eyebrow { color: #ffc857; font-size: 14px; }
+.heading h2 { font: 400 clamp(42px, 5.2vw, 82px)/.98 var(--display); letter-spacing: -.045em; margin: 22px 0 0; }
+.heading p { max-width: 430px; margin: 0; color: #d8e5e7; font-size: 16px; line-height: 1.65; }
+.layout { display: grid; grid-template-columns: 1.8fr 1fr; gap: 28px; align-items: stretch; }
+.room, .closeup { position: relative; overflow: hidden; margin: 0; background: #183943; }
+.room { min-height: 650px; }
+.room img { object-fit: cover; object-position: 50% 60%; }
+.room::after { content: ""; position: absolute; inset: 65% 0 0; background: linear-gradient(transparent, rgba(6,20,26,.85)); pointer-events: none; }
+.room figcaption { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 24px; color: #fff9ea; font-size: 12px; line-height: 1.5; }
+.closeup { aspect-ratio: 4 / 3; }
+.closeup img { object-fit: cover; object-position: 53% center; }
+.copy { padding: 26px 2px 0; }
+.copy h3 { font: 400 clamp(29px, 2.8vw, 42px)/1.05 var(--display); letter-spacing: -.025em; margin: 0 0 18px; }
+.copy p { color: #d8e5e7; font-size: 14px; line-height: 1.65; margin: 0 0 16px; }
+.copy a { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; margin-top: 24px; border-top: 1px solid #6d858b; color: #ffc857; font-size: 14px; text-decoration: none; }
+.copy a:hover { text-decoration: underline; }
+@media(max-width: 760px) {
+  .heading, .layout { grid-template-columns: 1fr; gap: 28px; }
+  .heading { margin-bottom: 30px; }
+  .heading p { font-size: 15px; }
+  .room { min-height: 0; aspect-ratio: 4 / 3; }
+  .room img { object-position: 55% center; }
+  .room figcaption { left: 18px; bottom: 18px; font-size: 11px; }
+  .detail { display: grid; grid-template-columns: 1fr; }
+  .closeup { aspect-ratio: 16 / 9; }
+}
