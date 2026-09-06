@@ -9,6 +9,7 @@ import SiteHeader from "./components/site-header";
 import { assetPath } from "./components/site-path";
 import ScrollCinema from "./components/scroll-cinema";
 import HeritageMoment from "./components/heritage-moment";
+import SharedMoments from "./components/shared-moments";
 import NightlyQA from "./components/nightly-qa";
 import VideoReviewCard from "./components/video-review-card";
 
@@ -386,16 +387,7 @@ export default function Home() {
           </figure>
         </section>
 
-        <section className="sharedMoments" aria-labelledby="shared-moments-title">
-          <header><div className="sectionLabel"><span>Between sessions</span> More from the week</div><h2 id="shared-moments-title">Shared moments.<br /><em>Lasting connections.</em></h2></header>
-          <div className="sharedMomentsGrid">
-            {[
-              { src: "/mastermind-singing-together.webp", alt: "Mastermind attendees singing and laughing together during an evening in Kuşadası", caption: "Music and laughter after hours" },
-              { src: "/mastermind-waterfront-walk.webp", alt: "Mastermind attendees walking and talking along the waterfront", caption: "Conversations along the waterfront" },
-              { src: "/mastermind-water-fight.webp", alt: "Mastermind attendees playing with water pistols outdoors", caption: "A little friendly competition" },
-            ].map((photo) => <figure key={photo.src}><div><Image src={assetPath(photo.src)} alt={photo.alt} fill unoptimized sizes="(max-width: 760px) 100vw, 33vw" /></div><figcaption>{photo.caption}</figcaption></figure>)}
-          </div>
-        </section>
+        <SharedMoments />
 
         <section className="testimonials" aria-labelledby="testimonials-title">
           <header className="testimonialHeading">
