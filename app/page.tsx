@@ -232,7 +232,7 @@ export default function Home() {
           </div>
           <figure className="nightInterludeImage">
             <Image
-              src={assetPath("/mastermind-singing-together.webp")}
+              src={assetPath("/mastermind-unscripted-night.jpg")}
               alt="Holistic SEO Mastermind attendees singing and laughing together during an evening in Kuşadası"
               fill
               unoptimized
@@ -346,8 +346,8 @@ export default function Home() {
 
         <section className="roadMoment" aria-labelledby="road-moment-title">
           <Image
-            src={assetPath("/mastermind-waterfront-walk.webp")}
-            alt="Holistic SEO Mastermind attendees walking and talking together along the waterfront"
+            src={assetPath("/mastermind-night-ride.jpg")}
+            alt="Holistic SEO Mastermind attendees sharing a night safari ride in Kuşadası"
             fill
             unoptimized
             sizes="100vw"
@@ -355,10 +355,10 @@ export default function Home() {
           <div className="roadMomentShade" aria-hidden="true" />
           <div className="roadMomentCopy">
             <div className="sectionLabel light"><span>Beyond the sessions</span> Shared experience</div>
-            <h2 id="road-moment-title">The conversation continues<br /><em>beyond the room.</em></h2>
+            <h2 id="road-moment-title">The day doesn’t end<br /><em>at the last slide.</em></h2>
           </div>
           <div className="roadMomentFoot">
-            <span>Along the waterfront · Kuşadası</span>
+            <span>Night safari · Kuşadası</span>
             <p>Some of the best conversations begin on the way back.</p>
           </div>
         </section>
@@ -372,8 +372,8 @@ export default function Home() {
           </header>
           <figure className="collectivePortraitFrame">
             <Image
-              src={assetPath("/mastermind-water-fight.webp")}
-              alt="Holistic SEO Mastermind attendees laughing and playing with water pistols outdoors"
+              src={assetPath("/mastermind-collective-toast.jpg")}
+              alt="Holistic SEO Mastermind attendees raising a toast together beside the water in Kuşadası"
               fill
               unoptimized
               sizes="100vw"
@@ -384,6 +384,17 @@ export default function Home() {
               <strong>Different markets. Different questions.<br />One generous table.</strong>
             </figcaption>
           </figure>
+        </section>
+
+        <section className="sharedMoments" aria-labelledby="shared-moments-title">
+          <header><div className="sectionLabel"><span>Between sessions</span> More from the week</div><h2 id="shared-moments-title">Shared moments.<br /><em>Lasting connections.</em></h2></header>
+          <div className="sharedMomentsGrid">
+            {[
+              { src: "/mastermind-singing-together.webp", alt: "Mastermind attendees singing and laughing together during an evening in Kuşadası", caption: "Music and laughter after hours" },
+              { src: "/mastermind-waterfront-walk.webp", alt: "Mastermind attendees walking and talking along the waterfront", caption: "Conversations along the waterfront" },
+              { src: "/mastermind-water-fight.webp", alt: "Mastermind attendees playing with water pistols outdoors", caption: "A little friendly competition" },
+            ].map((photo) => <figure key={photo.src}><div><Image src={assetPath(photo.src)} alt={photo.alt} fill unoptimized sizes="(max-width: 760px) 100vw, 33vw" /></div><figcaption>{photo.caption}</figcaption></figure>)}
+          </div>
         </section>
 
         <section className="testimonials" aria-labelledby="testimonials-title">
