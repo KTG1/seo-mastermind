@@ -392,3 +392,17 @@ footer span{font-size:8px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}
 .experienceBand::before,.experienceBand::after,.experienceVideo,.experienceCopy,.experienceBand li button,.cinemaLine,.cinemaCore,.cinemaPath,.cinemaStep,.cinemaOutcome,.cinemaConnector,.cinemaConnector::after,.cinemaPulse,.nightInterludeImage>img,.aegeanInterlude>video,.roadMoment>img,.collectivePortraitFrame>img,.homeFaqItem summary i,.homeFaqFilters button,.testimonialCard,.reviewTabs button,.videoReviewCard>img,.videoReviewShade,.videoPending,.videoReviewBody h3,.videoReviewBody p{transition:none;animation:none}.experienceVideo,.aegeanInterlude>video,.introductionVideo,.hostVideo,.applicationVideo{display:none}.experienceBand[data-engagement="water-sports"]::before{opacity:1}.scrollCinema{height:auto}.cinemaSticky{position:relative}.cinemaImage{transform:none}
 }
+
+/* Portrait photographs keep their vertical framing; copy sits in a shaded footer. */
+.gatheringPhotos{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#09231e}
+.gatheringPhoto{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:clamp(620px,65vw,940px);overflow:hidden;color:var(--paper);text-decoration:none;padding:clamp(26px,4.4vw,72px)}
+.gatheringPhoto>img{z-index:-2;object-fit:cover;object-position:center 45%}
+.gatheringPhoto::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(5,23,19,.97),rgba(5,23,19,.75) 22%,transparent 55%)}
+.gatheringCabana>img{object-position:center 58%}
+.gatheringPhoto>div{width:100%}
+.gatheringPhoto span{font:10px var(--mono);color:var(--solar)}
+.gatheringPhoto h2{font:400 clamp(36px,4vw,64px)/.98 var(--display);letter-spacing:-.04em;margin:20px 0}
+.gatheringPhoto p{font-size:14px;line-height:1.5;margin:0;padding-top:18px;border-top:1px solid rgba(255,249,234,.4)}
+.gatheringPhoto b{float:right;color:var(--solar)}
+.gatheringPhoto:focus-visible{outline-offset:-5px}
+@media(max-width:760px){.gatheringPhotos{grid-template-columns:1fr}.gatheringPhoto{min-height:740px;min-height:clamp(640px,115svh,900px);padding:28px 22px}.gatheringPhoto h2{font-size:43px}.roadMoment>img{object-position:64% center}.collectivePortraitFrame>img{object-position:48% center}}

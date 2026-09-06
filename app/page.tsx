@@ -229,7 +229,7 @@ export default function Home() {
           </div>
           <figure className="nightInterludeImage">
             <Image
-              src={assetPath("/mastermind-unscripted-night.jpg")}
+              src={assetPath("/mastermind-singing-together.webp")}
               alt="Holistic SEO Mastermind attendees singing and laughing together during an evening in Kuşadası"
               fill
               unoptimized
@@ -291,6 +291,17 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="gatheringPhotos" aria-label="Moments from previous gatherings">
+          <Link className="gatheringPhoto gatheringCabana" href="/attendees/">
+            <Image src={assetPath("/mastermind-cabana-conversations.webp")} alt="Mastermind attendees gathered for an informal conversation in a shaded cabana" fill unoptimized sizes="(max-width: 760px) 100vw, 50vw" />
+            <div><span>Between sessions</span><h2>Good company.<br />Better conversations.</h2><p>Meet the people who make the room. <b>↗</b></p></div>
+          </Link>
+          <Link className="gatheringPhoto gatheringVillage" href="/sirince/">
+            <Image src={assetPath("/mastermind-village-walk.webp")} alt="An attendee smiling during a group walk along a leafy stone path" fill unoptimized sizes="(max-width: 760px) 100vw, 50vw" />
+            <div><span>A change of scenery</span><h2>Take the conversation<br />outside.</h2><p>Explore the Şirince visit. <b>↗</b></p></div>
+          </Link>
+        </section>
+
         <section className="host">
           <video className="hostVideo" autoPlay muted loop playsInline preload="metadata" poster={assetPath("/mastermind-pamukkale-walk-poster.jpg")} aria-hidden="true">
             <source src={assetPath("/mastermind-pamukkale-walk-background.mp4")} type="video/mp4" />
@@ -332,8 +343,8 @@ export default function Home() {
 
         <section className="roadMoment" aria-labelledby="road-moment-title">
           <Image
-            src={assetPath("/mastermind-night-ride.jpg")}
-            alt="Holistic SEO Mastermind attendees sharing a night safari ride in Kuşadası"
+            src={assetPath("/mastermind-waterfront-walk.webp")}
+            alt="Holistic SEO Mastermind attendees walking and talking together along the waterfront"
             fill
             unoptimized
             sizes="100vw"
@@ -341,10 +352,10 @@ export default function Home() {
           <div className="roadMomentShade" aria-hidden="true" />
           <div className="roadMomentCopy">
             <div className="sectionLabel light"><span>Beyond the sessions</span> Shared experience</div>
-            <h2 id="road-moment-title">The day doesn’t end<br /><em>at the last slide.</em></h2>
+            <h2 id="road-moment-title">The conversation continues<br /><em>beyond the room.</em></h2>
           </div>
           <div className="roadMomentFoot">
-            <span>Night safari · Kuşadası</span>
+            <span>Along the waterfront · Kuşadası</span>
             <p>Some of the best conversations begin on the way back.</p>
           </div>
         </section>
@@ -358,8 +369,8 @@ export default function Home() {
           </header>
           <figure className="collectivePortraitFrame">
             <Image
-              src={assetPath("/mastermind-collective-toast.jpg")}
-              alt="Holistic SEO Mastermind attendees raising a toast together beside the water in Kuşadası"
+              src={assetPath("/mastermind-water-fight.webp")}
+              alt="Holistic SEO Mastermind attendees laughing and playing with water pistols outdoors"
               fill
               unoptimized
               sizes="100vw"
